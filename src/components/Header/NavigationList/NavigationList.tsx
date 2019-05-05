@@ -3,7 +3,7 @@ import NavigationListItem from './NavigationListItem/NavigationListItem';
 import classes from './NavigationList.module.scss';
 
 const navigationList = props => {
-    const navItems = ['Home', 'About', 'Skills', 'Contact'];
+    const navItems = ['Home', 'About', 'Work', 'Contact'];
     return (
         <ul className={classes.NavigationList}>
             {navItems.map(navItem => (
