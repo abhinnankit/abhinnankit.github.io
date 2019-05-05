@@ -1,0 +1,9 @@
+%padding-15 {
+    padding-left: 15px;
+    padding-right: 15px;
+}
+
+%grid {
+    @extend %padding-15;
+    min-height: 1px;
+}

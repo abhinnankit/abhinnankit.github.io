@@ -1,1 +1,6 @@
-@import '~bootstrap/scss/bootstrap-reboot';
+// Contains import to all the specific files
+
+@import 'variable';
+@import 'placeholders';
+@import 'mixin';
+@import 'common';
