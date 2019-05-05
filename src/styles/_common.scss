@@ -29,22 +29,27 @@
     max-width: 100%;
 }
 
+@include generate-col(null);
+
 /* Media queries */
 
 @media (min-width: 768px) {
     .container {
         max-width: 720px;
     }
+    @include generate-col('-md');
 }
 
 @media (min-width: 992px) {
     .container {
         max-width: 960px;
     }
+    @include generate-col('-lg');
 }
 
 @media (min-width: 1200px) {
     .container {
         max-width: 1140px;
     }
+    @include generate-col('-xl');
 }

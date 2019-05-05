@@ -1,9 +1,13 @@
 import React from 'react';
-import PropTypes from 'prop-types';
-import classes from './About.module.scss';
+import AboutMe from './AboutMe/AboutMe';
 
 const about = props => {
-    return <div />;
+    const sectionClasses = ['col-md-6', 'col-12'];
+    return (
+        <section className={sectionClasses.join(' ')} style={{ display: 'flex' }}>
+            <AboutMe />
+        </section>
+    );
 };
 
 about.propTypes = {};

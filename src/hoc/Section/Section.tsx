@@ -1,14 +1,19 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classes from './Section.module.scss';
+import Container from '../Container/Container';
+import Row from '../Row/Row';
 
 const section = props => {
     return (
         <section className={classes.Section}>
-            <div className={'container'}>
-                <h1>{props.title}</h1>
-                <div className={classes.SectionBlock} />
-            </div>
+            <Container>
+                <Row style={{ flexDirection: 'column' }}>
+                    <h1>{props.title}</h1>
+                    <div className={classes.SectionBlock} />
+                </Row>
+                <Row>{props.children}</Row>
+            </Container>
         </section>
     );
 };

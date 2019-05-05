@@ -1,0 +1,13 @@
+.img {
+    height: 12em;
+    width: 8em;
+    &::after {
+        content: '';
+        clear: both;
+        display: table;
+    }
+}
+
+.article {
+    margin-left: 1em;
+}
