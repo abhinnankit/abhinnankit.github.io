@@ -1,0 +1,21 @@
+.bar {
+    width: 28px;
+    height: 3px;
+    background-color: #fff;
+    margin: 3px 0;
+}
+
+.HamburgerMenu {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 0.5em;
+    margin: 0.5em 0.5em 0.5em auto;
+}
+
+@media (min-width: 576px) {
+    .HamburgerMenu {
+        display: none;
+    }
+}
