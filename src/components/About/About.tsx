@@ -4,7 +4,7 @@ import classes from './About.module.scss';
 import Skills from './Skills/Skills';
 
 const about = props => {
-    const aboutMeClasses = ['col-xl-6', 'col-lg-10', 'col-12', classes.About, classes.AboutSpace];
+    const aboutMeClasses = ['col-xl-6', 'col-lg-10', 'col-12', classes.AboutSpace];
     const skillClasses = ['col-xl-6', 'col-lg-10', 'col-12', classes.AboutSkill];
     return (
         <>

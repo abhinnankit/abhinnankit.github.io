@@ -1,9 +1,6 @@
-.About {
+.AboutSpace {
     display: flex;
     align-items: center;
-}
-
-.AboutSpace {
     justify-content: unset;
     flex-direction: column;
     flex-wrap: wrap;
@@ -21,13 +18,13 @@
 }
 
 @media (min-width: 1200px) {
-    .About {
+    .AboutSpace {
         flex-direction: row;
     }
 }
 
 @media (min-width: 992px) and (max-width: 1199px) {
-    .About {
+    .AboutSpace {
         margin: auto;
     }
 }
