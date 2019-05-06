@@ -3,15 +3,21 @@
     align-items: center;
 }
 
-.justifyContentEvenly {
+.AboutSpace {
     justify-content: unset;
     flex-direction: column;
     flex-wrap: wrap;
 }
 
-@media (min-width: 600px) {
-    .justifyContentEvenly {
+@media (min-width: 600px) and (max-width: 1199px) {
+    .AboutSpace {
         justify-content: space-evenly;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 1200px) {
+    .About {
         flex-direction: row;
     }
 }

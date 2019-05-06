@@ -5,7 +5,7 @@ import classes from './AboutMe.module.scss';
 const aboutMe = () => {
     return (
         <React.Fragment>
-            <figure>
+            <figure className={classes.Figure}>
                 <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
             </figure>
             <article className={classes.article}>
