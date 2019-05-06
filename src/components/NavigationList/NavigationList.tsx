@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const navigationList: FC<IProps> = props => {
-    const ulClass = [classes.NavigationList];
+    const ulClass = [classes.NavigationList, 'header-bg-color'];
     if (props.show) {
         ulClass.push(classes.OpenNavBar);
     }

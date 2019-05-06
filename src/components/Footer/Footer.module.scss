@@ -1,0 +1,24 @@
+$footer-padding: 60;
+
+.Footer {
+    padding: (($footer-padding) * 1px) 0;
+    background-color: #f8f8f8;
+}
+
+@media (min-width: 576px) {
+    .Footer {
+        padding: (($footer-padding + 20) * 1px) 0;
+    }
+}
+
+@media (min-width: 768px) {
+    .Footer {
+        padding: (($footer-padding + 60) * 1px) 0;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Footer {
+        padding: (($footer-padding + 80) * 1px) 0;
+    }
+}

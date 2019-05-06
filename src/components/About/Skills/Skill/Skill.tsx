@@ -12,8 +12,8 @@ const skill: FC<IProps> = props => {
             <div className={classes.SkillProgress}>
                 <div className={classes.SkillProgressBar} style={{ width: props.percent + '%' }} />
             </div>
-            <div className={classes.SkillName}>
-                <strong>{props.skill.toUpperCase()}, %</strong>
+            <div className={classes.SkillAttr} style={{ width: props.percent + '%' }}>
+                <strong>{props.skill.toUpperCase()}</strong>
                 <span>{props.percent}</span>
             </div>
         </div>
