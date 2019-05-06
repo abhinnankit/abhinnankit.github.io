@@ -17,7 +17,7 @@ const skills = () => {
     };
     return (
         <div className={classes.Skills}>
-            <h2>Technologies</h2>
+            <h2>TECHNOLOGIES</h2>
             {Object.keys(languages).map(language => (
                 <Skill key={language} skill={language} percent={languages[language]} />
             ))}
