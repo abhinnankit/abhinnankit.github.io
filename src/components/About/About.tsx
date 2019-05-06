@@ -11,6 +11,4 @@ const about = props => {
     );
 };
 
-about.propTypes = {};
-
 export default about;

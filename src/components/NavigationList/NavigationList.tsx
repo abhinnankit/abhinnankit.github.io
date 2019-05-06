@@ -1,18 +1,24 @@
-import React from 'react';
+import React, { FC } from 'react';
 import NavigationListItem from './NavigationListItem/NavigationListItem';
 import classes from './NavigationList.module.scss';
 
-const navigationList = props => {
+interface IProps {
+    show: boolean;
+}
+
+const navigationList: FC<IProps> = props => {
+    const ulClass = [classes.NavigationList];
+    if (props.show) {
+        ulClass.push(classes.OpenNavBar);
+    }
     const navItems = ['Home', 'About', 'Work', 'Contact'];
     return (
-        <ul className={classes.NavigationList}>
+        <ul className={ulClass.join(' ')}>
             {navItems.map(navItem => (
                 <NavigationListItem key={navItem}>{navItem.toUpperCase()}</NavigationListItem>
             ))}
         </ul>
     );
 };
-
-navigationList.propTypes = {};
 
 export default navigationList;

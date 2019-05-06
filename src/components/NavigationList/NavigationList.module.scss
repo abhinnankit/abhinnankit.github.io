@@ -1,0 +1,20 @@
+.NavigationList {
+    display: block;
+    list-style-type: none;
+    padding: 0;
+    height: 0;
+    text-align: center;
+    transition: height 0.2s linear;
+}
+
+.OpenNavBar {
+    display: block;
+    height: 224px;
+}
+
+@media (min-width: 576px) {
+    .NavigationList {
+        display: flex;
+        height: auto;
+    }
+}

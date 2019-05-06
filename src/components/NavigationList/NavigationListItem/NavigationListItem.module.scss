@@ -1,5 +1,6 @@
 .NavigationListItem {
     padding: 1em;
+    border-top: 1px solid rgba(255, 255, 255, 0.3);
     a {
         color: #fff;
         text-decoration: none;
@@ -10,5 +11,11 @@
         a {
             border-bottom: 1px solid #ffffff;
         }
+    }
+}
+
+@media (min-width: 576px) {
+    .NavigationListItem {
+        border-top: initial;
     }
 }
