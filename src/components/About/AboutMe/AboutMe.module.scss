@@ -1,8 +1,14 @@
 .img {
-    height: 12em;
-    width: 8em;
+    height: 18em;
+    width: 14em;
 }
 
 .article {
-    margin-left: 1em;
+    font-family: 'Caveat', cursive;
+}
+
+@media (min-width: 1200px) {
+    .article {
+        margin-left: 6em;
+    }
 }

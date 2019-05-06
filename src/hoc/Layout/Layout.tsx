@@ -8,9 +8,11 @@ class Layout extends Component {
         return (
             <Fragment>
                 <Header />
-                <Section title={'ABOUT'}>
-                    <About />
-                </Section>
+                <main>
+                    <Section title={'ABOUT'}>
+                        <About />
+                    </Section>
+                </main>
             </Fragment>
         );
     }
