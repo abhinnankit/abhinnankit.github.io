@@ -4,17 +4,24 @@
     padding: 0;
     height: 0;
     text-align: center;
-    transition: height 0.2s linear;
+    transition: height 0.2s ease-out;
+    overflow: hidden;
+    width: 100%;
+    top: 3.6em;
+    z-index: 1000;
+    background-color: #282828;
+    position: absolute;
 }
 
 .OpenNavBar {
-    display: block;
     height: 224px;
 }
 
 @media (min-width: 576px) {
     .NavigationList {
+        position: initial;
         display: flex;
         height: auto;
+        width: auto;
     }
 }

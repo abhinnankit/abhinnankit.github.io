@@ -1,8 +1,31 @@
-.bar {
+.bar1,
+.bar2,
+.bar3 {
     width: 28px;
     height: 3px;
     background-color: #fff;
     margin: 3px 0;
+    transition: 0.4s;
+}
+
+.bar2 {
+    position: relative;
+    left: 0;
+}
+
+.change.bar1 {
+    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
+    transform: rotate(-405deg) translate(-6px, 6px);
+}
+
+.change.bar2 {
+    opacity: 0;
+    left: -30px;
+}
+
+.change.bar3 {
+    -webkit-transform: rotate(45deg) translate(-7px, -7px);
+    transform: rotate(405deg) translate(-7px, -7px);
 }
 
 .HamburgerMenu {

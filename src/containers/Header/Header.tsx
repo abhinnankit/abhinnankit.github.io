@@ -37,7 +37,7 @@ class Header extends Component<object, State> {
                 <Row>
                     <nav className={'container'}>
                         <Row style={{ flexDirection: 'column' }}>
-                            <HamburgerMenu clicked={this.toggleHamburgerMenu} />
+                            <HamburgerMenu show={this.state.show} clicked={this.toggleHamburgerMenu} />
                             <NavigationList show={this.state.show} />
                         </Row>
                     </nav>
