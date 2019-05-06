@@ -7,7 +7,7 @@ const aboutMe = () => {
         <React.Fragment>
             <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
             <article className={classes.article}>
-                <h3>This is Abhinn Ankit!</h3>
+                <h2>This is Abhinn Ankit!</h2>
                 <p>He is a full-stack web developer from Boston.</p>
             </article>
         </React.Fragment>
