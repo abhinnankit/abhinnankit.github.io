@@ -5,10 +5,14 @@ import classes from './AboutMe.module.scss';
 const aboutMe = () => {
     return (
         <React.Fragment>
-            <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
+            <figure>
+                <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
+            </figure>
             <article className={classes.article}>
-                <h2>This is Abhinn Ankit!</h2>
-                <p>He is a full-stack web developer from Boston.</p>
+                <h2>Abhinn Ankit</h2>
+                <h3>Full-stack web developer</h3>
+                <p>I'm a full-stack web developer from Boston.</p>
+                <p>I strive to create visually appealing sites with intuitive design and clear navigation.</p>
             </article>
         </React.Fragment>
     );

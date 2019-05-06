@@ -4,5 +4,20 @@
 }
 
 .justifyContentEvenly {
-    justify-content: space-evenly;
+    justify-content: unset;
+    flex-direction: column;
+    flex-wrap: wrap;
+}
+
+@media (min-width: 600px) {
+    .justifyContentEvenly {
+        justify-content: space-evenly;
+        flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) and (max-width: 1199px) {
+    .About {
+        margin: auto;
+    }
 }

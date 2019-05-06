@@ -1,14 +1,27 @@
 .img {
-    height: 18em;
+    height: 17em;
     width: 14em;
 }
 
 .article {
-    font-family: 'Caveat', cursive;
+    text-align: center;
+    h2 {
+        font-size: 2.5em;
+        font-family: 'Raleway', sans-serif;
+    }
+    h3 {
+        margin-bottom: 1em;
+    }
+}
+
+@media (min-width: 576px) {
+    .article {
+        max-width: 23em;
+    }
 }
 
 @media (min-width: 1200px) {
     .article {
-        margin-left: 6em;
+        margin-left: 4em;
     }
 }
