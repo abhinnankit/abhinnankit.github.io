@@ -11,7 +11,7 @@ interface IProps {
 const socialLinks: FC<IProps> = props => {
     return (
         <div className={classes.SocialLinks}>
-            <a href={props.link} className={classes.IconsBox} rel="noreferrer" target="_blank">
+            <a href={props.link} className={classes.IconsBox} rel="noopener noreferrer" target="_blank">
                 <FontAwesomeIcon icon={props.icon} className={classes.Icons} />
             </a>
         </div>

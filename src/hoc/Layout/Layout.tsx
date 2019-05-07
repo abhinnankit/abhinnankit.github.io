@@ -3,7 +3,7 @@ import Header from '../../containers/Header/Header';
 import Section from '../Section/Section';
 import About from '../../components/About/About';
 import Footer from '../../components/Footer/Footer';
-import Contact from '../../containers/Contact/Contact';
+import Contact from '../../components/Contact/Contact';
 
 class Layout extends Component {
     render() {
