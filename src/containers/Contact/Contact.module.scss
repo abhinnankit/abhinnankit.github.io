@@ -1,0 +1,87 @@
+.Contact {
+    display: flex;
+    flex-direction: column;
+    margin: auto;
+    width: 90%;
+}
+
+.ContactFields {
+    width: 100%;
+    background-color: #fff;
+    font-family: system-ui, serif;
+    padding: 8px;
+    box-sizing: border-box;
+    color: #777;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+    font-size: 16px;
+    margin: 1px;
+    &:hover {
+        border-color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.ContactFields:focus {
+    color: #111;
+    border-color: rgba(0, 0, 0, 0.7);
+    box-shadow: 0 0 3px rgba(0, 0, 0, 0.3);
+    outline: none;
+}
+
+.btn {
+    color: #fff;
+    background: rgba(34, 34, 34, 0.9);
+    border: 2px solid transparent;
+    -webkit-border-radius: 2px;
+    -moz-border-radius: 2px;
+    border-radius: 2px;
+    margin-left: auto;
+    margin-top: 10px;
+    padding: 10px 25px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    outline: none;
+    transition: all 0.2s cubic-bezier(0, 0, 0.58, 1);
+}
+
+.btn:hover,
+.btn:focus {
+    font-weight: 400;
+    color: rgba(255, 255, 255, 0.85);
+    background: rgba(0, 0, 0, 0.7);
+    text-decoration: none;
+    outline: none;
+    border-color: transparent;
+}
+
+.btn:focus {
+    background: rgba(0, 0, 0, 0.8);
+}
+
+.btn:active {
+    outline: 0;
+    background-image: none;
+    box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
+}
+
+.textarea {
+    height: 150px;
+    resize: none;
+}
+
+@media (min-width: 768px) {
+    .Contact {
+        width: 70%;
+    }
+}
+
+@media (min-width: 992px) {
+    .Contact {
+        width: 60%;
+    }
+}
+
+@media (min-width: 1200px) {
+    .Contact {
+        width: 50%;
+    }
+}

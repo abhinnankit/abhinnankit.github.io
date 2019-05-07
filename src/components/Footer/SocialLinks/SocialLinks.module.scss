@@ -3,7 +3,7 @@
 }
 
 .IconsBox {
-    border: 1px solid #000;
+    border: 1px solid rgba(0, 0, 0, 0.3);
     padding: 0.5em;
     display: flex;
     transform: rotate(-45deg);
@@ -20,10 +20,7 @@
 }
 
 @media (min-width: 992px) {
-    .SocialLinks {
-        margin: 0 2em;
-    }
     .IconsBox {
-        font-size: x-large;
+        font-size: large;
     }
 }
