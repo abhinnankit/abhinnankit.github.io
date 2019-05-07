@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
-import NavigationList from '../../components/NavigationList/NavigationList';
+import NavigationList from './NavigationList/NavigationList';
 import classes from './Header.module.scss';
 import Row from '../../hoc/Row/Row';
-import HamburgerMenu from '../../components/UI/HamburgerMenu/HamburgerMenu';
+import HamburgerMenu from '../UI/HamburgerMenu/HamburgerMenu';
 
 const initialState = { show: false };
 type State = Readonly<typeof initialState>;

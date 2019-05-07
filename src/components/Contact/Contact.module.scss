@@ -1,15 +1,18 @@
 .Contact {
+    margin: auto;
+    min-width: 90%;
+}
+
+.Form {
     display: flex;
     flex-direction: column;
-    margin: auto;
-    width: 90%;
 }
 
 .ContactFields {
     width: 100%;
     background-color: #fff;
     font-family: system-ui, serif;
-    padding: 8px;
+    padding: 10px 15px;
     box-sizing: border-box;
     color: #777;
     border: 1px solid rgba(0, 0, 0, 0.1);
@@ -68,20 +71,8 @@
     resize: none;
 }
 
-@media (min-width: 768px) {
+@media (min-width: 600px) {
     .Contact {
-        width: 70%;
-    }
-}
-
-@media (min-width: 992px) {
-    .Contact {
-        width: 60%;
-    }
-}
-
-@media (min-width: 1200px) {
-    .Contact {
-        width: 50%;
+        min-width: 500px;
     }
 }

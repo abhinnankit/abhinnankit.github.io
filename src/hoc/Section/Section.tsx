@@ -14,7 +14,7 @@ const section: FC<IProps> = props => {
             <Container>
                 <Row style={{ flexDirection: 'column' }}>
                     <h1>{props.title.toUpperCase()}</h1>
-                    <div className={classes.SectionBlock} />
+                    <div className={classes.SectionUnderline} />
                 </Row>
                 <Row>{props.children}</Row>
             </Container>

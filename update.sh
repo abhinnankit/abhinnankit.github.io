@@ -16,7 +16,7 @@ pretty-quick staged
 echo -e "Adding files:\n"
 git add --all
 
-echo -e "Committing changes to local.\n"
+echo -e "Committing changes.\n"
 
 git commit -m "${commit_msg}"
 
