@@ -14,8 +14,7 @@
 }
 
 .change.bar1 {
-    -webkit-transform: rotate(-45deg) translate(-6px, 6px);
-    transform: rotate(-405deg) translate(-6px, 6px);
+    transform: rotate(45deg) translate(6px, 6px);
 }
 
 .change.bar2 {
@@ -24,8 +23,7 @@
 }
 
 .change.bar3 {
-    -webkit-transform: rotate(45deg) translate(-7px, -7px);
-    transform: rotate(405deg) translate(-7px, -7px);
+    transform: rotate(-45deg) translate(6px, -6px);
 }
 
 .HamburgerMenu {

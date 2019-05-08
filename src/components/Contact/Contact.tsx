@@ -14,12 +14,7 @@ const contact = props => {
                 placeholder="Email"
                 required={true}
             />
-            <textarea
-                className={textareaClasses.join(' ')}
-                name="message"
-                placeholder="Your message"
-                spellCheck={false}
-            />
+            <textarea className={textareaClasses.join(' ')} name="message" placeholder="Your message" />
             <button className={classes.btn} type="submit">
                 Submit
             </button>

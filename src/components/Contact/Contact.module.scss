@@ -7,6 +7,7 @@
 
 .ContactFields {
     width: 100%;
+    display: block;
     background-color: #fff;
     font-family: system-ui, serif;
     padding: 10px 15px;
@@ -31,8 +32,6 @@
     color: #fff;
     background: rgba(34, 34, 34, 0.9);
     border: 2px solid transparent;
-    -webkit-border-radius: 2px;
-    -moz-border-radius: 2px;
     border-radius: 2px;
     margin-left: auto;
     margin-top: 10px;
@@ -58,14 +57,12 @@
 }
 
 .btn:active {
-    outline: 0;
-    background-image: none;
+    outline: none;
     box-shadow: 2px 3px 6px rgba(0, 0, 0, 0.25);
 }
 
 .textarea {
-    height: 150px;
-    resize: none;
+    min-height: 150px;
 }
 
 @media (min-width: 600px) {
