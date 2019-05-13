@@ -1,5 +1,5 @@
 import React from 'react';
-import myImage from '../../../assets/images/sjanasjncpascmxan.jpg';
+import myImage from '../../../assets/images/me.jpg';
 import classes from './AboutMe.module.scss';
 
 const aboutMe = () => {
