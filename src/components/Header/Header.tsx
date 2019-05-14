@@ -31,7 +31,7 @@ class Header extends Component<object, State> {
     }
 
     render() {
-        const headerClass = [classes.Header, 'container-fluid', 'header-bg-color'];
+        const headerClass = [classes.Header, 'container-fluid', 'header-bg-color', classes.HeaderSticky];
         return (
             <header className={headerClass.join(' ')}>
                 <Row>

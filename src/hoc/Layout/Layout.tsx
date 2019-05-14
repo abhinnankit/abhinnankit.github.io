@@ -12,7 +12,7 @@ class Layout extends Component {
             <>
                 <Header />
                 <main>
-                    <Section title={'ABOUT'} style={{ backgroundColor: 'rgba(250,250,250, 0.8)' }}>
+                    <Section title={'ABOUT'} style={{ backgroundColor: '#18191A' }}>
                         <About />
                     </Section>
                     <Section title={'Projects'}>

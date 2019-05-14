@@ -3,10 +3,16 @@ import classes from './Project.module.scss';
 
 interface IProps {
     imgUrl: string;
+    justifyContentStart: boolean;
 }
 
 const project: FC<IProps> = props => {
     const mainDivClass = ['col-lg-6', classes.Project];
+    if (props.justifyContentStart) {
+        mainDivClass.push(classes.ProjectFlexStart);
+    } else {
+        mainDivClass.push(classes.ProjectFlexEnd);
+    }
     return (
         <>
             <div className={mainDivClass.join(' ')}>

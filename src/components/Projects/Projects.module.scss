@@ -1,9 +1,16 @@
 .Projects {
     margin: auto;
     width: 100%;
+    display: flex;
+    flex-direction: column;
 }
 
 .More {
     text-align: center;
-    margin-top: 1.5em;
+}
+
+@media (min-width: 992px) {
+    .Projects {
+        flex-direction: row;
+    }
 }

@@ -2,12 +2,23 @@
     justify-content: center;
     align-items: center;
     display: flex;
+    margin-bottom: 1.5em;
 }
 
 .ProjectImg {
-    width: 400px;
-    height: 300px;
+    max-width: 100vw;
+    height: 275px;
     opacity: 0.8;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
+}
+
+@media (min-width: 992px) {
+    .ProjectFlexStart {
+        justify-content: flex-start;
+    }
+
+    .ProjectFlexEnd {
+        justify-content: flex-end;
+    }
 }
