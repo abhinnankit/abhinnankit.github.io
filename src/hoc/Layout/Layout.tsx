@@ -12,13 +12,13 @@ class Layout extends Component {
             <>
                 <Header />
                 <main>
-                    <Section title={'ABOUT'} style={{ backgroundColor: '#18191A' }}>
+                    <Section title={'ABOUT'} style={{ backgroundColor: '#18191a' }}>
                         <About />
                     </Section>
-                    <Section title={'Projects'}>
+                    <Section title={'Projects'} style={{ backgroundColor: '#131415' }}>
                         <Projects />
                     </Section>
-                    <Section title="contact" style={{ backgroundColor: 'rgba(250,250,250, 0.8)' }}>
+                    <Section title="contact" style={{ backgroundColor: '#1a1c1c' }}>
                         <Contact />
                     </Section>
                 </main>

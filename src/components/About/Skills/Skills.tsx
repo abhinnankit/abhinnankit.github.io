@@ -11,7 +11,7 @@ const skills = () => {
         css: 90,
         scss: 85,
         react: 80,
-        angular: 75,
+        angular: 85,
         'spring boot': 65,
         express: 65,
     };
