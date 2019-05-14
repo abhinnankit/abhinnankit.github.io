@@ -7,7 +7,11 @@ import HamburgerMenu from '../UI/HamburgerMenu/HamburgerMenu';
 const initialState = { show: false };
 type State = Readonly<typeof initialState>;
 
-class Header extends Component<object, State> {
+interface IProps {
+    clicked(e: string): void;
+}
+
+class Header extends Component<IProps, State> {
     readonly state: State = initialState;
 
     toggleHamburgerMenu = () => {
@@ -38,7 +42,7 @@ class Header extends Component<object, State> {
                     <nav className={'container'}>
                         <Row style={{ flexDirection: 'column' }}>
                             <HamburgerMenu show={this.state.show} clicked={this.toggleHamburgerMenu} />
-                            <NavigationList show={this.state.show} />
+                            <NavigationList show={this.state.show} clicked={this.props.clicked} />
                         </Row>
                     </nav>
                 </Row>

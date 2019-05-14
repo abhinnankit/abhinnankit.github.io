@@ -4,6 +4,7 @@ import classes from './NavigationList.module.scss';
 
 interface IProps {
     show: boolean;
+    clicked(e: string): void;
 }
 
 const navigationList: FC<IProps> = props => {
@@ -15,7 +16,10 @@ const navigationList: FC<IProps> = props => {
     return (
         <ul className={ulClass.join(' ')}>
             {navItems.map(navItem => (
-                <NavigationListItem key={navItem}>{navItem.toUpperCase()}</NavigationListItem>
+                // tslint:disable-next-line:jsx-no-lambda
+                <NavigationListItem key={navItem} clicked={() => props.clicked(navItem)}>
+                    {navItem.toUpperCase()}
+                </NavigationListItem>
             ))}
         </ul>
     );

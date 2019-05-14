@@ -4,8 +4,8 @@ import classes from './About.module.scss';
 import Skills from './Skills/Skills';
 
 const about = props => {
-    const aboutMeClasses = ['col-12', classes.AboutSpace];
-    const skillClasses = ['col-12', classes.AboutSkill];
+    const aboutMeClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSpace];
+    const skillClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSkill];
     return (
         <>
             <div className={aboutMeClasses.join(' ')}>
