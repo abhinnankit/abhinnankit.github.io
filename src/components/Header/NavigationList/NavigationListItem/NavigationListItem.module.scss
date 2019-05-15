@@ -2,15 +2,21 @@
     padding: 1em;
     border-top: 1px solid rgba(255, 255, 255, 0.3);
     span {
-        color: #bab5ab;
+        color: #f0f0f0;
         cursor: pointer;
         text-decoration: none;
         padding: 0.4em;
+        transition: color 0.3s ease-in;
         &:hover,
         &:active {
-            border-bottom: 1px solid #bab5ab;
+            color: #bab5ab;
         }
     }
+}
+
+.active {
+    color: #bab5ab !important;
+    border-bottom: 1.5px solid #bab5ab;
 }
 
 @media (min-width: 576px) {

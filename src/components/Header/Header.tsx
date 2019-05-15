@@ -8,13 +8,14 @@ const initialState = { show: false, sticky: false };
 type State = Readonly<typeof initialState>;
 
 interface IProps {
+    markActive: boolean[];
     clicked(e: string): void;
 }
 
 class Header extends Component<IProps, State> {
     readonly state: State = initialState;
-    private readonly headerRef = React.createRef<HTMLElement>();
-    private height = 0;
+    height = 0;
+    readonly headerRef = React.createRef<HTMLElement>();
 
     toggleHamburgerMenu = () => {
         this.setState((prevState: State) => {
@@ -34,8 +35,6 @@ class Header extends Component<IProps, State> {
     };
 
     addStickyClass = () => {
-        console.dir(this.height + this.headerRef.current.offsetHeight);
-        console.log(window.pageYOffset);
         if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight) {
             this.setState({
                 sticky: true,
@@ -59,6 +58,7 @@ class Header extends Component<IProps, State> {
     }
 
     render() {
+        console.log(this.props);
         const headerClass = [classes.Header, 'container-fluid', 'header-bg-color'];
         if (this.state.sticky) {
             headerClass.push(classes.HeaderSticky);
@@ -72,7 +72,11 @@ class Header extends Component<IProps, State> {
                     <nav className={'container'}>
                         <Row style={{ flexDirection: 'column' }}>
                             <HamburgerMenu show={this.state.show} clicked={this.toggleHamburgerMenu} />
-                            <NavigationList show={this.state.show} clicked={this.props.clicked} />
+                            <NavigationList
+                                markActive={this.props.markActive}
+                                show={this.state.show}
+                                clicked={this.props.clicked}
+                            />
                         </Row>
                     </nav>
                 </Row>

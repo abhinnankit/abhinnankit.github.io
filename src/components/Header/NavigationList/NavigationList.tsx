@@ -4,6 +4,7 @@ import classes from './NavigationList.module.scss';
 
 interface IProps {
     show: boolean;
+    markActive: boolean[];
     clicked(e: string): void;
 }
 
@@ -15,9 +16,13 @@ const navigationList: FC<IProps> = props => {
     const navItems = ['Home', 'About', 'Work', 'Contact'];
     return (
         <ul className={ulClass.join(' ')}>
-            {navItems.map(navItem => (
+            {navItems.map((navItem, index) => (
                 // tslint:disable-next-line:jsx-no-lambda
-                <NavigationListItem key={navItem} clicked={() => props.clicked(navItem)}>
+                <NavigationListItem
+                    key={navItem}
+                    markActive={props.markActive[index]}
+                    clicked={() => props.clicked(navItem)}
+                >
                     {navItem.toUpperCase()}
                 </NavigationListItem>
             ))}
