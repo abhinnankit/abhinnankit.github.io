@@ -10,8 +10,10 @@ $footer-height: 180;
 }
 
 .FooterWrapper {
-    //background-color: #1B242F;
-    background-color: #131415;
+    background-color: #1b242f;
+    // dark
+    //background-color: #131415;
+    //background-color: #f0f0f0;
 }
 
 .FooterIconsWrapper {
@@ -21,7 +23,9 @@ $footer-height: 180;
 }
 
 .FooterAbout {
+    // dark
     color: rgb(186, 181, 171);
+    //color: #888;
     font-family: Dosis, arial, sans-serif;
     text-transform: uppercase;
     letter-spacing: 0.5em;

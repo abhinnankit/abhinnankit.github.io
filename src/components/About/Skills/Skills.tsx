@@ -14,6 +14,8 @@ const skills = () => {
         angular: 85,
         'spring boot': 65,
         express: 65,
+        aws: 70,
+        circleci: 65,
     };
     return (
         <div className={classes.Skills}>

@@ -3,13 +3,17 @@
     h1 {
         font-size: 2.2em;
         font-weight: bold;
-        color: rgb(206, 203, 195);
+        // dark
+        //color: rgb(206, 203, 195);
+        color: #484848;
         text-align: center;
     }
 }
 
 .SectionUnderline {
-    border-bottom: 0.3em solid rgb(206, 203, 195);
+    // dark
+    //border-bottom: 0.3em solid rgb(206, 203, 195);
+    border-bottom: 0.3em solid #484848;
     width: 4em;
     margin: auto auto 3em;
 }

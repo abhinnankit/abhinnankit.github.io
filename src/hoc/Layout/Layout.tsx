@@ -1,4 +1,4 @@
-import React, { Component, Ref } from 'react';
+import React, { Component } from 'react';
 import Header from '../../components/Header/Header';
 import Section from '../Section/Section';
 import About from '../../components/About/About';
@@ -41,20 +41,27 @@ class Layout extends Component {
     render() {
         return (
             <>
-                <Home />
+                {/*<Home />*/}
                 <Header clicked={this.linkClicked} />
                 <main>
+                    {/*<Section*/}
+                    {/*    ref={this.aboutRef}*/}
+                    {/*    title={'ABOUT'}*/}
+                    {/*    style={{ backgroundColor: '#18191a', paddingTop: '10em' }}*/}
+                    {/*>*/}
                     <Section
                         ref={this.aboutRef}
                         title={'ABOUT'}
-                        style={{ backgroundColor: '#18191a', paddingTop: '10em' }}
+                        style={{ backgroundColor: '#f0f0f0', paddingTop: '10em' }}
                     >
                         <About />
                     </Section>
-                    <Section ref={this.workRef} title={'Projects'} style={{ backgroundColor: '#131415' }}>
+                    {/*<Section ref={this.workRef} title={'Projects'} style={{ backgroundColor: '#131415' }}>*/}
+                    <Section ref={this.workRef} title={'Projects'} style={{ backgroundColor: '#e5e0da' }}>
                         <Projects />
                     </Section>
-                    <Section ref={this.contactRef} title="contact" style={{ backgroundColor: '#1a1c1c' }}>
+                    {/*<Section ref={this.contactRef} title="contact" style={{ backgroundColor: '#1a1c1c' }}>*/}
+                    <Section ref={this.contactRef} title="contact" style={{ backgroundColor: '#f0f0f0' }}>
                         <Contact />
                     </Section>
                 </main>

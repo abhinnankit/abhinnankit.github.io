@@ -30,7 +30,10 @@
 }
 
 .header-bg-color {
-    background-color: #0c0c0c;
+    // Dark color
+    //background-color: #0c0c0c;
+    //background-color: rgba(0, 0, 0, 0.95);
+    background-color: #1b242f;
 }
 
 @include generate-col(null);
