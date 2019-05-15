@@ -35,7 +35,7 @@ class Header extends Component<IProps, State> {
     };
 
     addStickyClass = () => {
-        if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight) {
+        if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight - 10) {
             this.setState({
                 sticky: true,
             });
