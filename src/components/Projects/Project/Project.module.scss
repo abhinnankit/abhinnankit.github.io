@@ -3,11 +3,13 @@
     align-items: center;
     display: flex;
     margin-bottom: 1.5em;
+    padding: 0;
 }
 
 .ProjectImg {
     max-width: 100vw;
-    height: 275px;
+    width: 20em;
+    height: 12em;
     opacity: 0.8;
     border: 1px solid rgba(0, 0, 0, 0.05);
     box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);

@@ -1,9 +1,25 @@
 .Header {
     border-bottom: 4px solid #555555;
+    position: absolute;
+    height: 56px;
 }
 
 .HeaderSticky {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
     z-index: 9999;
+}
+
+.HeaderAnimate {
+    animation: dropIn 0.5s ease;
+}
+
+@keyframes dropIn {
+    0% {
+        top: -60px;
+    }
+    100% {
+        top: 0;
+    }
 }
