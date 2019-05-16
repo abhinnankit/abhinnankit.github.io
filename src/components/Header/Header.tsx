@@ -30,12 +30,12 @@ class Header extends Component<IProps, State> {
     };
 
     isMobile = () => {
-        const isMobile = window.matchMedia('only screen and (max-width: 760px)');
+        const isMobile = window.matchMedia('only screen and (max-width: 575px)');
         return isMobile.matches;
     };
 
     addStickyClass = () => {
-        if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight - 10) {
+        if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight - 5) {
             this.setState({
                 sticky: true,
             });
@@ -57,14 +57,22 @@ class Header extends Component<IProps, State> {
         window.removeEventListener('scroll', this.addStickyClass);
     }
 
+    onNavItemClick = navItem => {
+        if (this.isMobile()) {
+            this.setState({
+                show: false,
+            });
+        }
+        this.props.clicked(navItem);
+    };
+
     render() {
-        console.log(this.props);
         const headerClass = [classes.Header, 'container-fluid', 'header-bg-color'];
-        if (this.state.sticky) {
+        if (this.state.sticky && !this.isMobile()) {
             headerClass.push(classes.HeaderSticky);
-            if (!this.isMobile()) {
-                headerClass.push(classes.HeaderAnimate);
-            }
+            headerClass.push(classes.HeaderAnimate);
+        } else if (this.isMobile()) {
+            headerClass.push(classes.HeaderSticky);
         }
         return (
             <header ref={this.headerRef} className={headerClass.join(' ')}>
@@ -75,7 +83,7 @@ class Header extends Component<IProps, State> {
                             <NavigationList
                                 markActive={this.props.markActive}
                                 show={this.state.show}
-                                clicked={this.props.clicked}
+                                clicked={this.onNavItemClick}
                             />
                         </Row>
                     </nav>

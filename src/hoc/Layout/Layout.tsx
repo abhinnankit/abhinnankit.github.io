@@ -43,11 +43,10 @@ class Layout extends Component {
     };
 
     addClasses = () => {
-        const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight;
-        const aboutHeight = headerHeight + this.aboutRef.current.offsetHeight - this.headerRef.current.height - 111;
+        const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight - 53;
+        const aboutHeight = this.aboutRef.current.offsetHeight + this.headerRef.current.height - 55;
         const workHeight = aboutHeight + this.workRef.current.offsetHeight;
-        console.log(window.pageYOffset + ' ' + headerHeight + ' ' + aboutHeight + ' ' + workHeight);
-        if (window.pageYOffset >= workHeight) {
+        if (window.pageYOffset >= workHeight || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             if (!this.state.markActive[3]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 3),
@@ -76,6 +75,7 @@ class Layout extends Component {
 
     componentDidMount(): void {
         window.addEventListener('scroll', this.addClasses);
+        this.addClasses();
     }
 
     componentWillUnmount(): void {
@@ -83,9 +83,11 @@ class Layout extends Component {
     }
 
     render() {
+        if (window.matchMedia('only screen and (min-width: 1440px)')) {
+        }
         return (
             <>
-                {/*<Home />*/}
+                <Home />
                 <Header ref={this.headerRef} clicked={this.linkClicked} markActive={this.state.markActive} />
                 <main>
                     <Section
@@ -95,9 +97,18 @@ class Layout extends Component {
                     >
                         <About />
                     </Section>
+                    <div
+                        style={{ background: 'linear-gradient(to right top, #e5e0da 50%, #f0f0f0 50%)', height: '5em' }}
+                    />
                     <Section ref={this.workRef} title={'Projects'} style={{ backgroundColor: '#e5e0da' }}>
                         <Projects />
                     </Section>
+                    <div
+                        style={{
+                            background: 'linear-gradient(to right bottom, #e5e0da 50%, #f0f0f0 50%)',
+                            height: '5em',
+                        }}
+                    />
                     <Section ref={this.contactRef} title="contact" style={{ backgroundColor: '#f0f0f0' }}>
                         <Contact />
                     </Section>

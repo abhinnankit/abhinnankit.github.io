@@ -17,12 +17,7 @@ const navigationList: FC<IProps> = props => {
     return (
         <ul className={ulClass.join(' ')}>
             {navItems.map((navItem, index) => (
-                // tslint:disable-next-line:jsx-no-lambda
-                <NavigationListItem
-                    key={navItem}
-                    markActive={props.markActive[index]}
-                    clicked={() => props.clicked(navItem)}
-                >
+                <NavigationListItem key={navItem} markActive={props.markActive[index]} clicked={props.clicked}>
                     {navItem.toUpperCase()}
                 </NavigationListItem>
             ))}
