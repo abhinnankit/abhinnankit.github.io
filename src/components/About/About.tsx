@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react';
+import React, { FC } from 'react';
 import AboutMe from './AboutMe/AboutMe';
 import classes from './About.module.scss';
 import Skills from './Skills/Skills';

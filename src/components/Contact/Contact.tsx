@@ -1,23 +1,22 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import classes from './Contact.module.scss';
 
 const Contact = props => {
     const [animate, setAnimate] = useState(false);
     const textAreaRef = useRef(null);
-    let threshold = null;
-    useEffect(() => {
-        threshold = window.innerHeight / 1.6;
-        window.addEventListener('scroll', scrollListener);
-    }, []);
-    // console.dir(textAreaRef.current.getBoundingClientRect());
+    const threshold = window.innerHeight / 1.6;
     const scrollListener = () => {
-        console.log(threshold + ' ' + textAreaRef.current.getBoundingClientRect().top);
+        // console.log(threshold + ' ' + textAreaRef.current.getBoundingClientRect().top);
         if (!animate && textAreaRef.current && textAreaRef.current.getBoundingClientRect().top < threshold) {
             setAnimate(true);
             console.log('Animate');
             window.removeEventListener('scroll', scrollListener);
         }
     };
+    useLayoutEffect(() => {
+        window.addEventListener('scroll', scrollListener);
+        // eslint-disable-next-line
+    }, []);
     const textareaClasses = [classes.textarea, classes.ContactFields, 'opaque'];
     const nameClasses = [classes.ContactFields, 'opaque'];
     const emailClasses = [classes.ContactFields, 'opaque'];
