@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "abhinnankit.github.io/static/css/main.f148c576.chunk.css",
+    "main.css": "abhinnankit.github.io/static/css/main.3167ea16.chunk.css",
     "main.js": "abhinnankit.github.io/static/js/main.e4ff74db.chunk.js",
     "main.js.map": "abhinnankit.github.io/static/js/main.e4ff74db.chunk.js.map",
     "runtime~main.js": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js",
@@ -8,9 +8,9 @@
     "static/js/2.76ae49fd.chunk.js": "abhinnankit.github.io/static/js/2.76ae49fd.chunk.js",
     "static/js/2.76ae49fd.chunk.js.map": "abhinnankit.github.io/static/js/2.76ae49fd.chunk.js.map",
     "index.html": "abhinnankit.github.io/index.html",
-    "precache-manifest.6b616d8407d2ffea4fb5ad782ed98a16.js": "abhinnankit.github.io/precache-manifest.6b616d8407d2ffea4fb5ad782ed98a16.js",
+    "precache-manifest.9e92d602070be684d26d1962913c8844.js": "abhinnankit.github.io/precache-manifest.9e92d602070be684d26d1962913c8844.js",
     "service-worker.js": "abhinnankit.github.io/service-worker.js",
-    "static/css/main.f148c576.chunk.css.map": "abhinnankit.github.io/static/css/main.f148c576.chunk.css.map",
+    "static/css/main.3167ea16.chunk.css.map": "abhinnankit.github.io/static/css/main.3167ea16.chunk.css.map",
     "static/media/1-min.png": "abhinnankit.github.io/static/media/1-min.63aa403b.png",
     "static/media/me.jpg": "abhinnankit.github.io/static/media/me.60638dcb.jpg"
   }
