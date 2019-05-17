@@ -91,6 +91,7 @@ class Layout extends Component {
 
     addAnimateClass = () => {
         const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight;
+        console.log(headerHeight + ' ' + window.innerHeight);
         const aboutHeight = this.height.about + this.headerRef.current.height;
         const workHeight = aboutHeight + this.height.work;
         if (!this.state.animateHeader.every(_ => _)) {
@@ -142,7 +143,7 @@ class Layout extends Component {
             });
         }
         headerHeight += 300;
-        console.log(window.pageYOffset + ' ' + headerHeight);
+        // console.log(window.pageYOffset + ' ' + headerHeight);
         if (!this.state.animateAbout.skills && window.pageYOffset >= headerHeight) {
             const animateAbout = { ...this.state.animateAbout };
             animateAbout.skills = true;
@@ -156,6 +157,10 @@ class Layout extends Component {
         this.height.about = this.aboutRef.current.clientHeight + 156;
         this.height.work = this.workRef.current.clientHeight + 460;
         window.addEventListener('scroll', this.addClasses);
+        window.addEventListener('resize', () => {
+            this.height.about = this.aboutRef.current.clientHeight + 156;
+            this.height.work = this.workRef.current.clientHeight + 460;
+        });
     }
 
     componentWillUnmount(): void {

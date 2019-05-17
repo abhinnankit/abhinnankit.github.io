@@ -24,6 +24,7 @@ class Header extends Component<IProps, State> {
     };
 
     hideNavBar = () => {
+        this.height = this.headerRef.current.offsetTop;
         if (this.state) {
             this.setState({ show: false });
         }
