@@ -23,9 +23,12 @@ class Header extends Component<IProps, State> {
         });
     };
 
-    hideNavBar = () => {
+    reCalcHeight = () => {
         this.height = this.headerRef.current.offsetTop;
-        if (this.state) {
+    };
+
+    hideNavBar = () => {
+        if (this.isMobile() && this.state.show) {
             this.setState({ show: false });
         }
     };
@@ -45,16 +48,17 @@ class Header extends Component<IProps, State> {
                 sticky: false,
             });
         }
+        this.hideNavBar();
     };
 
     componentDidMount(): void {
         this.height = this.headerRef.current.offsetTop;
-        window.addEventListener('resize', this.hideNavBar);
+        window.addEventListener('resize', this.reCalcHeight);
         window.addEventListener('scroll', this.addStickyClass);
     }
 
     componentWillUnmount(): void {
-        window.removeEventListener('resize', this.hideNavBar);
+        window.removeEventListener('resize', this.reCalcHeight);
         window.removeEventListener('scroll', this.addStickyClass);
     }
 
