@@ -7,8 +7,22 @@
 .IconsBox {
     border: 2px solid rgba(186, 181, 171, 0.3);
     padding: 0.5em;
+    border-radius: 3px;
     display: flex;
     transform: rotate(-45deg);
+    position: relative;
+    background: transparent;
+    transition: background-color 0.4s ease-in-out;
+    &:hover {
+        background-color: #cd5c5c;
+        path {
+            color: white;
+        }
+        .Icons {
+            will-change: opacity;
+            animation: moveUpDown 0.3s linear;
+        }
+    }
     path {
         color: #bab5ab;
     }
@@ -17,6 +31,26 @@
 .Icons {
     transform: rotate(45deg);
     margin: auto;
+}
+
+@keyframes moveUpDown {
+    0% {
+        opacity: 0;
+        transform: rotate(45deg) translateY(-50px);
+    }
+    30% {
+        opacity: 0;
+    }
+    50% {
+        opacity: 1;
+    }
+    70% {
+        opacity: 0;
+    }
+    100% {
+        transform: rotate(45deg) translateY(50px);
+        opacity: 0;
+    }
 }
 
 @media (min-width: 768px) {
