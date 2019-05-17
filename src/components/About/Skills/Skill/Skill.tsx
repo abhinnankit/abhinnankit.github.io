@@ -15,20 +15,20 @@ const Skill: FC<IProps> = props => {
     const skillAttrScoreClasses = ['opaque'];
     const skillProgressClasses = [classes.SkillProgress, 'opaque'];
     const skillProgressbarClasses = [classes.SkillProgressBar, 'opaque'];
-    let progressBarStyle = null;
     if (props.animate) {
         skillProgressClasses.push(classes.AnimateSkillProgressSpreadOut);
         skillAttrNameClasses.push(classes.SkillNameVisible);
         skillAttrScoreClasses.push(classes.SkillValueVisible);
-        progressBarStyle = {
-            width: props.percent + '%',
-            opacity: 1,
-        };
+        skillProgressbarClasses.push(classes.AnimateSkillProgressBar);
     }
     return (
         <div className={classes.Skill}>
             <div ref={progressBlockRef} className={skillProgressClasses.join(' ')}>
-                <div ref={progressBarRef} className={skillProgressbarClasses.join(' ')} style={progressBarStyle} />
+                <div
+                    ref={progressBarRef}
+                    className={skillProgressbarClasses.join(' ')}
+                    style={{ width: props.percent + '%' }}
+                />
             </div>
             <div className={classes.SkillAttr} style={{ width: props.percent + '%' }}>
                 <strong className={skillAttrNameClasses.join(' ')}>{props.skill.toUpperCase()}</strong>
