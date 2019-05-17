@@ -69,6 +69,39 @@
     min-height: 150px;
 }
 
+.AnimateForm {
+    animation-name: popInOut;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.Delay1 {
+    animation-delay: 0.1s;
+}
+
+.Delay2 {
+    animation-delay: 0.2s;
+}
+
+.Delay3 {
+    animation-delay: 0.4s;
+}
+
+@keyframes popInOut {
+    0% {
+        opacity: 0;
+        transform: scale(0.4);
+    }
+    80% {
+        opacity: 0.7;
+        transform: scale(1.05);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 @media (min-width: 600px) {
     .Contact {
         min-width: 500px;

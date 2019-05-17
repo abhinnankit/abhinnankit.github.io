@@ -1,25 +1,48 @@
-import React from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import classes from './Contact.module.scss';
 
-const contact = props => {
-    const textareaClasses = [classes.textarea, classes.ContactFields];
-    const inputFieldClasses = [classes.ContactFields];
+const Contact = props => {
+    const [animate, setAnimate] = useState(false);
+    const textAreaRef = useRef(null);
+    let threshold = null;
+    useEffect(() => {
+        threshold = window.innerHeight / 1.6;
+        window.addEventListener('scroll', scrollListener);
+    }, []);
+    // console.dir(textAreaRef.current.getBoundingClientRect());
+    const scrollListener = () => {
+        console.log(threshold + ' ' + textAreaRef.current.getBoundingClientRect().top);
+        if (!animate && textAreaRef.current && textAreaRef.current.getBoundingClientRect().top < threshold) {
+            setAnimate(true);
+            console.log('Animate');
+            window.removeEventListener('scroll', scrollListener);
+        }
+    };
+    const textareaClasses = [classes.textarea, classes.ContactFields, 'opaque'];
+    const nameClasses = [classes.ContactFields, 'opaque'];
+    const emailClasses = [classes.ContactFields, 'opaque'];
+    const btnClasses = [classes.btn, 'opaque'];
+    if (animate) {
+        nameClasses.push(classes.AnimateForm);
+        emailClasses.push(classes.Delay1, classes.AnimateForm);
+        textareaClasses.push(classes.Delay2, classes.AnimateForm);
+        btnClasses.push(classes.Delay3, classes.AnimateForm);
+    }
     return (
         <form action="https://formspree.io/abhinnankit@outlook.com" method="POST" className={classes.Contact}>
-            <input className={inputFieldClasses.join(' ')} type="text" name="name" placeholder="Name" required={true} />
-            <input
-                className={inputFieldClasses.join(' ')}
-                type="email"
-                name="email"
-                placeholder="Email"
-                required={true}
+            <input className={nameClasses.join(' ')} type="text" name="name" placeholder="Name" required={true} />
+            <input className={emailClasses.join(' ')} type="email" name="email" placeholder="Email" required={true} />
+            <textarea
+                ref={textAreaRef}
+                className={textareaClasses.join(' ')}
+                name="message"
+                placeholder="Your message"
             />
-            <textarea className={textareaClasses.join(' ')} name="message" placeholder="Your message" />
-            <button className={classes.btn} type="submit">
+            <button className={btnClasses.join(' ')} type="submit">
                 Submit
             </button>
         </form>
     );
 };
 
-export default contact;
+export default Contact;
