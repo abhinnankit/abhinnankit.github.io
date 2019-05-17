@@ -91,7 +91,6 @@ class Layout extends Component {
 
     addAnimateClass = () => {
         const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight;
-        console.log(headerHeight + ' ' + window.innerHeight);
         const aboutHeight = this.height.about + this.headerRef.current.height;
         const workHeight = aboutHeight + this.height.work;
         if (!this.state.animateHeader.every(_ => _)) {
@@ -106,7 +105,7 @@ class Layout extends Component {
         headerHeight -= 300;
         aboutHeight -= 280;
         workHeight -= 280;
-        // console.log(window.pageYOffset + ' ' + headerHeight + ' ' + aboutHeight + ' ' + workHeight);
+        console.log(window.pageYOffset + ' ' + headerHeight + ' ' + aboutHeight + ' ' + workHeight);
         if (
             !this.state.animateHeader[2] &&
             (window.pageYOffset >= workHeight || window.innerHeight + window.scrollY >= document.body.offsetHeight)
