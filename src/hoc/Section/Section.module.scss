@@ -1,6 +1,6 @@
 .Section {
     padding: 5em 0;
-    h1 {
+    .h1 {
         font-size: 2.2em;
         font-weight: bold;
         // dark
@@ -10,10 +10,42 @@
     }
 }
 
+.animateZoomIn {
+    animation: zoomIn 0.8s;
+    opacity: 1 !important;
+}
+
+.animate {
+    animation: leftIn 0.8s;
+    opacity: 1 !important;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(2);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
 .SectionUnderline {
     // dark
     //border-bottom: 0.3em solid rgb(206, 203, 195);
     border-bottom: 0.3em solid #484848;
     width: 4em;
     margin: auto auto 3em;
+    opacity: 0;
+}
+
+.opaque {
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .opaque {
+        opacity: 0;
+    }
 }

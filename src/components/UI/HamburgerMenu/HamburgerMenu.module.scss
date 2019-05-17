@@ -1,7 +1,7 @@
 .bar1,
 .bar2,
 .bar3 {
-    width: 28px;
+    width: 29px;
     height: 3px;
     background-color: #fff;
     margin: 3px 0;
@@ -14,7 +14,7 @@
 }
 
 .change.bar1 {
-    transform: rotate(45deg) translate(6px, 6px);
+    transform: rotate(45deg) translate(7px, 5px);
 }
 
 .change.bar2 {
@@ -23,7 +23,7 @@
 }
 
 .change.bar3 {
-    transform: rotate(-45deg) translate(6px, -6px);
+    transform: rotate(-45deg) translate(7px, -6px);
 }
 
 .HamburgerMenu {
