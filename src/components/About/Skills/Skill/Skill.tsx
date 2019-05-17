@@ -1,6 +1,5 @@
 import React, { FC, useRef } from 'react';
 import classes from './Skill.module.scss';
-import Layout from '../../../../hoc/Layout/Layout';
 
 interface IProps {
     skill: string;
@@ -14,7 +13,7 @@ const Skill: FC<IProps> = props => {
     const percentRef = useRef(null);
     const skillAttrNameClasses = ['opaque'];
     const skillAttrScoreClasses = ['opaque'];
-    const skillProgressClasses = [classes.SkillProgress, classes.w0, 'opaque'];
+    const skillProgressClasses = [classes.SkillProgress, 'opaque'];
     const skillProgressbarClasses = [classes.SkillProgressBar, 'opaque'];
     let progressBarStyle = null;
     if (props.animate) {
@@ -24,11 +23,6 @@ const Skill: FC<IProps> = props => {
         progressBarStyle = {
             width: props.percent + '%',
             opacity: 1,
-        };
-    }
-    if (!Layout.isDesktop()) {
-        progressBarStyle = {
-            width: props.percent + '%',
         };
     }
     return (

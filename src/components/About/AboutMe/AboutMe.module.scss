@@ -18,7 +18,7 @@
 
 .AnimateFigure {
     animation: slideInLeft 0.8s;
-    opacity: 1 !important;
+    animation-fill-mode: forwards;
 }
 
 @keyframes slideInLeft {
@@ -34,7 +34,7 @@
 
 .AnimateArticle {
     animation: slideInRight 0.8s;
-    opacity: 1 !important;
+    animation-fill-mode: forwards;
 }
 
 @keyframes slideInRight {

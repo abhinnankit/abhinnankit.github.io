@@ -32,15 +32,12 @@ $skill-block-padding: 0.3em;
     background-color: white;
     width: 100%;
     margin: auto;
-}
-
-.w0 {
-    width: 100%;
+    transform: scaleX(0);
 }
 
 .AnimateSkillProgressSpreadOut {
-    transition: width linear 0.8s;
-    width: 100% !important;
+    transition: transform linear 0.8s;
+    transform: scaleX(1);
     opacity: 1;
 }
 
@@ -48,11 +45,6 @@ $skill-block-padding: 0.3em;
     background-color: #515151;
     padding: 2px;
     width: 0;
+    will-change: width;
     transition: width 0.8s linear 1.2s, opacity 0s linear 0.9s;
-}
-
-@media (min-width: 768px) {
-    .w0 {
-        width: 0;
-    }
 }

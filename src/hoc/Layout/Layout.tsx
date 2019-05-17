@@ -86,9 +86,7 @@ class Layout extends Component {
                 });
             }
         }
-        if (Layout.isDesktop()) {
-            this.addAnimateClass();
-        }
+        this.addAnimateClass();
     };
 
     addAnimateClass = () => {
