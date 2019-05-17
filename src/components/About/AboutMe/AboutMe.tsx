@@ -10,8 +10,8 @@ const aboutMe: FC<IProps> = props => {
     const figureClasses = [classes.Figure, 'opaque'];
     const articleClasses = [classes.article, 'opaque'];
     if (props.animate) {
-        figureClasses.push(classes.animateFigure);
-        articleClasses.push(classes.animateArticle);
+        figureClasses.push(classes.AnimateFigure);
+        articleClasses.push(classes.AnimateArticle);
     }
     return (
         <React.Fragment>

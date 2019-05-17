@@ -24,8 +24,8 @@ const skills: FC<IProps> = props => {
     const firstSpanClasses = ['opaque'];
     const secondSpanClasses = ['opaque'];
     if (props.animate) {
-        firstSpanClasses.push(classes.animateSpanSlideInLeft);
-        secondSpanClasses.push(classes.animateSpanSlideInRight);
+        firstSpanClasses.push(classes.AnimateSlideInLeft);
+        secondSpanClasses.push(classes.AnimateSlideInRight);
     }
     return (
         <div className={classes.Skills}>
