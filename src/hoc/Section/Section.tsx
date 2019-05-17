@@ -5,17 +5,27 @@ import Row from '../Row/Row';
 
 interface IProps {
     title: string;
-    animateH1ZoomIn?: boolean;
+    animateZoomIn?: boolean;
+    animateSlideInLeft?: boolean;
+    animateSlideInRight?: boolean;
     style?: object;
 }
 
 const section: RefForwardingComponent<HTMLElement, IProps & { ref: Ref<HTMLElement> }> = React.forwardRef(
     (props, ref) => {
-        const h1Classes = [classes.h1, classes.opaque];
-        const sectionUnderlineClass = [classes.SectionUnderline, classes.opaque];
-        if (props.animateH1ZoomIn) {
-            h1Classes.push(classes.animateZoomIn);
-            sectionUnderlineClass.push(classes.animateZoomIn);
+        const h1Classes = [classes.h1, 'opaque'];
+        const sectionUnderlineClass = [classes.SectionUnderline, 'opaque', classes.AnimateUnderline];
+        if (props.animateZoomIn) {
+            h1Classes.push(classes.AnimateZoomIn);
+            sectionUnderlineClass.push(classes.AnimateZoomIn);
+        }
+        if (props.animateSlideInLeft) {
+            h1Classes.push(classes.AnimateSlideInLeft);
+            sectionUnderlineClass.push(classes.AnimateSlideInLeft);
+        }
+        if (props.animateSlideInRight) {
+            h1Classes.push(classes.AnimateSlideInRight);
+            sectionUnderlineClass.push(classes.AnimateSlideInRight);
         }
         return (
             <section ref={ref} className={classes.Section} style={props.style}>

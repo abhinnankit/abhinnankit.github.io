@@ -38,6 +38,16 @@
 
 @include generate-col(null);
 
+.opaque {
+    opacity: 1;
+}
+
+@media (min-width: 768px) {
+    .opaque {
+        opacity: 0;
+    }
+}
+
 /* Media queries */
 
 @media (min-width: 576px) {

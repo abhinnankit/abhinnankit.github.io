@@ -8,9 +8,18 @@ import Projects from '../../components/Projects/Projects';
 import Home from '../../components/Home/Home';
 
 class Layout extends Component {
+    static isDesktop() {
+        const isMobile = window.matchMedia('only screen and (min-width: 768px)');
+        return isMobile.matches;
+    }
+
     state = {
         markActive: [false, false, false, false],
         animateHeader: [false, false, false],
+        animateAbout: {
+            aboutMe: false,
+            skills: false,
+        },
     };
 
     height = {
@@ -29,11 +38,6 @@ class Layout extends Component {
         this.workRef = React.createRef<HTMLElement>();
         this.contactRef = React.createRef<HTMLElement>();
         this.headerRef = React.createRef<Header>();
-    }
-
-    isDesktop() {
-        const isMobile = window.matchMedia('only screen and (min-width: 768px)');
-        return isMobile.matches;
     }
 
     linkClicked = navItem => {
@@ -82,42 +86,73 @@ class Layout extends Component {
                 });
             }
         }
-        if (this.isDesktop()) {
+        if (Layout.isDesktop()) {
             this.addAnimateClass();
         }
     };
 
     addAnimateClass = () => {
-        const headerHeight =
-            this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight - 330;
-        const aboutHeight = this.height.about + this.headerRef.current.height - 330;
+        const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight;
+        const aboutHeight = this.height.about + this.headerRef.current.height;
         const workHeight = aboutHeight + this.height.work;
-        if (window.pageYOffset >= workHeight || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
-            if (!this.state.animateHeader[2]) {
-                const animateHeader = this.state.animateHeader.slice();
-                animateHeader[2] = true;
-                this.setState({
-                    animateHeader,
-                });
-            }
-        } else if (window.pageYOffset >= aboutHeight) {
-            if (!this.state.animateHeader[1]) {
-                const animateHeader = this.state.animateHeader.slice();
-                animateHeader[1] = true;
-                this.setState({
-                    animateHeader,
-                });
-            }
-        } else if (window.pageYOffset >= headerHeight) {
-            const animateHeader = this.state.animateHeader.slice();
-            animateHeader[0] = true;
-            if (!this.state.animateHeader[0]) {
-                this.setState({
-                    animateHeader,
-                });
-            }
+        if (!this.state.animateHeader.every(_ => _)) {
+            this.animateHeaders(headerHeight, aboutHeight, workHeight);
+        }
+        if (!this.state.animateAbout.aboutMe || !this.state.animateAbout.skills) {
+            this.animateAbout(headerHeight);
         }
     };
+
+    animateHeaders(headerHeight, aboutHeight, workHeight) {
+        headerHeight -= 300;
+        aboutHeight -= 280;
+        workHeight -= 280;
+        // console.log(window.pageYOffset + ' ' + headerHeight + ' ' + aboutHeight + ' ' + workHeight);
+        if (
+            !this.state.animateHeader[2] &&
+            (window.pageYOffset >= workHeight || window.innerHeight + window.scrollY >= document.body.offsetHeight)
+        ) {
+            const animateHeader = this.state.animateHeader.slice();
+            animateHeader[2] = true;
+            this.setState({
+                animateHeader,
+            });
+        }
+        if (!this.state.animateHeader[1] && window.pageYOffset >= aboutHeight) {
+            const animateHeader = this.state.animateHeader.slice();
+            animateHeader[1] = true;
+            this.setState({
+                animateHeader,
+            });
+        }
+        if (!this.state.animateHeader[0] && window.pageYOffset >= headerHeight) {
+            const animateHeader = this.state.animateHeader.slice();
+            animateHeader[0] = true;
+            this.setState({
+                animateHeader,
+            });
+        }
+    }
+
+    animateAbout(headerHeight) {
+        headerHeight -= 200;
+        if (!this.state.animateAbout.aboutMe && window.pageYOffset >= headerHeight) {
+            const animateAbout = { ...this.state.animateAbout };
+            animateAbout.aboutMe = true;
+            this.setState({
+                animateAbout,
+            });
+        }
+        headerHeight += 300;
+        console.log(window.pageYOffset + ' ' + headerHeight);
+        if (!this.state.animateAbout.skills && window.pageYOffset >= headerHeight) {
+            const animateAbout = { ...this.state.animateAbout };
+            animateAbout.skills = true;
+            this.setState({
+                animateAbout,
+            });
+        }
+    }
 
     componentDidMount(): void {
         this.height.about = this.aboutRef.current.clientHeight + 156;
@@ -136,18 +171,21 @@ class Layout extends Component {
                 <Header ref={this.headerRef} clicked={this.linkClicked} markActive={this.state.markActive} />
                 <main>
                     <Section
-                        animateH1ZoomIn={this.state.animateHeader[0]}
+                        animateZoomIn={this.state.animateHeader[0]}
                         ref={this.aboutRef}
                         title={'ABOUT'}
                         style={{ backgroundColor: '#f0f0f0', paddingTop: '10em' }}
                     >
-                        <About />
+                        <About animateAbout={this.state.animateAbout} />
                     </Section>
                     <div
-                        style={{ background: 'linear-gradient(to right top, #e5e0da 50%, #f0f0f0 50%)', height: '5em' }}
+                        style={{
+                            background: 'linear-gradient(to right top, #e5e0da 50%, #f0f0f0 50%)',
+                            height: '5em',
+                        }}
                     />
                     <Section
-                        animateH1ZoomIn={this.state.animateHeader[1]}
+                        animateSlideInLeft={this.state.animateHeader[1]}
                         ref={this.workRef}
                         title={'Projects'}
                         style={{ backgroundColor: '#e5e0da' }}
@@ -161,7 +199,7 @@ class Layout extends Component {
                         }}
                     />
                     <Section
-                        animateH1ZoomIn={this.state.animateHeader[2]}
+                        animateSlideInRight={this.state.animateHeader[2]}
                         ref={this.contactRef}
                         title="contact"
                         style={{ backgroundColor: '#f0f0f0' }}

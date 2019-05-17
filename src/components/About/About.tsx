@@ -1,18 +1,25 @@
-import React from 'react';
+import React, { FC } from 'react';
 import AboutMe from './AboutMe/AboutMe';
 import classes from './About.module.scss';
 import Skills from './Skills/Skills';
 
-const about = props => {
+interface IProps {
+    animateAbout: {
+        aboutMe: boolean;
+        skills: boolean;
+    };
+}
+
+const about: FC<IProps> = props => {
     const aboutMeClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSpace];
     const skillClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSkill];
     return (
         <>
             <div className={aboutMeClasses.join(' ')}>
-                <AboutMe />
+                <AboutMe animate={props.animateAbout.aboutMe} />
             </div>
             <div className={skillClasses.join(' ')}>
-                <Skills />
+                <Skills animate={props.animateAbout.skills} />
             </div>
         </>
     );

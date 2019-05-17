@@ -1,6 +1,7 @@
 .Section {
     padding: 5em 0;
     .h1 {
+        position: relative;
         font-size: 2.2em;
         font-weight: bold;
         // dark
@@ -10,14 +11,15 @@
     }
 }
 
-.animateZoomIn {
+.AnimateZoomIn {
     animation: zoomIn 0.8s;
     opacity: 1 !important;
 }
 
-.animate {
-    animation: leftIn 0.8s;
-    opacity: 1 !important;
+.AnimateUnderline {
+    position: relative;
+    animation-delay: 0.4s !important;
+    transition: opacity 0.8s linear 0.4s;
 }
 
 @keyframes zoomIn {
@@ -31,6 +33,38 @@
     }
 }
 
+.AnimateSlideInLeft {
+    animation: slideInLeft 0.8s;
+    opacity: 1 !important;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        left: -400px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+.AnimateSlideInRight {
+    animation: slideInRight 0.8s;
+    opacity: 1 !important;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        right: -400px;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
+}
+
 .SectionUnderline {
     // dark
     //border-bottom: 0.3em solid rgb(206, 203, 195);
@@ -38,14 +72,4 @@
     width: 4em;
     margin: auto auto 3em;
     opacity: 0;
-}
-
-.opaque {
-    opacity: 1;
-}
-
-@media (min-width: 768px) {
-    .opaque {
-        opacity: 0;
-    }
 }

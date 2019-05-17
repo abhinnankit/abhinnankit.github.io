@@ -11,6 +11,43 @@
     h3 {
         margin-bottom: 1em;
     }
+    p {
+        text-align: justify;
+    }
+}
+
+.animateFigure {
+    animation: slideInLeft 0.8s;
+    position: relative;
+    opacity: 1 !important;
+}
+
+@keyframes slideInLeft {
+    from {
+        opacity: 0;
+        left: -200px;
+    }
+    to {
+        opacity: 1;
+        left: 0;
+    }
+}
+
+.animateArticle {
+    animation: slideInRight 0.8s;
+    position: relative;
+    opacity: 1 !important;
+}
+
+@keyframes slideInRight {
+    from {
+        opacity: 0;
+        right: -200px;
+    }
+    to {
+        opacity: 1;
+        right: 0;
+    }
 }
 
 @media (min-width: 1200px) {

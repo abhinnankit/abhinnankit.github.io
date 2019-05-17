@@ -1,8 +1,12 @@
-import React from 'react';
+import React, { FC } from 'react';
 import Skill from './Skill/Skill';
 import classes from './Skills.module.scss';
 
-const skills = () => {
+interface IProps {
+    animate: boolean;
+}
+
+const skills: FC<IProps> = props => {
     const technologies = {
         java: 80,
         javascript: 80,
@@ -17,11 +21,20 @@ const skills = () => {
         aws: 70,
         circleci: 65,
     };
+    const firstSpanClasses = ['opaque'];
+    const secondSpanClasses = ['opaque'];
+    if (props.animate) {
+        firstSpanClasses.push(classes.animateSpanSlideInLeft);
+        secondSpanClasses.push(classes.animateSpanSlideInRight);
+    }
     return (
         <div className={classes.Skills}>
-            <h2>TECHNOLOGIES</h2>
+            <h2>
+                <span className={firstSpanClasses.join(' ')}>TECHNO</span>
+                <span className={secondSpanClasses.join(' ')}>LOGIES</span>
+            </h2>
             {Object.keys(technologies).map(technology => (
-                <Skill key={technology} skill={technology} percent={technologies[technology]} />
+                <Skill key={technology} animate={props.animate} skill={technology} percent={technologies[technology]} />
             ))}
         </div>
     );

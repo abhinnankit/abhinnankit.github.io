@@ -2,7 +2,7 @@ $skill-block-padding: 0.3em;
 
 .Skill {
     display: flex;
-    margin-bottom: 0.4em;
+    margin-bottom: 0.8em;
     flex-direction: column;
 }
 
@@ -10,8 +10,19 @@ $skill-block-padding: 0.3em;
     display: flex;
     width: 100%;
     font-size: small;
+    position: relative;
     padding: $skill-block-padding;
     justify-content: space-between;
+}
+
+.SkillNameVisible {
+    transition: opacity 0.3s ease-in 0.9s;
+    opacity: 1 !important;
+}
+
+.SkillValueVisible {
+    transition: opacity 0.3s ease-in 1.7s;
+    opacity: 1 !important;
 }
 
 .SkillProgress {
@@ -23,7 +34,25 @@ $skill-block-padding: 0.3em;
     margin: auto;
 }
 
+.w0 {
+    width: 100%;
+}
+
+.AnimateSkillProgressSpreadOut {
+    transition: width linear 0.8s;
+    width: 100% !important;
+    opacity: 1;
+}
+
 .SkillProgressBar {
     background-color: #515151;
     padding: 2px;
+    width: 0;
+    transition: width 0.8s linear 1.2s, opacity 0s linear 0.9s;
+}
+
+@media (min-width: 768px) {
+    .w0 {
+        width: 0;
+    }
 }
