@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, useEffect } from 'react';
 import AboutMe from './AboutMe/AboutMe';
 import classes from './About.module.scss';
 import Skills from './Skills/Skills';
@@ -10,7 +10,7 @@ interface IProps {
     };
 }
 
-const about: FC<IProps> = props => {
+const About: FC<IProps> = React.memo(props => {
     const aboutMeClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSpace];
     const skillClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSkill];
     return (
@@ -23,6 +23,6 @@ const about: FC<IProps> = props => {
             </div>
         </>
     );
-};
+});
 
-export default about;
+export default About;

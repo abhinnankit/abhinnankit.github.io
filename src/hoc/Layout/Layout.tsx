@@ -22,11 +22,6 @@ class Layout extends Component {
         },
     };
 
-    height = {
-        work: 0,
-        about: 0,
-    };
-
     private readonly aboutRef: React.RefObject<any>;
     private readonly workRef: React.RefObject<any>;
     private readonly contactRef: React.RefObject<any>;
@@ -58,57 +53,52 @@ class Layout extends Component {
     };
 
     addClasses = () => {
-        const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight - 53;
-        const aboutHeight = this.aboutRef.current.offsetHeight + this.headerRef.current.height - 55;
-        const workHeight = aboutHeight + this.workRef.current.offsetHeight + 80;
-        if (window.pageYOffset >= workHeight || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+        const aboutTop = this.aboutRef.current.getBoundingClientRect().top;
+        const workTop = this.workRef.current.getBoundingClientRect().top;
+        const contactTop = this.contactRef.current.getBoundingClientRect().top;
+        if (contactTop <= 100 || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             if (!this.state.markActive[3]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 3),
                 });
             }
-        } else if (window.pageYOffset >= aboutHeight) {
+        } else if (workTop <= 100) {
             if (!this.state.markActive[2]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 2),
                 });
             }
-        } else if (window.pageYOffset >= headerHeight) {
+        } else if (aboutTop <= 0) {
             if (!this.state.markActive[1]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 1),
                 });
             }
-        } else if (window.pageYOffset >= 0) {
+        } else if (aboutTop > 0) {
             if (!this.state.markActive[0]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 0),
                 });
             }
         }
-        this.addAnimateClass();
+        this.addAnimateClass(aboutTop, workTop, contactTop);
     };
 
-    addAnimateClass = () => {
-        const headerHeight = this.headerRef.current.height + this.headerRef.current.headerRef.current.offsetHeight;
-        const aboutHeight = this.height.about + this.headerRef.current.height;
-        const workHeight = aboutHeight + this.height.work;
+    addAnimateClass = (aboutTop, workTop, contactTop) => {
+        const threshold = window.innerHeight / 2.8;
         if (!this.state.animateHeader.every(_ => _)) {
-            this.animateHeaders(headerHeight, aboutHeight, workHeight);
+            this.animateHeaders(threshold, aboutTop, workTop, contactTop);
         }
         if (!this.state.animateAbout.aboutMe || !this.state.animateAbout.skills) {
-            this.animateAbout(headerHeight);
+            this.animateAbout(threshold, aboutTop);
         }
     };
 
-    animateHeaders(headerHeight, aboutHeight, workHeight) {
-        headerHeight -= 300;
-        aboutHeight -= 280;
-        workHeight -= 280;
-        console.log(window.pageYOffset + ' ' + headerHeight + ' ' + aboutHeight + ' ' + workHeight);
+    animateHeaders(threshold, aboutTop, workTop, contactTop) {
+        // console.log(threshold + ' ' + aboutTop + ' ' + workTop + ' ' + contactTop);
         if (
             !this.state.animateHeader[2] &&
-            (window.pageYOffset >= workHeight || window.innerHeight + window.scrollY >= document.body.offsetHeight)
+            (contactTop < threshold || window.innerHeight + window.scrollY >= document.body.offsetHeight)
         ) {
             const animateHeader = this.state.animateHeader.slice();
             animateHeader[2] = true;
@@ -116,14 +106,14 @@ class Layout extends Component {
                 animateHeader,
             });
         }
-        if (!this.state.animateHeader[1] && window.pageYOffset >= aboutHeight) {
+        if (!this.state.animateHeader[1] && workTop < threshold) {
             const animateHeader = this.state.animateHeader.slice();
             animateHeader[1] = true;
             this.setState({
                 animateHeader,
             });
         }
-        if (!this.state.animateHeader[0] && window.pageYOffset >= headerHeight) {
+        if (!this.state.animateHeader[0] && aboutTop < threshold) {
             const animateHeader = this.state.animateHeader.slice();
             animateHeader[0] = true;
             this.setState({
@@ -132,18 +122,17 @@ class Layout extends Component {
         }
     }
 
-    animateAbout(headerHeight) {
-        headerHeight -= 200;
-        if (!this.state.animateAbout.aboutMe && window.pageYOffset >= headerHeight) {
+    animateAbout(threshold, aboutTop) {
+        aboutTop += 200;
+        if (!this.state.animateAbout.aboutMe && aboutTop <= threshold) {
             const animateAbout = { ...this.state.animateAbout };
             animateAbout.aboutMe = true;
             this.setState({
                 animateAbout,
             });
         }
-        headerHeight += 300;
-        // console.log(window.pageYOffset + ' ' + headerHeight);
-        if (!this.state.animateAbout.skills && window.pageYOffset >= headerHeight) {
+        aboutTop += 300;
+        if (!this.state.animateAbout.skills && aboutTop <= threshold) {
             const animateAbout = { ...this.state.animateAbout };
             animateAbout.skills = true;
             this.setState({
@@ -153,13 +142,7 @@ class Layout extends Component {
     }
 
     componentDidMount(): void {
-        this.height.about = this.aboutRef.current.clientHeight + 156;
-        this.height.work = this.workRef.current.clientHeight + 460;
         window.addEventListener('scroll', this.addClasses);
-        window.addEventListener('resize', () => {
-            this.height.about = this.aboutRef.current.clientHeight + 156;
-            this.height.work = this.workRef.current.clientHeight + 460;
-        });
     }
 
     componentWillUnmount(): void {
