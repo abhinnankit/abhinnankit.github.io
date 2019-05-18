@@ -12,7 +12,7 @@ const Skill: FC<IProps> = props => {
     const progressBlockRef = useRef(null);
     const percentRef = useRef(null);
     const skillAttrNameClasses = ['opaque'];
-    const skillAttrScoreClasses = ['opaque'];
+    const skillAttrScoreClasses = [classes.SkillScore, 'opaque'];
     const skillProgressClasses = [classes.SkillProgress, 'opaque'];
     const skillProgressbarClasses = [classes.SkillProgressBar, 'opaque'];
     if (props.animate) {
