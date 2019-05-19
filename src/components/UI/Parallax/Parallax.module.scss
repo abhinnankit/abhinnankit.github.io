@@ -7,6 +7,19 @@
     position: relative;
 }
 
+.ParallaxMobile {
+    position: absolute;
+    height: 100vh;
+    width: 100%;
+    z-index: -100;
+    background-attachment: scroll;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    transition: transform 0s ease;
+    will-change: transform;
+}
+
 .TopAngle {
     width: 0;
     height: 0;
@@ -14,7 +27,6 @@
     border-style: solid;
     border-width: 400px 0 0;
     top: 0;
-    border-left-width: 1819px;
     border-top-width: 75px;
     border-color: #f0f0f0 transparent;
 }
