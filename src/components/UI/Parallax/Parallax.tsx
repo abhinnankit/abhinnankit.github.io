@@ -7,13 +7,13 @@ const Parallax = () => {
     const parallaxMobileRef = useRef(null);
     const [bottom, setBottom] = useState(0);
     const onScroll = () => {
-        console.log(
-            window.innerHeight +
-                ' ' +
-                wrapperRef.current.getBoundingClientRect().top +
-                ' ' +
-                wrapperRef.current.getBoundingClientRect().height
-        );
+        // console.log(
+        //     window.innerHeight +
+        //         ' ' +
+        //         wrapperRef.current.getBoundingClientRect().top +
+        //         ' ' +
+        //         wrapperRef.current.getBoundingClientRect().height
+        // );
         // window.requestAnimationFrame(scrollImage);
         if (
             window.innerHeight - wrapperRef.current.getBoundingClientRect().top >

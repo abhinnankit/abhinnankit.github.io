@@ -39,14 +39,16 @@ class Header extends Component<IProps, State> {
     };
 
     addStickyClass = () => {
-        if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight - 5) {
-            this.setState({
-                sticky: true,
-            });
-        } else if (this.state.sticky && window.pageYOffset <= this.height) {
-            this.setState({
-                sticky: false,
-            });
+        if (!this.isMobile()) {
+            if (!this.state.sticky && window.pageYOffset >= this.height + this.headerRef.current.offsetHeight - 5) {
+                this.setState({
+                    sticky: true,
+                });
+            } else if (this.state.sticky && window.pageYOffset <= this.height) {
+                this.setState({
+                    sticky: false,
+                });
+            }
         }
         this.hideNavBar();
     };
