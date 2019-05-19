@@ -1,7 +1,104 @@
+%text-color {
+    color: #f5f5dc;
+}
+
+%text-font-size {
+    font-size: calc(20px + (46 - 10) * ((100vw - 250px) / (1600 - 250)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 250px) / (1600 - 250)));
+}
+
+%text {
+    @extend %text-color;
+    margin-bottom: 0.5em;
+    letter-spacing: 1px;
+    text-align: center;
+    z-index: 101;
+    font-family: 'Cormorant Upright', serif;
+}
+
 .Home {
     height: 100vh;
     margin: 0;
     overflow: hidden;
-    background-color: white;
     background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+}
+
+.Particles {
+    z-index: 100;
+    height: 100%;
+    width: 100%;
+    background: linear-gradient(45deg, rgb(45, 54, 76) 0%, rgb(37, 45, 63) 100%);
+    position: absolute;
+    top: 0;
+}
+
+.BannerBlock {
+    display: flex;
+    align-items: center;
+    margin-top: 15em;
+    height: 100%;
+    width: 100%;
+    flex-direction: column;
+    h1 {
+        margin-bottom: 1em;
+    }
+}
+
+.HeaderLine {
+    @extend %text;
+    font-size: calc(14px + (46 - 14) * ((100vw - 250px) / (1600 - 250)));
+    line-height: calc(1.3em + (1.5 - 1.2) * ((100vw - 250px) / (1600 - 250)));
+    strong {
+        color: #ff7f50 !important;
+    }
+}
+
+.BannerText {
+    @extend %text;
+    @extend %text-font-size;
+    display: block;
+    max-width: 70vw;
+    > span {
+        > i {
+            @extend %text-color;
+            @extend %text-font-size;
+        }
+        > b {
+            @extend %text-color;
+            @extend %text-font-size;
+        }
+        @extend %text-color;
+        @extend %text-font-size;
+    }
+}
+
+.Animate {
+    animation: zoomIn 0.8s ease-out;
+    animation-fill-mode: forwards;
+}
+
+@keyframes zoomIn {
+    from {
+        opacity: 0;
+        transform: scale(0.3);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
+}
+
+@media (min-width: 500px) {
+    .HeaderLine {
+        display: initial;
+    }
+}
+
+@media (max-width: 264px) {
+    .HeaderLine {
+        font-size: 18px;
+    }
 }
