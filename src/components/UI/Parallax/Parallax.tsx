@@ -21,12 +21,15 @@ const Parallax = () => {
         ) {
             parallaxMobileRef.current.style.position = 'absolute';
             parallaxMobileRef.current.style.bottom = bottom;
+            parallaxMobileRef.current.style.top = 'auto';
         } else if (wrapperRef.current.getBoundingClientRect().top > window.innerHeight) {
             parallaxMobileRef.current.style.position = 'absolute';
             parallaxMobileRef.current.style.bottom = bottom;
+            parallaxMobileRef.current.style.top = 'auto';
         } else if (wrapperRef.current.getBoundingClientRect().top < window.innerHeight) {
             parallaxMobileRef.current.style.position = 'fixed';
             parallaxMobileRef.current.style.bottom = 0;
+            parallaxMobileRef.current.style.top = 0;
         }
         // parallaxMobileRef.current.style.transform = `translateY(${window.innerHeight - wrapperRef.current.getBoundingClientRect().top}px)`;
     };
