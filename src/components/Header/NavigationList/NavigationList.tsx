@@ -13,7 +13,7 @@ const navigationList: FC<IProps> = props => {
     if (props.show) {
         ulClass.push(classes.OpenNavBar);
     }
-    const navItems = ['Home', 'About', 'Work', 'Contact'];
+    const navItems = ['Home', 'About', 'Skills', 'Work', 'Contact'];
     return (
         <ul className={ulClass.join(' ')}>
             {navItems.map((navItem, index) => (

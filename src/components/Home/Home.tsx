@@ -7,7 +7,7 @@ const Home = () => {
     // 'I\'m a <i>full-stack</i> <b>versatile</b> <i>developer</i> from <b>Boston</b>.',
     // 'I strive to <i>create</i> visually appealing sites with <i>intuitive</i> <b>design</b> and <i>clear</i>' +
     // ' <b>navigation</b>.',
-    const message = ['<i>Learning</i> is not my <b>passion</b>.', '<i>Learning</i> is my <b>objective</b>.'];
+    const message = ['I <i>believe</i> in working for a <b>cause</b>, not for <b>applause</b>'];
     const headerRef = useRef(null);
     const [animate, setAnimate] = useState(false);
     const [startTyping, setStartTyping] = useState(false);
@@ -21,6 +21,7 @@ const Home = () => {
     useEffect(() => {
         setAnimate(true);
         headerRef.current.addEventListener('webkitAnimationEnd', animationEndCallback);
+        // eslint-disable-next-line
     }, []);
     const headerLineClasses = ['opaque'];
     if (animate) {

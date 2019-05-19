@@ -6,6 +6,8 @@ import Footer from '../../components/Footer/Footer';
 import Contact from '../../components/Contact/Contact';
 import Projects from '../../components/Projects/Projects';
 import Home from '../../components/Home/Home';
+import Skills from '../../components/Skills/Skills';
+import Parallax from '../../components/UI/Parallax/Parallax';
 
 class Layout extends Component {
     static isDesktop() {
@@ -14,17 +16,16 @@ class Layout extends Component {
     }
 
     state = {
-        markActive: [false, false, false, false],
-        animateHeader: [false, false, false],
-        animateAbout: {
-            aboutMe: false,
-            skills: false,
-        },
+        markActive: [false, false, false, false, false],
+        animateHeader: [false, false, false, false],
+        animateSkills: false,
+        animateAbout: false,
     };
 
     private readonly aboutRef: React.RefObject<any>;
     private readonly workRef: React.RefObject<any>;
     private readonly contactRef: React.RefObject<any>;
+    private readonly skillRef: React.RefObject<any>;
     private readonly headerRef: React.RefObject<Header>;
 
     constructor(props) {
@@ -32,6 +33,7 @@ class Layout extends Component {
         this.aboutRef = React.createRef<HTMLElement>();
         this.workRef = React.createRef<HTMLElement>();
         this.contactRef = React.createRef<HTMLElement>();
+        this.skillRef = React.createRef<HTMLElement>();
         this.headerRef = React.createRef<Header>();
     }
 
@@ -46,6 +48,9 @@ class Layout extends Component {
             case 'contact':
                 window.scrollTo(0, this.contactRef.current.offsetTop - 54);
                 break;
+            case 'skills':
+                window.scrollTo(0, this.skillRef.current.offsetTop - 54);
+                break;
             default:
                 window.scrollTo(0, 0);
                 break;
@@ -54,15 +59,23 @@ class Layout extends Component {
 
     addClasses = () => {
         const aboutTop = this.aboutRef.current.getBoundingClientRect().top;
+        const skillTop = this.skillRef.current.getBoundingClientRect().top;
         const workTop = this.workRef.current.getBoundingClientRect().top;
         const contactTop = this.contactRef.current.getBoundingClientRect().top;
+        console.log(window.scrollY + ' ' + aboutTop + ' ' + skillTop + ' ' + workTop + ' ' + contactTop);
         if (contactTop <= 100 || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
+            if (!this.state.markActive[4]) {
+                this.setState({
+                    markActive: this.state.markActive.map((_, i) => i === 4),
+                });
+            }
+        } else if (workTop <= 100) {
             if (!this.state.markActive[3]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 3),
                 });
             }
-        } else if (workTop <= 100) {
+        } else if (skillTop <= 100) {
             if (!this.state.markActive[2]) {
                 this.setState({
                     markActive: this.state.markActive.map((_, i) => i === 2),
@@ -81,32 +94,42 @@ class Layout extends Component {
                 });
             }
         }
-        this.addAnimateClass(aboutTop, workTop, contactTop);
+        this.addAnimateClass(aboutTop, skillTop, workTop, contactTop);
     };
 
-    addAnimateClass = (aboutTop, workTop, contactTop) => {
+    addAnimateClass = (aboutTop, skillTop, workTop, contactTop) => {
         const threshold = window.innerHeight / 2.8;
         if (!this.state.animateHeader.every(_ => _)) {
-            this.animateHeaders(threshold, aboutTop, workTop, contactTop);
+            this.animateHeaders(threshold, aboutTop, skillTop, workTop, contactTop);
         }
-        if (!this.state.animateAbout.aboutMe || !this.state.animateAbout.skills) {
+        if (!this.state.animateAbout) {
             this.animateAbout(threshold, aboutTop);
+        }
+        if (!this.state.animateSkills) {
+            this.animateSkill(threshold, skillTop);
         }
     };
 
-    animateHeaders(threshold, aboutTop, workTop, contactTop) {
-        // console.log(threshold + ' ' + aboutTop + ' ' + workTop + ' ' + contactTop);
+    animateHeaders(threshold, aboutTop, skillTop, workTop, contactTop) {
+        // console.log(threshold + ' ' + aboutTop + ' ' + skillTop + ' ' + workTop + ' ' + contactTop);
         if (
-            !this.state.animateHeader[2] &&
+            !this.state.animateHeader[3] &&
             (contactTop < threshold || window.innerHeight + window.scrollY >= document.body.offsetHeight)
         ) {
+            const animateHeader = this.state.animateHeader.slice();
+            animateHeader[3] = true;
+            this.setState({
+                animateHeader,
+            });
+        }
+        if (!this.state.animateHeader[2] && workTop < threshold) {
             const animateHeader = this.state.animateHeader.slice();
             animateHeader[2] = true;
             this.setState({
                 animateHeader,
             });
         }
-        if (!this.state.animateHeader[1] && workTop < threshold) {
+        if (!this.state.animateHeader[1] && skillTop < threshold) {
             const animateHeader = this.state.animateHeader.slice();
             animateHeader[1] = true;
             this.setState({
@@ -124,19 +147,21 @@ class Layout extends Component {
 
     animateAbout(threshold, aboutTop) {
         aboutTop += 200;
-        if (!this.state.animateAbout.aboutMe && aboutTop <= threshold) {
-            const animateAbout = { ...this.state.animateAbout };
-            animateAbout.aboutMe = true;
+        if (!this.state.animateAbout && aboutTop <= threshold) {
+            const animateAbout = true;
             this.setState({
                 animateAbout,
             });
         }
-        aboutTop += 300;
-        if (!this.state.animateAbout.skills && aboutTop <= threshold) {
-            const animateAbout = { ...this.state.animateAbout };
-            animateAbout.skills = true;
+    }
+
+    animateSkill(threshold, skillTop) {
+        console.log(threshold + ' ' + skillTop);
+        skillTop += 200;
+        if (!this.state.animateSkills && skillTop <= threshold) {
+            const animateSkills = true;
             this.setState({
-                animateAbout,
+                animateSkills,
             });
         }
     }
@@ -163,6 +188,15 @@ class Layout extends Component {
                     >
                         <About animateAbout={this.state.animateAbout} />
                     </Section>
+                    <Parallax />
+                    <Section
+                        animateSlideInRight={this.state.animateHeader[1]}
+                        ref={this.skillRef}
+                        title={'Skills'}
+                        style={{ backgroundColor: '#f0f0f0', paddingTop: '10em' }}
+                    >
+                        <Skills animate={this.state.animateSkills} />
+                    </Section>
                     <div
                         style={{
                             background: 'linear-gradient(to right top, #e5e0da 50%, #f0f0f0 50%)',
@@ -170,7 +204,7 @@ class Layout extends Component {
                         }}
                     />
                     <Section
-                        animateSlideInLeft={this.state.animateHeader[1]}
+                        animateSlideInLeft={this.state.animateHeader[2]}
                         ref={this.workRef}
                         title={'Projects'}
                         style={{ backgroundColor: '#e5e0da' }}
@@ -184,7 +218,7 @@ class Layout extends Component {
                         }}
                     />
                     <Section
-                        animateSlideInRight={this.state.animateHeader[2]}
+                        animateSlideInRight={this.state.animateHeader[3]}
                         ref={this.contactRef}
                         title="contact"
                         style={{ backgroundColor: '#f0f0f0' }}
