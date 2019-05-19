@@ -1,23 +1,13 @@
 import React from 'react';
 import classes from './Parallax.module.scss';
+import imgUrl from '../../../assets/images/banner.png';
 
 const Parallax = () => {
     return (
-        <div className={classes.parallax}>
+        <div className={classes.parallax} style={{ backgroundImage: `url(${imgUrl})` }}>
             <div className={classes.tint}>
-                <div
-                    style={{
-                        background: 'linear-gradient(to right top, transparent 50%, #f0f0f0 50%)',
-                        height: '5em',
-                    }}
-                />
-                <div style={{ height: '12em' }} />
-                <div
-                    style={{
-                        background: 'linear-gradient(to right top, #f0f0f0 50%, transparent 50%)',
-                        height: '5em',
-                    }}
-                />
+                <div className={classes.TopAngle} />
+                <div className={classes.BottomAngle} />
             </div>
         </div>
     );
