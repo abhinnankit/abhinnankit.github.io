@@ -62,7 +62,6 @@ class Layout extends Component {
         const skillTop = this.skillRef.current.getBoundingClientRect().top;
         const workTop = this.workRef.current.getBoundingClientRect().top;
         const contactTop = this.contactRef.current.getBoundingClientRect().top;
-        console.log(window.scrollY + ' ' + aboutTop + ' ' + skillTop + ' ' + workTop + ' ' + contactTop);
         if (contactTop <= 100 || window.innerHeight + window.scrollY >= document.body.offsetHeight) {
             if (!this.state.markActive[4]) {
                 this.setState({
@@ -156,7 +155,6 @@ class Layout extends Component {
     }
 
     animateSkill(threshold, skillTop) {
-        console.log(threshold + ' ' + skillTop);
         skillTop += 200;
         if (!this.state.animateSkills && skillTop <= threshold) {
             const animateSkills = true;
