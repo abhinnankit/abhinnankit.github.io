@@ -1,18 +1,18 @@
 {
   "files": {
-    "main.css": "abhinnankit.github.io/static/css/main.01e7e39a.chunk.css",
-    "main.js": "abhinnankit.github.io/static/js/main.03f0810f.chunk.js",
-    "main.js.map": "abhinnankit.github.io/static/js/main.03f0810f.chunk.js.map",
+    "main.css": "abhinnankit.github.io/static/css/main.ed1cb5ab.chunk.css",
+    "main.js": "abhinnankit.github.io/static/js/main.93ad874d.chunk.js",
+    "main.js.map": "abhinnankit.github.io/static/js/main.93ad874d.chunk.js.map",
     "runtime~main.js": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js",
     "runtime~main.js.map": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js.map",
-    "static/js/2.64733105.chunk.js": "abhinnankit.github.io/static/js/2.64733105.chunk.js",
-    "static/js/2.64733105.chunk.js.map": "abhinnankit.github.io/static/js/2.64733105.chunk.js.map",
+    "static/js/2.4299b360.chunk.js": "abhinnankit.github.io/static/js/2.4299b360.chunk.js",
+    "static/js/2.4299b360.chunk.js.map": "abhinnankit.github.io/static/js/2.4299b360.chunk.js.map",
     "index.html": "abhinnankit.github.io/index.html",
-    "precache-manifest.fb2bed7527600f322075e52c6bd3defa.js": "abhinnankit.github.io/precache-manifest.fb2bed7527600f322075e52c6bd3defa.js",
+    "precache-manifest.f307f48965f3c024c12a351007787c21.js": "abhinnankit.github.io/precache-manifest.f307f48965f3c024c12a351007787c21.js",
     "service-worker.js": "abhinnankit.github.io/service-worker.js",
-    "static/css/main.01e7e39a.chunk.css.map": "abhinnankit.github.io/static/css/main.01e7e39a.chunk.css.map",
+    "static/css/main.ed1cb5ab.chunk.css.map": "abhinnankit.github.io/static/css/main.ed1cb5ab.chunk.css.map",
     "static/media/1-min.png": "abhinnankit.github.io/static/media/1-min.cbb2a873.png",
-    "static/media/Parallax.module.scss": "abhinnankit.github.io/static/media/banner.bd902081.png",
+    "static/media/banner.png": "abhinnankit.github.io/static/media/banner.bd902081.png",
     "static/media/me.jpg": "abhinnankit.github.io/static/media/me.980f4c2e.jpg"
   }
 }
