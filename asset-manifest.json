@@ -1,16 +1,16 @@
 {
   "files": {
-    "main.css": "abhinnankit.github.io/static/css/main.b1aff7b2.chunk.css",
-    "main.js": "abhinnankit.github.io/static/js/main.0cba3370.chunk.js",
-    "main.js.map": "abhinnankit.github.io/static/js/main.0cba3370.chunk.js.map",
+    "main.css": "abhinnankit.github.io/static/css/main.b58fbc9a.chunk.css",
+    "main.js": "abhinnankit.github.io/static/js/main.625e426b.chunk.js",
+    "main.js.map": "abhinnankit.github.io/static/js/main.625e426b.chunk.js.map",
     "runtime~main.js": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js",
     "runtime~main.js.map": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js.map",
-    "static/js/2.4299b360.chunk.js": "abhinnankit.github.io/static/js/2.4299b360.chunk.js",
-    "static/js/2.4299b360.chunk.js.map": "abhinnankit.github.io/static/js/2.4299b360.chunk.js.map",
+    "static/js/2.aeb67307.chunk.js": "abhinnankit.github.io/static/js/2.aeb67307.chunk.js",
+    "static/js/2.aeb67307.chunk.js.map": "abhinnankit.github.io/static/js/2.aeb67307.chunk.js.map",
     "index.html": "abhinnankit.github.io/index.html",
-    "precache-manifest.975e1351dc856b4dc7baeceb7a066eaa.js": "abhinnankit.github.io/precache-manifest.975e1351dc856b4dc7baeceb7a066eaa.js",
+    "precache-manifest.341490d93dd0c803dc1049ccf7305c5b.js": "abhinnankit.github.io/precache-manifest.341490d93dd0c803dc1049ccf7305c5b.js",
     "service-worker.js": "abhinnankit.github.io/service-worker.js",
-    "static/css/main.b1aff7b2.chunk.css.map": "abhinnankit.github.io/static/css/main.b1aff7b2.chunk.css.map",
+    "static/css/main.b58fbc9a.chunk.css.map": "abhinnankit.github.io/static/css/main.b58fbc9a.chunk.css.map",
     "static/media/1-min.png": "abhinnankit.github.io/static/media/1-min.cbb2a873.png",
     "static/media/banner.png": "abhinnankit.github.io/static/media/banner.bd902081.png",
     "static/media/me.jpg": "abhinnankit.github.io/static/media/me.980f4c2e.jpg"
