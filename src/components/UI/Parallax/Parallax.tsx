@@ -7,11 +7,12 @@ const Parallax = () => {
     const parallaxMobileRef = useRef(null);
     const [bottom, setBottom] = useState(0);
     const onScroll = () => {
-        console.dir(
-            window.innerHeight -
+        console.log(
+            window.innerHeight +
+                ' ' +
                 wrapperRef.current.getBoundingClientRect().top +
                 ' ' +
-                (window.innerHeight + wrapperRef.current.getBoundingClientRect().height)
+                wrapperRef.current.getBoundingClientRect().height
         );
         // window.requestAnimationFrame(scrollImage);
         if (
@@ -20,9 +21,9 @@ const Parallax = () => {
         ) {
             parallaxMobileRef.current.style.position = 'absolute';
             parallaxMobileRef.current.style.bottom = bottom;
-            // } else if (window.innerHeight === wrapperRef.current.getBoundingClientRect().top) {
-            //     parallaxMobileRef.current.style.position = 'absolute';
-            //     parallaxMobileRef.current.style.bottom = bottom;
+        } else if (wrapperRef.current.getBoundingClientRect().top > window.innerHeight) {
+            parallaxMobileRef.current.style.position = 'absolute';
+            parallaxMobileRef.current.style.bottom = bottom;
         } else if (wrapperRef.current.getBoundingClientRect().top < window.innerHeight) {
             parallaxMobileRef.current.style.position = 'fixed';
             parallaxMobileRef.current.style.bottom = 0;
