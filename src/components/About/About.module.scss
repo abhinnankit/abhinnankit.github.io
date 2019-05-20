@@ -7,6 +7,18 @@
     margin: auto auto 2em;
 }
 
+.Wrapper {
+    background-color: white;
+    padding: 2.5em 1em;
+}
+
+@media (min-width: 768px) {
+    .Wrapper {
+        border-radius: 5px;
+        box-shadow: 0.92px 0.38px 1.6px 0.4px rgba(0, 0, 0, 0.15);
+    }
+}
+
 @media (min-width: 600px) and (max-width: 1199px) {
     .AboutSpace {
         justify-content: space-around;

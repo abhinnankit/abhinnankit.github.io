@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const About: FC<IProps> = React.memo(props => {
-    const aboutMeClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSpace];
+    const aboutMeClasses = ['col-lg-10 col-xl-10 col-12', classes.AboutSpace, classes.Wrapper];
     return (
         <>
             <div className={aboutMeClasses.join(' ')}>
