@@ -21,8 +21,8 @@ const skills: FC<IProps> = props => {
         aws: 70,
         circleci: 65,
     };
-    const skillsClasses = ['col-12', 'col-lg-7', classes.Skills];
-    const expertiseClasses = ['col-12', 'col-lg-5'];
+    const skillsClasses = ['col-12', 'col-lg-6', classes.Skills];
+    const expertiseClasses = ['col-12', 'col-lg-6'];
     const firstSpanClasses = ['opaque'];
     const secondSpanClasses = ['opaque'];
     if (props.animate) {

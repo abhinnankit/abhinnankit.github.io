@@ -5,16 +5,15 @@
 
 .article {
     text-align: center;
-    font-family: 'Raleway', sans-serif;
+    font-family: 'Roboto', sans-serif;
     margin: auto;
-    max-width: 23em;
+    max-width: 26em;
     h3 {
         margin-bottom: 1em;
     }
     p {
         text-align: justify;
-        font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
-            'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+        font-family: 'Roboto', sans-serif;
     }
 }
 
@@ -85,5 +84,13 @@
     .Figure {
         margin: 0;
         max-width: 100%;
+    }
+}
+
+@media (max-width: 450px) {
+    .article {
+        p {
+            text-align: left;
+        }
     }
 }
