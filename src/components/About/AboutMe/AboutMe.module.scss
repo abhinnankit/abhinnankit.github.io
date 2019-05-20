@@ -5,11 +5,11 @@
     -moz-box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
     box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
     filter: grayscale(0);
-    -webkit-transition: 0.5s -webkit-filter linear;
-    -moz-transition: 0.5s filter linear;
-    -ms-transition: 0.5s -ms-filter linear;
-    -o-transition: 0.5s -o-filter linear;
-    transition: 0.5s filter linear, 1s -webkit-filter linear;
+    -webkit-transition: 0.3s -webkit-filter linear;
+    -moz-transition: 0.3s filter linear;
+    -ms-transition: 0.3s -ms-filter linear;
+    -o-transition: 0.3s -o-filter linear;
+    transition: 0.3s filter linear, 1s -webkit-filter linear, 0.3s transform linear;
 }
 
 .Figure {
@@ -22,9 +22,8 @@
         border-top: 2px solid darkgray;
         border-left: 2px solid darkgray;
         position: absolute;
-        left: -20px;
-        top: -20px;
-        transition: 0.5s all ease;
+        left: -21px;
+        top: -25px;
     }
     &::after {
         content: '';
@@ -34,9 +33,8 @@
         border-top: 2px solid darkgray;
         border-right: 2px solid darkgray;
         position: absolute;
-        right: -20px;
-        top: -20px;
-        transition: 0.5s all ease;
+        right: -21px;
+        top: -25px;
     }
     > div {
         &::before {
@@ -47,9 +45,8 @@
             border-bottom: 2px solid darkgray;
             border-left: 2px solid darkgray;
             position: absolute;
-            left: -20px;
-            bottom: -14px;
-            transition: 0.5s all ease;
+            left: -21px;
+            bottom: -17px;
         }
         &::after {
             content: '';
@@ -59,9 +56,8 @@
             border-bottom: 2px solid darkgray;
             border-right: 2px solid darkgray;
             position: absolute;
-            right: -20px;
-            bottom: -14px;
-            transition: 0.5s all ease;
+            right: -21px;
+            bottom: -17px;
         }
     }
 }
@@ -70,28 +66,7 @@
     .img {
         box-shadow: none;
         filter: grayscale(100%);
-    }
-    &::after {
-        transform: scale(2.5) translate(-21px, 24px);
-        border-top-width: 1px;
-        border-right-width: 1px;
-    }
-    &::before {
-        transform: scale(2.5) translate(21px, 24px);
-        border-top-width: 1px;
-        border-left-width: 1px;
-    }
-    > div {
-        &::after {
-            transform: scale(2.5) translate(-21px, -25px);
-            border-bottom-width: 1px;
-            border-right-width: 1px;
-        }
-        &::before {
-            transform: scale(2.5) translate(21px, -25px);
-            border-bottom-width: 1px;
-            border-left-width: 1px;
-        }
+        transform: scale(1.156);
     }
 }
 

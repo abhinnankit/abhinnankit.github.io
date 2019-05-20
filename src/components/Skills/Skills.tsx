@@ -34,8 +34,8 @@ const skills: FC<IProps> = props => {
             <div className={expertiseClasses.join(' ')} />
             <div className={skillsClasses.join(' ')}>
                 <h2>
-                    <span className={firstSpanClasses.join(' ')}>TECHNO</span>
-                    <span className={secondSpanClasses.join(' ')}>LOGIES</span>
+                    <span className={firstSpanClasses.join(' ')}>WHAT&nbsp;</span>
+                    <span className={secondSpanClasses.join(' ')}>I KNOW</span>
                 </h2>
                 {Object.keys(technologies).map(technology => (
                     <Skill
