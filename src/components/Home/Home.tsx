@@ -7,7 +7,7 @@ const Home = () => {
     // 'I\'m a <i>full-stack</i> <b>versatile</b> <i>developer</i> from <b>Boston</b>.',
     // 'I strive to <i>create</i> visually appealing sites with <i>intuitive</i> <b>design</b> and <i>clear</i>' +
     // ' <b>navigation</b>.',
-    const message = ["I'm a <i>versatile</i> <b>software developer</b> with diverse set of skills."];
+    const message = ["I'm a <i>full-stack</i> <b>software developer</b> with a wide range of <i>skills</i>."];
     const headerRef = useRef(null);
     const [animate, setAnimate] = useState(false);
     const [startTyping, setStartTyping] = useState(false);

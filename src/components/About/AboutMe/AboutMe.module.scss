@@ -22,6 +22,24 @@
     position: relative;
     transition: 0.5s color ease;
     text-decoration: none;
+    color: #f7c530;
+    &:hover {
+        color: black;
+        &::after {
+            width: 101%;
+        }
+    }
+    &::after {
+        left: 0;
+        height: 0.2rem;
+        width: 0;
+        background: #f7c530;
+        bottom: -0.25em;
+        content: '';
+        transition: 0.5s all ease;
+        backface-visibility: hidden;
+        position: absolute;
+    }
 }
 
 .AnimateArticle {

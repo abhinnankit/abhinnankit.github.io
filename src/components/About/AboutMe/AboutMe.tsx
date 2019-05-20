@@ -23,10 +23,10 @@ const aboutMe: FC<IProps> = props => {
             <article className={articleClasses.join(' ')}>
                 <h3>Summary</h3>
                 <p>
-                    I am a graduate student at Northeastern University in Boston. At Northeastern University, I am
-                    studying Information Systems with concentration in Software engineering. I'm well versed in various
-                    computer languages as well as the principles and techniques of website development and maintenance.
-                    I've interned at Amadeus North America, where I brought ideas to life by building prototypes.&nbsp;
+                    I am a graduate student at Northeastern University in Boston, where I'm enrolled in Information
+                    Systems with concentration in Software engineering. I'm well versed in various computer languages as
+                    well as the principles and techniques of website development and maintenance. I've interned at
+                    Amadeus North America, where I brought ideas to life by building prototypes.&nbsp;
                     <a className={classes.link} href={resumeLink} download="Abhinn_Ankit_resume">
                         Download my resume.
                     </a>
