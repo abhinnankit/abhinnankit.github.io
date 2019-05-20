@@ -17,16 +17,14 @@ const aboutMe: FC<IProps> = props => {
     }
     return (
         <React.Fragment>
-            <figure className={figureClasses.join(' ')}>
-                <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
-            </figure>
             <article className={articleClasses.join(' ')}>
-                <h3>Summary</h3>
                 <p>
-                    I am a graduate student at Northeastern University in Boston, where I'm enrolled in Information
-                    Systems with concentration in Software engineering. I'm well versed in various computer languages as
-                    well as the principles and techniques of website development and maintenance. I've interned at
-                    Amadeus North America, where I brought ideas to life by building prototypes.&nbsp;
+                    I am a graduate student at Northeastern University in Boston. I'm well versed in various computer
+                    languages as well as the principles and techniques of website development and maintenance.
+                </p>
+                <p>
+                    I strive to create visually appealing sites with intuitive design and clear navigation. I've
+                    interned at Amadeus North America, where I brought ideas to life by building prototypes.&nbsp;
                     <a className={classes.link} href={resumeLink} download="Abhinn_Ankit_resume">
                         Download my resume.
                     </a>
@@ -34,6 +32,10 @@ const aboutMe: FC<IProps> = props => {
                 {/*<p>A versatile developer from Boston.</p>*/}
                 {/*<p>I strive to create visually appealing sites with intuitive design and clear navigation.</p>*/}
             </article>
+            <figure className={figureClasses.join(' ')}>
+                <div />
+                <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
+            </figure>
         </React.Fragment>
     );
 };

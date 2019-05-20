@@ -181,7 +181,7 @@ class Layout extends Component {
                     <Section
                         animateZoomIn={this.state.animateHeader[0]}
                         ref={this.aboutRef}
-                        title={'ABOUT'}
+                        title={'ABOUT me'}
                         style={{ backgroundColor: '#f0f0f0', paddingTop: '10em' }}
                     >
                         <About animateAbout={this.state.animateAbout} />
