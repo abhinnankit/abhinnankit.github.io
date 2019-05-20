@@ -1,6 +1,7 @@
 import React, { FC } from 'react';
 import Skill from './Skill/Skill';
-import classes from './Skills.module.scss';
+import SkillsLayout from './SkillsLayout/SkillsLayout';
+import Expertise from './Expertise/Expertise';
 
 interface IProps {
     animate: boolean;
@@ -21,22 +22,12 @@ const skills: FC<IProps> = props => {
         aws: 70,
         circleci: 65,
     };
-    const skillsClasses = ['col-12', 'col-lg-6', classes.Skills];
-    const expertiseClasses = ['col-12', 'col-lg-6'];
-    const firstSpanClasses = ['opaque'];
-    const secondSpanClasses = ['opaque'];
-    if (props.animate) {
-        firstSpanClasses.push(classes.AnimateSlideInLeft);
-        secondSpanClasses.push(classes.AnimateSlideInRight);
-    }
     return (
         <>
-            <div className={expertiseClasses.join(' ')} />
-            <div className={skillsClasses.join(' ')}>
-                <h2>
-                    <span className={firstSpanClasses.join(' ')}>WHAT&nbsp;</span>
-                    <span className={secondSpanClasses.join(' ')}>I KNOW</span>
-                </h2>
+            <SkillsLayout animate={props.animate} firstHalfHeader="What" secondHalfHeader="i work on">
+                <Expertise />
+            </SkillsLayout>
+            <SkillsLayout animate={props.animate} firstHalfHeader="WHAT" secondHalfHeader="I KNOW">
                 {Object.keys(technologies).map(technology => (
                     <Skill
                         key={technology}
@@ -45,7 +36,7 @@ const skills: FC<IProps> = props => {
                         percent={technologies[technology]}
                     />
                 ))}
-            </div>
+            </SkillsLayout>
         </>
     );
 };

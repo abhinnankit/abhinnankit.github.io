@@ -1,4 +1,4 @@
-import React, { MouseEvent, FC } from 'react';
+import React, { FC, MouseEvent } from 'react';
 import classes from './HamburgerMenu.module.scss';
 
 interface IProps {
