@@ -198,7 +198,7 @@ class Layout extends Component {
                     <div
                         style={{
                             background: 'linear-gradient(to right top, #e5e0da 50%, #f0f0f0 50%)',
-                            height: '5em',
+                            height: 'calc(16px + (90 - 16) * ((100vw - 250px) / (1600 - 250)))',
                         }}
                     />
                     <Section
@@ -212,7 +212,7 @@ class Layout extends Component {
                     <div
                         style={{
                             background: 'linear-gradient(to right bottom, #e5e0da 50%, #f0f0f0 50%)',
-                            height: '5em',
+                            height: 'calc(16px + (90 - 16) * ((100vw - 250px) / (1600 - 250)))',
                         }}
                     />
                     <Section

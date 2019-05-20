@@ -13,10 +13,18 @@
     }
     p {
         text-align: justify;
+        font-family: 'Josefin Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu',
+            'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
     }
 }
 
-.AnimateFigure {
+.link {
+    position: relative;
+    transition: 0.5s color ease;
+    text-decoration: none;
+}
+
+.AnimateArticle {
     animation: slideInLeft 0.8s;
     animation-fill-mode: forwards;
 }
@@ -32,7 +40,7 @@
     }
 }
 
-.AnimateArticle {
+.AnimateFigure {
     animation: slideInRight 0.8s;
     animation-fill-mode: forwards;
 }

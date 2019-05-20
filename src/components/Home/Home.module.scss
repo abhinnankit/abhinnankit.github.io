@@ -13,7 +13,7 @@
     letter-spacing: 1px;
     text-align: center;
     z-index: 101;
-    font-family: 'Cormorant Upright', serif;
+    font-family: 'Cormorant Garamond', serif;
 }
 
 .Home {
@@ -40,6 +40,8 @@
     align-items: center;
     margin-top: 30vh;
     width: 100%;
+    position: relative;
+    overflow: hidden;
     flex-direction: column;
     h1 {
         margin-bottom: 1em;
@@ -53,6 +55,10 @@
     strong {
         color: #ff7f50 !important;
     }
+    position: relative;
+    top: -2em;
+    will-change: top;
+    transition: top 1s;
 }
 
 .BannerText {
@@ -75,20 +81,19 @@
 }
 
 .Animate {
-    animation: zoomIn 0.8s ease-out;
-    animation-fill-mode: forwards;
+    top: 0;
 }
-
-@keyframes zoomIn {
-    from {
-        opacity: 0;
-        transform: scale(0.3);
-    }
-    to {
-        opacity: 1;
-        transform: scale(1);
-    }
-}
+//
+//@keyframes dropDown {
+//    from {
+//        opacity: 0;
+//        transform: translateY(-1em);
+//    }
+//    to {
+//        opacity: 1;
+//        transform: translateY(0);
+//    }
+//}
 
 @media (min-width: 500px) {
     .HeaderLine {

@@ -21,6 +21,8 @@ const skills: FC<IProps> = props => {
         aws: 70,
         circleci: 65,
     };
+    const skillsClasses = ['col-12', 'col-lg-7', classes.Skills];
+    const expertiseClasses = ['col-12', 'col-lg-5'];
     const firstSpanClasses = ['opaque'];
     const secondSpanClasses = ['opaque'];
     if (props.animate) {
@@ -28,15 +30,23 @@ const skills: FC<IProps> = props => {
         secondSpanClasses.push(classes.AnimateSlideInRight);
     }
     return (
-        <div className={classes.Skills}>
-            <h2>
-                <span className={firstSpanClasses.join(' ')}>TECHNO</span>
-                <span className={secondSpanClasses.join(' ')}>LOGIES</span>
-            </h2>
-            {Object.keys(technologies).map(technology => (
-                <Skill key={technology} animate={props.animate} skill={technology} percent={technologies[technology]} />
-            ))}
-        </div>
+        <>
+            <div className={expertiseClasses.join(' ')} />
+            <div className={skillsClasses.join(' ')}>
+                <h2>
+                    <span className={firstSpanClasses.join(' ')}>TECHNO</span>
+                    <span className={secondSpanClasses.join(' ')}>LOGIES</span>
+                </h2>
+                {Object.keys(technologies).map(technology => (
+                    <Skill
+                        key={technology}
+                        animate={props.animate}
+                        skill={technology}
+                        percent={technologies[technology]}
+                    />
+                ))}
+            </div>
+        </>
     );
 };
 

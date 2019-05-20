@@ -7,25 +7,25 @@ const Home = () => {
     // 'I\'m a <i>full-stack</i> <b>versatile</b> <i>developer</i> from <b>Boston</b>.',
     // 'I strive to <i>create</i> visually appealing sites with <i>intuitive</i> <b>design</b> and <i>clear</i>' +
     // ' <b>navigation</b>.',
-    const message = ['I <i>believe</i> in working for a <b>cause</b>, not for <b>applause</b>'];
+    const message = ["I'm a <i>versatile</i> <b>software developer</b> with diverse set of skills."];
     const headerRef = useRef(null);
     const [animate, setAnimate] = useState(false);
     const [startTyping, setStartTyping] = useState(false);
     const bannerTextClasses = [classes.BannerText];
     const animationEndCallback = () => {
         if (!startTyping) {
-            headerRef.current.removeEventListener('webkitAnimationEnd', animationEndCallback);
+            headerRef.current.removeEventListener('transitionend', animationEndCallback);
             setStartTyping(true);
         }
     };
     useEffect(() => {
         setAnimate(true);
-        headerRef.current.addEventListener('webkitAnimationEnd', animationEndCallback);
+        headerRef.current.addEventListener('transitionend', animationEndCallback);
         // eslint-disable-next-line
     }, []);
-    const headerLineClasses = ['opaque'];
+    const headerLineClasses = [classes.HeaderLine];
     if (animate) {
-        headerLineClasses.push(classes.Animate, classes.HeaderLine);
+        headerLineClasses.push(classes.Animate);
     }
     return (
         <div className={classes.Home}>
@@ -35,15 +35,7 @@ const Home = () => {
                     <strong className={headerLineClasses.join(' ')}>Abhinn Ankit</strong>
                 </p>
                 {startTyping ? (
-                    <Typed
-                        className={bannerTextClasses.join(' ')}
-                        strings={message}
-                        typeSpeed={40}
-                        loop={true}
-                        backDelay={2000}
-                        smartBackspace={true}
-                        backSpeed={20}
-                    />
+                    <Typed className={bannerTextClasses.join(' ')} strings={message} typeSpeed={40} />
                 ) : (
                     <div style={{ height: '32px' }} />
                 )}

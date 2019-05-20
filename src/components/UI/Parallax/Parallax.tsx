@@ -7,14 +7,6 @@ const Parallax = () => {
     const parallaxMobileRef = useRef(null);
     const [bottom, setBottom] = useState(0);
     const onScroll = () => {
-        // console.log(
-        //     window.innerHeight +
-        //         ' ' +
-        //         wrapperRef.current.getBoundingClientRect().top +
-        //         ' ' +
-        //         wrapperRef.current.getBoundingClientRect().height
-        // );
-        // window.requestAnimationFrame(scrollImage);
         if (
             window.innerHeight - wrapperRef.current.getBoundingClientRect().top >
             window.innerHeight + wrapperRef.current.getBoundingClientRect().height
@@ -31,12 +23,12 @@ const Parallax = () => {
             parallaxMobileRef.current.style.bottom = 0;
             parallaxMobileRef.current.style.top = 0;
         }
-        // parallaxMobileRef.current.style.transform = `translateY(${window.innerHeight - wrapperRef.current.getBoundingClientRect().top}px)`;
     };
     useEffect(() => {
         setBottom(wrapperRef.current.getBoundingClientRect().height);
         window.addEventListener('scroll', onScroll);
         window.requestAnimationFrame(onScroll);
+        // eslint-disable-next-line
     }, []);
     return (
         <div ref={wrapperRef} className={classes.parallax}>
