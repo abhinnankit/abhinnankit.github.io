@@ -1,19 +1,22 @@
 {
   "files": {
-    "main.css": "abhinnankit.github.io/static/css/main.f763e0a0.chunk.css",
-    "main.js": "abhinnankit.github.io/static/js/main.982edf81.chunk.js",
-    "main.js.map": "abhinnankit.github.io/static/js/main.982edf81.chunk.js.map",
+    "main.css": "abhinnankit.github.io/static/css/main.08a5113a.chunk.css",
+    "main.js": "abhinnankit.github.io/static/js/main.e4bf82b7.chunk.js",
+    "main.js.map": "abhinnankit.github.io/static/js/main.e4bf82b7.chunk.js.map",
     "runtime~main.js": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js",
     "runtime~main.js.map": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js.map",
-    "static/js/2.afe3c7bb.chunk.js": "abhinnankit.github.io/static/js/2.afe3c7bb.chunk.js",
-    "static/js/2.afe3c7bb.chunk.js.map": "abhinnankit.github.io/static/js/2.afe3c7bb.chunk.js.map",
+    "static/js/2.b6ca2d4d.chunk.js": "abhinnankit.github.io/static/js/2.b6ca2d4d.chunk.js",
+    "static/js/2.b6ca2d4d.chunk.js.map": "abhinnankit.github.io/static/js/2.b6ca2d4d.chunk.js.map",
     "index.html": "abhinnankit.github.io/index.html",
-    "precache-manifest.dfdeeecd136252aa8ab51c6a98e5cd10.js": "abhinnankit.github.io/precache-manifest.dfdeeecd136252aa8ab51c6a98e5cd10.js",
+    "precache-manifest.49d63bc62b99d4aa55e7ee143cbd93b3.js": "abhinnankit.github.io/precache-manifest.49d63bc62b99d4aa55e7ee143cbd93b3.js",
     "service-worker.js": "abhinnankit.github.io/service-worker.js",
-    "static/css/main.f763e0a0.chunk.css.map": "abhinnankit.github.io/static/css/main.f763e0a0.chunk.css.map",
+    "static/css/main.08a5113a.chunk.css.map": "abhinnankit.github.io/static/css/main.08a5113a.chunk.css.map",
     "static/media/1-min.png": "abhinnankit.github.io/static/media/1-min.cbb2a873.png",
     "static/media/banner.png": "abhinnankit.github.io/static/media/banner.bd902081.png",
+    "static/media/cloud.a87acf52.svg": "abhinnankit.github.io/static/media/cloud.a87acf52.svg",
+    "static/media/laptop.83a7aae9.svg": "abhinnankit.github.io/static/media/laptop.83a7aae9.svg",
     "static/media/me.jpg": "abhinnankit.github.io/static/media/me.980f4c2e.jpg",
+    "static/media/networkwired.7fda671e.svg": "abhinnankit.github.io/static/media/networkwired.7fda671e.svg",
     "static/media/resume.pdf": "abhinnankit.github.io/static/media/resume.ab9f4004.pdf"
   }
 }
