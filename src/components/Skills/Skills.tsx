@@ -30,7 +30,7 @@ const skills: FC<IProps> = React.memo(props => {
             icon: <Laptop />,
             headerPart1: 'Frontend',
             headerPart2: 'Development',
-            description: 'I build server side applications using best-in practice technologies & frameworks.',
+            description: 'I enjoy building pixel-perfect user interface and bringing it to life.',
         },
         {
             icon: <Cloud />,

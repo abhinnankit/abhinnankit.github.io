@@ -2,11 +2,10 @@
     max-height: 17em;
     max-width: 14em;
     display: inline-block;
-    -webkit-transition: 0.3s -webkit-filter linear;
-    -moz-transition: 0.3s filter linear;
-    -ms-transition: 0.3s -ms-filter linear;
-    -o-transition: 0.3s -o-filter linear;
-    transition: 0.3s filter linear, 1s -webkit-filter linear, 0.3s transform linear;
+    opacity: 0;
+    -webkit-box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
+    -moz-box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
+    box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
 }
 
 .Figure {
@@ -64,15 +63,6 @@
             right: -21px;
             bottom: -17px;
         }
-    }
-}
-
-.Figure:hover {
-    .img {
-        transform: scale(1.1);
-        -webkit-box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
-        -moz-box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
-        box-shadow: 1px 1px 9px 1px rgba(0, 0, 0, 0.4);
     }
 }
 
@@ -135,14 +125,17 @@
 .AnimateFigure {
     animation: slideInRight 0.8s;
     animation-fill-mode: forwards;
+    .img {
+        animation: zoom 0.5s;
+        animation-delay: 0.8s;
+        animation-fill-mode: forwards;
+    }
 
     &::after,
     &::before,
     > div::after,
     > div::before {
-        animation: zoom 0.5s;
-        animation-delay: 0.8s;
-        animation-fill-mode: forwards;
+        opacity: 1;
     }
 }
 
@@ -164,7 +157,7 @@
     }
     70% {
         opacity: 1;
-        transform: scale(1.3);
+        transform: scale(1.1);
     }
     100% {
         opacity: 1;
