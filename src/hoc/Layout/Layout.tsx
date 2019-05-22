@@ -191,13 +191,13 @@ class Layout extends Component {
                         animateSlideInRight={this.state.animateHeader[1]}
                         ref={this.skillRef}
                         title={'Skills'}
-                        style={{ backgroundColor: '#f0f0f0', paddingTop: '10em' }}
+                        style={{ backgroundColor: '#ffffff', paddingTop: '10em' }}
                     >
                         <Skills animate={this.state.animateSkills} />
                     </Section>
                     <div
                         style={{
-                            background: 'linear-gradient(to right top, #e5e0da 50%, #f0f0f0 50%)',
+                            background: 'linear-gradient(to right top, #e5e0da 50%, #ffffff 50%)',
                             height: 'calc(16px + (90 - 16) * ((100vw - 250px) / (1600 - 250)))',
                         }}
                     />

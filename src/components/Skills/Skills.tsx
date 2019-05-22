@@ -3,7 +3,9 @@ import Skill from './Skill/Skill';
 import SkillsLayout from './SkillsLayout/SkillsLayout';
 import Card from './Card/Card';
 import classes from './Skills.module.scss';
-import { faNetworkWired, faLaptopCode, faCloudUploadAlt } from '@fortawesome/free-solid-svg-icons';
+import { ReactComponent as NetworkWired } from '../../assets/images/svg/networkwired.svg';
+import { ReactComponent as Laptop } from '../../assets/images/svg/laptop.svg';
+import { ReactComponent as Cloud } from '../../assets/images/svg/cloud.svg';
 
 interface IProps {
     animate: boolean;
@@ -19,19 +21,19 @@ interface IDevType {
 const skills: FC<IProps> = React.memo(props => {
     const devTypes: IDevType[] = [
         {
-            icon: faNetworkWired,
+            icon: <NetworkWired />,
             headerPart1: 'Backend',
             headerPart2: 'Development',
-            description: 'I build server side applications using best-in practice technologies & frameworks.',
+            description: 'I build server-side applications using best-in practice technologies & frameworks.',
         },
         {
-            icon: faLaptopCode,
+            icon: <Laptop />,
             headerPart1: 'Frontend',
             headerPart2: 'Development',
             description: 'I build server side applications using best-in practice technologies & frameworks.',
         },
         {
-            icon: faCloudUploadAlt,
+            icon: <Cloud />,
             headerPart1: 'Cloud',
             headerPart2: 'Computing',
             description: 'I build server side applications using best-in practice technologies & frameworks.',

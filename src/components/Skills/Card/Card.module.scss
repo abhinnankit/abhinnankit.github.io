@@ -1,17 +1,32 @@
 .Card {
     display: flex;
     justify-content: flex-end;
-    svg {
-        margin-top: 0.9em;
+    .TopMargin {
+        margin-top: 1.45em;
+        span {
+            display: inline-block;
+            padding: 1em;
+            border-radius: 50%;
+            path {
+                color: #768591;
+            }
+        }
         &::after {
             display: block;
             content: '';
-            height: 10px;
-            width: 40px;
+            height: 1px;
+            width: 70%;
             position: relative;
-            background-color: gray;
+            background-color: #768591;
+            transform: rotate(90deg) translateY(-4.2em) translateX(-1.9em) scaleX(1.6);
         }
     }
+}
+
+.Wrapper {
+    transform: rotateX(180deg);
+    backface-visibility: hidden;
+    display: flex;
 }
 
 .CardDescription {
@@ -19,17 +34,34 @@
         font-size: 22px;
         letter-spacing: -1px;
         font-weight: 500;
+        color: #2f4f4f;
         &:first-of-type {
             margin-top: 0.4em;
             padding: 0.4em 0.4em 0;
         }
         &:last-of-type {
             padding: 0 0.4em 0.4em;
+            color: #edb200;
         }
     }
     p {
         font-size: 18px;
         padding: 0.4em;
         margin-bottom: 0.4em;
+        color: #33444e;
+    }
+}
+
+.Animate {
+    animation: showCard 2s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes showCard {
+    from {
+        transform: rotateX(180deg);
+    }
+    to {
+        transform: rotateX(0);
     }
 }

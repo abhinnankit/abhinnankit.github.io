@@ -19,12 +19,15 @@ const aboutMe: FC<IProps> = props => {
         <React.Fragment>
             <article className={articleClasses.join(' ')}>
                 <p>
-                    I am a graduate student at Northeastern University in Boston. I'm knowledgeable in various computer
-                    languages as well as the principles and techniques of website development and maintenance.
+                    I am a graduate student at Northeastern University in Boston. I strive to create visually appealing
+                    web apps and websites with intuitive design and clear navigation, accompanied by modern and
+                    efficient backend.
                 </p>
                 <p>
-                    I strive to create visually appealing sites with intuitive design and clear navigation. I've
-                    interned at Amadeus North America, where I brought ideas to life by building prototypes.&nbsp;
+                    I've interned at Amadeus North America, where I brought ideas to life by building prototypes and
+                    also, developed web apps using state-of-the-art technologies.&nbsp;
+                </p>
+                <p>
                     <a className={classes.link} href={resumeLink} download="Abhinn_Ankit_resume">
                         Download my resume.
                     </a>
