@@ -22,7 +22,7 @@ const SkillsLayout: FC<IProps> = props => {
         <div className={skillsClasses.join(' ')}>
             <div className={headerWrapperClasses.join(' ')}>
                 <h2>
-                    <span className={firstSpanClasses.join(' ')}>{props.firstHalfHeader}&nbsp;</span>
+                    <span className={firstSpanClasses.join(' ')}>{props.firstHalfHeader}</span>
                     <span className={secondSpanClasses.join(' ')}>{props.secondHalfHeader}</span>
                 </h2>
             </div>
