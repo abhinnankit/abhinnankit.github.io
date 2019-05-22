@@ -9,7 +9,7 @@ interface IProps {
 }
 
 const SkillsLayout: FC<IProps> = props => {
-    const skillsClasses = ['col-12', props.colClass, classes.Wrapper];
+    const skillsClasses = [props.colClass, classes.Wrapper];
     const firstSpanClasses = ['opaque'];
     const secondSpanClasses = ['opaque'];
     const headerWrapperClasses = [classes.HeaderWrapper];
@@ -21,7 +21,7 @@ const SkillsLayout: FC<IProps> = props => {
     return (
         <div className={skillsClasses.join(' ')}>
             <div className={headerWrapperClasses.join(' ')}>
-                <h2>
+                <h2 className={props.firstHalfHeader === 'EXPER' ? classes.LessMarginTop : null}>
                     <span className={firstSpanClasses.join(' ')}>{props.firstHalfHeader}</span>
                     <span className={secondSpanClasses.join(' ')}>{props.secondHalfHeader}</span>
                 </h2>

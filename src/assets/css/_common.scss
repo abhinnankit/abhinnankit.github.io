@@ -59,9 +59,9 @@
     @include generate-col('-md');
 }
 
-@media (min-width: 992px) {
+@media (min-width: 900px) {
     .container {
-        max-width: 960px;
+        max-width: 870px;
     }
     @include generate-col('-lg');
 }

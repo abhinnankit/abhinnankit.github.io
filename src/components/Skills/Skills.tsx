@@ -55,7 +55,12 @@ const skills: FC<IProps> = React.memo(props => {
     };
     return (
         <>
-            <SkillsLayout animate={props.animate} colClass="col-lg-6" firstHalfHeader="EXPER" secondHalfHeader="TISE">
+            <SkillsLayout
+                animate={props.animate}
+                colClass="col-12 col-lg-6"
+                firstHalfHeader="EXPER"
+                secondHalfHeader="TISE"
+            >
                 {devTypes.map((devType: IDevType) => {
                     const keys = Object.keys(devType);
                     return (
@@ -70,10 +75,10 @@ const skills: FC<IProps> = React.memo(props => {
                     );
                 })}
             </SkillsLayout>
-            <div className="col-lg-1" />
+            <div className="col-lg-1 col-md-1" />
             <SkillsLayout
                 animate={props.animate}
-                colClass="col-lg-5"
+                colClass="col-lg-5 col-md-10 col-12"
                 firstHalfHeader="TECHNO"
                 secondHalfHeader="LOGIES"
             >

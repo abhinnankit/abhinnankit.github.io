@@ -9,7 +9,6 @@ const Contact = props => {
         // console.log(threshold + ' ' + textAreaRef.current.getBoundingClientRect().top);
         if (!animate && textAreaRef.current && textAreaRef.current.getBoundingClientRect().top < threshold) {
             setAnimate(true);
-            console.log('Animate');
             window.removeEventListener('scroll', scrollListener);
         }
     };
