@@ -19,7 +19,7 @@ const aboutMe: FC<IProps> = props => {
         <React.Fragment>
             <article className={articleClasses.join(' ')}>
                 <p>
-                    I am a graduate student at Northeastern University in Boston. I'm well versed in various computer
+                    I am a graduate student at Northeastern University in Boston. I'm knowledgeable in various computer
                     languages as well as the principles and techniques of website development and maintenance.
                 </p>
                 <p>
@@ -29,12 +29,10 @@ const aboutMe: FC<IProps> = props => {
                         Download my resume.
                     </a>
                 </p>
-                {/*<p>A versatile developer from Boston.</p>*/}
-                {/*<p>I strive to create visually appealing sites with intuitive design and clear navigation.</p>*/}
             </article>
             <figure className={figureClasses.join(' ')}>
                 <div />
-                <img src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
+                <img width="224" height="271" src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
             </figure>
         </React.Fragment>
     );

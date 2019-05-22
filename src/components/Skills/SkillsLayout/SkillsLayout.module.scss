@@ -2,13 +2,38 @@
     font-family: 'Roboto', sans-serif;
     width: 100%;
     h2 {
+        color: #282828;
+        font-size: 28px;
         text-align: center;
         text-transform: uppercase;
-        margin: 3em 1em 1em;
+        margin: 3em 1em auto;
+        display: inline-block;
+        &::after {
+            display: inline-block;
+            content: '';
+            width: 70%;
+            height: 1.5px;
+            background-color: #484848;
+            position: relative;
+            top: -28px;
+            opacity: 0;
+        }
         span {
+            color: #484848;
             display: inline-block;
         }
     }
+}
+
+.HeaderWrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.HeaderWrapper.Animate h2::after {
+    transition: opacity 1s linear 1.3s;
+    opacity: 1;
 }
 
 .AnimateSlideInLeft {

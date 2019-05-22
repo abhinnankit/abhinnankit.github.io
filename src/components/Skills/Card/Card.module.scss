@@ -1,0 +1,35 @@
+.Card {
+    display: flex;
+    justify-content: flex-end;
+    svg {
+        margin-top: 0.9em;
+        &::after {
+            display: block;
+            content: '';
+            height: 10px;
+            width: 40px;
+            position: relative;
+            background-color: gray;
+        }
+    }
+}
+
+.CardDescription {
+    h3 {
+        font-size: 22px;
+        letter-spacing: -1px;
+        font-weight: 500;
+        &:first-of-type {
+            margin-top: 0.4em;
+            padding: 0.4em 0.4em 0;
+        }
+        &:last-of-type {
+            padding: 0 0.4em 0.4em;
+        }
+    }
+    p {
+        font-size: 18px;
+        padding: 0.4em;
+        margin-bottom: 0.4em;
+    }
+}
