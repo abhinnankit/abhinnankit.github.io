@@ -24,7 +24,8 @@ class Header extends Component<IProps, State> {
     };
 
     reCalcHeight = () => {
-        this.height = this.headerRef.current.offsetTop;
+        console.dir(this.headerRef.current);
+        this.height = window.innerHeight;
     };
 
     hideNavBar = () => {
@@ -54,7 +55,7 @@ class Header extends Component<IProps, State> {
     };
 
     componentDidMount(): void {
-        this.height = this.headerRef.current.offsetTop;
+        this.height = window.innerHeight;
         window.addEventListener('resize', this.reCalcHeight);
         window.addEventListener('scroll', this.addStickyClass);
     }

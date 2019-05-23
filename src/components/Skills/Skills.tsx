@@ -24,13 +24,15 @@ const skills: FC<IProps> = React.memo(props => {
             icon: <NetworkWired />,
             headerPart1: 'Backend',
             headerPart2: 'Development',
-            description: 'I build server-side applications using best-in practice technologies & frameworks.',
+            description: 'I build server-side applications using contemporary technologies & design' + ' patterns.',
         },
         {
             icon: <Laptop />,
             headerPart1: 'Frontend',
             headerPart2: 'Development',
-            description: 'I enjoy building pixel-perfect user interface and bringing it to life.',
+            description:
+                'I use exemplary techniques and frameworks to build pixel-perfect user interfaces and' +
+                ' bring them to life.',
         },
         {
             icon: <Cloud />,

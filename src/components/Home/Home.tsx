@@ -4,10 +4,7 @@ import Particles from 'react-particles-js';
 import Typed from 'react-typed';
 
 const Home = () => {
-    // 'I\'m a <i>full-stack</i> <b>versatile</b> <i>developer</i> from <b>Boston</b>.',
-    // 'I strive to <i>create</i> visually appealing sites with <i>intuitive</i> <b>design</b> and <i>clear</i>' +
-    // ' <b>navigation</b>.',
-    const message = ["I'm a <i>full-stack</i> <b>software developer</b> with a wide variety of <i>skills</i>."];
+    const message = ["I'm a <i>full-stack</i> <b>software developer</b> with a wide array of <i>skills</i>."];
     const headerRef = useRef(null);
     const [animate, setAnimate] = useState(false);
     const [startTyping, setStartTyping] = useState(false);

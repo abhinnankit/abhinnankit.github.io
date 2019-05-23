@@ -9,18 +9,22 @@ import Home from '../../components/Home/Home';
 import Skills from '../../components/Skills/Skills';
 import Parallax from '../../components/UI/Parallax/Parallax';
 
-class Layout extends Component {
+const initialState = {
+    markActive: [false, false, false, false, false],
+    animateHeader: [false, false, false, false],
+    animateSkills: false,
+    animateAbout: false,
+};
+
+type State = Readonly<typeof initialState>;
+
+class Layout extends Component<object, State> {
     static isDesktop() {
         const isMobile = window.matchMedia('only screen and (min-width: 768px)');
         return isMobile.matches;
     }
 
-    state = {
-        markActive: [false, false, false, false, false],
-        animateHeader: [false, false, false, false],
-        animateSkills: false,
-        animateAbout: false,
-    };
+    readonly state: State = initialState;
 
     private readonly aboutRef: React.RefObject<any>;
     private readonly workRef: React.RefObject<any>;
