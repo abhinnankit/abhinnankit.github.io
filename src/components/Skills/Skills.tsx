@@ -24,7 +24,7 @@ const skills: FC<IProps> = React.memo(props => {
             icon: <NetworkWired />,
             headerPart1: 'Backend',
             headerPart2: 'Development',
-            description: 'I build server-side applications using contemporary technologies & design' + ' patterns.',
+            description: 'I develop server-side applications using best-in practice technologies & design patterns.',
         },
         {
             icon: <Laptop />,
@@ -38,7 +38,7 @@ const skills: FC<IProps> = React.memo(props => {
             icon: <Cloud />,
             headerPart1: 'Cloud',
             headerPart2: 'Computing',
-            description: 'I build server side applications using best-in practice technologies & frameworks.',
+            description: 'I provide top cloud architecture solutions to successfully meet the strategic needs.',
         },
     ];
     const technologies = {
