@@ -4,6 +4,7 @@ import classes from './Project.module.scss';
 interface IProps {
     imgUrl: string;
     justifyContentStart: boolean;
+    animate: boolean;
 }
 
 const project: FC<IProps> = props => {
@@ -13,10 +14,13 @@ const project: FC<IProps> = props => {
     } else {
         mainDivClass.push(classes.ProjectFlexEnd);
     }
+    if (props.animate) {
+        mainDivClass.push(classes.Animate);
+    }
     return (
         <>
             <div className={mainDivClass.join(' ')}>
-                <img src={props.imgUrl} alt="Shopping site" className={classes.ProjectImg} />
+                <img width="570" height="400" src={props.imgUrl} alt="Shopping site" className={classes.ProjectImg} />
             </div>
         </>
     );

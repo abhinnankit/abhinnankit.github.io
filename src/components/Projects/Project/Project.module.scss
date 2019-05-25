@@ -2,7 +2,9 @@
     justify-content: center;
     align-items: center;
     display: flex;
-    margin-bottom: 1.5em;
+    margin-bottom: 0.1em;
+    transform: translateY(8em);
+    opacity: 0;
 }
 
 .p0 {
@@ -16,6 +18,22 @@
     //border: 1px solid rgba(0, 0, 0, 0.05);
     //box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
     cursor: pointer;
+}
+
+.Animate {
+    animation: slideUp 1s;
+    animation-fill-mode: forwards;
+}
+
+@keyframes slideUp {
+    from {
+        transform: translateY(8em);
+        opacity: 0;
+    }
+    to {
+        transform: translateY(0);
+        opacity: 1;
+    }
 }
 
 @media (min-width: 425px) {

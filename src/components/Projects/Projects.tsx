@@ -1,16 +1,30 @@
-import React from 'react';
+import React, { useLayoutEffect, useRef, useState } from 'react';
 import Project from './Project/Project';
 import classes from './Projects.module.scss';
 import giftedUrl from '../../assets/images/gifted/1-min.png';
 import bostonEventsUrl from '../../assets/images/boston_events/1-min.png';
 
-const projects = () => {
+const Projects = () => {
     const moreSection = [classes.More, 'col-12'];
+    const projectRef = useRef(null);
+    const threshold = window.innerHeight / 1.6;
+    const [animate, setAnimate] = useState(false);
+    const scrollListener = () => {
+        // console.log(threshold + ' ' + projectRef.current.getBoundingClientRect().top);
+        if (!animate && projectRef.current && projectRef.current.getBoundingClientRect().top < threshold) {
+            setAnimate(true);
+            window.removeEventListener('scroll', scrollListener);
+        }
+    };
+    useLayoutEffect(() => {
+        window.addEventListener('scroll', scrollListener);
+        // eslint-disable-next-line
+    }, []);
     return (
         <>
-            <div className={classes.Projects}>
-                <Project imgUrl={giftedUrl} justifyContentStart={false} />
-                <Project imgUrl={bostonEventsUrl} justifyContentStart={true} />
+            <div className={classes.Projects} ref={projectRef}>
+                <Project animate={animate} imgUrl={giftedUrl} justifyContentStart={false} />
+                <Project animate={animate} imgUrl={bostonEventsUrl} justifyContentStart={true} />
             </div>
             <div className={moreSection.join(' ')}>
                 More projects on&nbsp;
@@ -23,4 +37,4 @@ const projects = () => {
     );
 };
 
-export default projects;
+export default Projects;
