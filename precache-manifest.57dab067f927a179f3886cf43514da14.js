@@ -1,31 +1,31 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "b63dcad307b6aabb37b52b1a84c6e9e9",
+    "revision": "795b01aa613edf6f047cfae29ab5fe8e",
     "url": "abhinnankit.github.io/index.html"
   },
   {
-    "revision": "784d63c1cf0f7636f607",
-    "url": "abhinnankit.github.io/static/css/main.3d95afdd.chunk.css"
+    "revision": "b5dd70f7d171891bb2fd",
+    "url": "abhinnankit.github.io/static/css/main.1525fd66.chunk.css"
   },
   {
-    "revision": "ac88df9dae840d9432b2",
-    "url": "abhinnankit.github.io/static/js/2.5d1819da.chunk.js"
+    "revision": "10039b4a88bc1643003a",
+    "url": "abhinnankit.github.io/static/js/2.a002ade0.chunk.js"
   },
   {
-    "revision": "784d63c1cf0f7636f607",
-    "url": "abhinnankit.github.io/static/js/main.557f8f35.chunk.js"
+    "revision": "b5dd70f7d171891bb2fd",
+    "url": "abhinnankit.github.io/static/js/main.d76859b3.chunk.js"
   },
   {
     "revision": "9bf7cdc42c764bd68001",
     "url": "abhinnankit.github.io/static/js/runtime~main.1c8345e1.js"
   },
   {
-    "revision": "2e3e6da6b3697e779df0e234560c8cf5",
-    "url": "abhinnankit.github.io/static/media/1-min.2e3e6da6.png"
+    "revision": "1b241cbdf256168493b6d81bcf2bf9fa",
+    "url": "abhinnankit.github.io/static/media/1-min.1b241cbd.png"
   },
   {
-    "revision": "7c561e39d5f76c9574cee1ad12982c40",
-    "url": "abhinnankit.github.io/static/media/1-min.7c561e39.png"
+    "revision": "a7f5ef6cdaa98237a6b1a240249f0f8b",
+    "url": "abhinnankit.github.io/static/media/1-min.a7f5ef6c.png"
   },
   {
     "revision": "bd9020819fa5789453b373ed1bb0eba9",
