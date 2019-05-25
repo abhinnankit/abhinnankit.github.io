@@ -35,7 +35,7 @@ const aboutMe: FC<IProps> = props => {
             </article>
             <figure className={figureClasses.join(' ')}>
                 <div />
-                <img width="224" height="271" src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
+                <img width="224" height="282" src={myImage} alt={'Abhinn Ankit'} className={classes.img} />
             </figure>
         </React.Fragment>
     );
