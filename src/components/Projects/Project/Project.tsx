@@ -7,7 +7,7 @@ interface IProps {
 }
 
 const project: FC<IProps> = props => {
-    const mainDivClass = ['col-lg-6', classes.Project];
+    const mainDivClass = ['col-lg-6', classes.Project, classes.p0];
     if (props.justifyContentStart) {
         mainDivClass.push(classes.ProjectFlexStart);
     } else {
