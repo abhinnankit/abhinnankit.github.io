@@ -10,7 +10,6 @@ const Projects = () => {
     const threshold = window.innerHeight / 1.6;
     const [animate, setAnimate] = useState(false);
     const scrollListener = () => {
-        // console.log(threshold + ' ' + projectRef.current.getBoundingClientRect().top);
         if (!animate && projectRef.current && projectRef.current.getBoundingClientRect().top < threshold) {
             setAnimate(true);
             window.removeEventListener('scroll', scrollListener);

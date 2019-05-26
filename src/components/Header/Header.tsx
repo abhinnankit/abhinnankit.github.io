@@ -24,7 +24,6 @@ class Header extends Component<IProps, State> {
     };
 
     reCalcHeight = () => {
-        console.dir(this.headerRef.current);
         this.height = window.innerHeight;
     };
 

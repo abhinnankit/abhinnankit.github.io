@@ -12,7 +12,7 @@ const Project: FC<IProps> = props => {
     const [showDetails, setShowDetails] = useState(false);
     const mainDivClass = ['col-lg-6', classes.Project, classes.p0];
     if (props.justifyContentStart) {
-        mainDivClass.push(classes.ProjectFlexStart);
+        mainDivClass.push(classes.ProjectFlexStart, classes.AnimateLate);
     } else {
         mainDivClass.push(classes.ProjectFlexEnd);
     }

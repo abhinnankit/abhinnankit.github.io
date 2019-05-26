@@ -25,6 +25,10 @@
     animation-fill-mode: forwards;
 }
 
+.AnimateLate {
+    animation-delay: 0.1s;
+}
+
 @keyframes slideUp {
     from {
         transform: translateY(8em);
