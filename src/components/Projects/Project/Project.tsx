@@ -31,6 +31,7 @@ const Project: FC<IProps> = props => {
                 show me
             </Modal>
             <div className={mainDivClass.join(' ')}>
+                <div className={classes.ProjectInfo}>something</div>
                 <img
                     onClick={openDetailsHandler}
                     width="570"

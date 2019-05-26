@@ -37,6 +37,10 @@
     background-color: #1b242f;
 }
 
+.disable-hover {
+    pointer-events: none;
+}
+
 @include generate-col(null);
 
 .opaque {

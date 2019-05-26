@@ -170,6 +170,21 @@ class Layout extends Component<object, State> {
 
     componentDidMount(): void {
         window.addEventListener('scroll', this.addClasses);
+        const body = document.body;
+        let timer;
+        window.addEventListener(
+            'scroll',
+            () => {
+                clearTimeout(timer);
+                if (!body.classList.contains('disable-hover')) {
+                    body.classList.add('disable-hover');
+                }
+                timer = setTimeout(() => {
+                    body.classList.remove('disable-hover');
+                }, 100);
+            },
+            false
+        );
     }
 
     componentWillUnmount(): void {
