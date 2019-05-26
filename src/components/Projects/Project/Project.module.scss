@@ -6,15 +6,37 @@
     transform: translateY(8em);
     opacity: 0;
     overflow: hidden;
-    &:hover {
+    &:hover,
+    &:active,
+    &:focus {
         .ProjectInfo {
             animation: dropNBounce 0.5s;
             animation-fill-mode: forwards;
             opacity: 1;
+            z-index: 1;
         }
         .ProjectImg {
-            opacity: 0.07;
+            z-index: 0;
+            opacity: 0.2;
         }
+    }
+}
+
+.Button {
+    padding: 0.5em 1em;
+    font-size: 16px;
+    //color: #33444e;
+    color: rgba(27, 36, 47, 0.5);
+    text-transform: uppercase;
+    border: 2px solid rgba(27, 36, 47, 0.5);
+    cursor: pointer;
+    background-color: transparent;
+    position: absolute;
+    bottom: 24%;
+    transition: background-color 0.1s linear, color 0.1s linear;
+    &:hover {
+        color: #ffffff;
+        background-color: rgba(27, 36, 47, 0.9);
     }
 }
 
@@ -26,9 +48,26 @@
     opacity: 0;
     justify-content: center;
     align-items: center;
-    background-color: white;
+    flex-direction: column;
+    background-color: rgba(255, 255, 255, 0.9);
     color: #000;
     transform: translateY(-100%);
+}
+
+.Title {
+    position: absolute;
+    top: 25%;
+    color: #33444e;
+    text-transform: uppercase;
+}
+
+.Technologies {
+    position: absolute;
+    bottom: 60%;
+    font-size: 18px;
+    color: #edb200;
+    //color: #D2B48C;
+    //color: #c69400;
 }
 
 .p0 {
@@ -41,7 +80,6 @@
     height: 100%;
     //border: 1px solid rgba(0, 0, 0, 0.05);
     //box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.3);
-    cursor: pointer;
     transition: opacity 0.5s;
 }
 
@@ -83,9 +121,16 @@
     }
 }
 
-@media (min-width: 425px) {
-    .ProjectImg {
-        width: 80%;
+@media (max-width: 575px) {
+    .Title {
+        position: initial;
+    }
+    .Technologies {
+        position: initial;
+        margin-bottom: calc(3em + (40 - 1.5) * ((100vw - 250px) / (500 - 250)));
+    }
+    .Button {
+        position: initial;
     }
 }
 

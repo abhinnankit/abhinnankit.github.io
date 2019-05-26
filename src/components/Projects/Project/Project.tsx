@@ -6,6 +6,8 @@ interface IProps {
     imgUrl: string;
     justifyContentStart: boolean;
     animate: boolean;
+    title: string;
+    technologies: string;
 }
 
 const Project: FC<IProps> = props => {
@@ -31,15 +33,14 @@ const Project: FC<IProps> = props => {
                 show me
             </Modal>
             <div className={mainDivClass.join(' ')}>
-                <div className={classes.ProjectInfo}>something</div>
-                <img
-                    onClick={openDetailsHandler}
-                    width="570"
-                    height="400"
-                    src={props.imgUrl}
-                    alt="Shopping site"
-                    className={classes.ProjectImg}
-                />
+                <div className={classes.ProjectInfo}>
+                    <h2 className={classes.Title}>{props.title}</h2>
+                    <p className={classes.Technologies}>{props.technologies}</p>
+                    <button type="button" className={classes.Button} onClick={openDetailsHandler}>
+                        Know More
+                    </button>
+                </div>
+                <img width="570" height="400" src={props.imgUrl} alt="Shopping site" className={classes.ProjectImg} />
             </div>
         </>
     );
