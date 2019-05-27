@@ -3,6 +3,7 @@ import classes from './CarouselSlide.module.scss';
 
 interface IProps {
     imagesUrl: string;
+    imgIndex: number;
 }
 
 const CarouselSlide: FC<IProps> = props => {

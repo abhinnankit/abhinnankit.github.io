@@ -13,8 +13,8 @@ const Carousel: FC<IProps> = React.memo(props => {
     return (
         <div className={classes.Carousel}>
             <div className={classes.CarouselSlideWrapper}>
-                {carImgUrls.map(carImgUrl => (
-                    <CarouselSlide key={carImgUrl} imagesUrl={carImgUrl} />
+                {carImgUrls.map((carImgUrl, index) => (
+                    <CarouselSlide key={carImgUrl} imagesUrl={carImgUrl} imgIndex={index} />
                 ))}
             </div>
             <span className={classes.Prev}>

@@ -18,7 +18,7 @@ const Projects = React.memo(() => {
             title: 'Style It Right',
             technologies: 'Angular 4 + Express.js',
             imgUrl: styleItRightUrl,
-            carImgUrls: [sirCarImage1, sirCarImage2, sirCarImage3],
+            carImgUrls: [sirCarImage2, sirCarImage1, sirCarImage3],
             animateLate: false,
             about: 'E-commerce',
             description:
@@ -30,7 +30,7 @@ const Projects = React.memo(() => {
             title: 'Boston Events',
             technologies: 'Angular 5 + Node.js',
             imgUrl: bostonEventsUrl,
-            carImgUrls: [beCarImage1, beCarImage2, beCarImage3],
+            carImgUrls: [beCarImage2, beCarImage1, beCarImage3],
             animateLate: true,
             about: 'Event organization',
             description:
