@@ -10,7 +10,7 @@ const Parallax = () => {
 
     useEffect(() => {
         const onScroll = () => {
-            if (window.matchMedia('only screen and (max-width: 767px)').matches) {
+            if (window.matchMedia('only screen and (max-width: 525px)').matches) {
                 if (
                     window.innerHeight - wrapperRef.current.getBoundingClientRect().top >
                     window.innerHeight + wrapperRef.current.getBoundingClientRect().height
@@ -38,6 +38,7 @@ const Parallax = () => {
         setBottom(wrapperRef.current.getBoundingClientRect().height);
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', updateAngles);
+        onScroll();
         return () => {
             window.removeEventListener('resize', updateAngles);
             window.removeEventListener('scroll', onScroll);

@@ -1,8 +1,16 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import Project from './Project/Project';
 import classes from './Projects.module.scss';
+
 import styleItRightUrl from '../../assets/images/style_it_right/1-min.png';
+import sirCarImage1 from '../../assets/images/style_it_right/1.png';
+import sirCarImage2 from '../../assets/images/style_it_right/2.png';
+import sirCarImage3 from '../../assets/images/style_it_right/3.png';
+
 import bostonEventsUrl from '../../assets/images/boston_events/1-min.png';
+import beCarImage1 from '../../assets/images/boston_events/1.png';
+import beCarImage2 from '../../assets/images/boston_events/2.png';
+import beCarImage3 from '../../assets/images/boston_events/3.png';
 
 const Projects = React.memo(() => {
     const projects = [
@@ -10,6 +18,7 @@ const Projects = React.memo(() => {
             title: 'Style It Right',
             technologies: 'Angular 4 + Express.js',
             imgUrl: styleItRightUrl,
+            carImgUrls: [sirCarImage1, sirCarImage2, sirCarImage3],
             animateLate: false,
             about: 'E-commerce',
             description:
@@ -21,6 +30,7 @@ const Projects = React.memo(() => {
             title: 'Boston Events',
             technologies: 'Angular 5 + Node.js',
             imgUrl: bostonEventsUrl,
+            carImgUrls: [beCarImage1, beCarImage2, beCarImage3],
             animateLate: true,
             about: 'Event organization',
             description:
@@ -34,7 +44,6 @@ const Projects = React.memo(() => {
     const threshold = window.innerHeight / 1.6 - 100;
     const [animate, setAnimate] = useState(false);
     const scrollListener = () => {
-        console.log(threshold + ' ' + projectRef.current.getBoundingClientRect().top);
         if (!animate && projectRef.current && projectRef.current.getBoundingClientRect().top < threshold) {
             setAnimate(true);
             window.removeEventListener('scroll', scrollListener);
@@ -56,6 +65,7 @@ const Projects = React.memo(() => {
                         key={project.title}
                         animate={animate}
                         imgUrl={project.imgUrl}
+                        carImgUrls={project.carImgUrls}
                         title={project.title}
                         description={project.description}
                         about={project.about}

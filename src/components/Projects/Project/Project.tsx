@@ -10,6 +10,7 @@ interface IProps {
     technologies: string;
     about: string;
     description: string;
+    carImgUrls: string[];
 }
 
 const Project: FC<IProps> = props => {
@@ -35,7 +36,7 @@ const Project: FC<IProps> = props => {
                 title={props.title}
                 description={props.description}
                 about={props.about}
-                imgUrls={[]}
+                carImgUrls={props.carImgUrls}
             />
             <div className={mainDivClass.join(' ')}>
                 <div className={classes.ProjectInfo}>

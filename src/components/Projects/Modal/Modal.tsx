@@ -10,7 +10,7 @@ interface IProps {
     title: string;
     description: string;
     about: string;
-    imgUrls: string[];
+    carImgUrls: string[];
 
     modalClosed(): void;
 }
@@ -19,6 +19,7 @@ const Modal: FC<IProps> = React.memo(props => {
     const stopPropagation = e => {
         e.stopPropagation();
     };
+    console.log(...props.carImgUrls);
     return (
         <>
             <Backdrop show={props.show} clicked={props.modalClosed} />
@@ -34,7 +35,7 @@ const Modal: FC<IProps> = React.memo(props => {
                         <span className={classes.close} onClick={props.modalClosed}>
                             <Close className={['svg-inline--fa fa-times-square fa-w-14'].join(' ')} />
                         </span>
-                        <Carousel />
+                        <Carousel carImgUrls={props.carImgUrls} />
                         <div className={classes.CarouselInfo}>
                             <h2 className={classes.Title}>{props.title}</h2>
                             <h4 className={classes.About}>{props.about}</h4>

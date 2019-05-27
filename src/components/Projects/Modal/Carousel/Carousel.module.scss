@@ -24,6 +24,15 @@
     }
 }
 
+.CarouselSlideWrapper {
+    display: flex;
+    height: 100%;
+}
+
+.Prev {
+    left: 0;
+}
+
 .Next {
     right: 0;
 }
