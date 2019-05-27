@@ -3,6 +3,7 @@
     width: 100%;
     position: relative;
     border-bottom: 2px solid black;
+    overflow-x: hidden;
 }
 
 .Prev,
@@ -27,7 +28,34 @@
 .CarouselSlideWrapper {
     display: flex;
     height: 100%;
-    transform: translateX(-100%);
+    transform: translateX(0);
+    //transition: all 0.4s linear;
+}
+
+.Forwards {
+    animation: moveForward 0.4s linear;
+}
+
+@keyframes moveForward {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(100%);
+    }
+}
+
+.Backwards {
+    animation: moveBackwards 0.4s linear;
+}
+
+@keyframes moveBackwards {
+    from {
+        transform: translateX(0);
+    }
+    to {
+        transform: translateX(-100%);
+    }
 }
 
 .Prev {

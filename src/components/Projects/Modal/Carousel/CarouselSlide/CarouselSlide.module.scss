@@ -1,16 +1,4 @@
 .CarouselImage {
     max-width: 100%;
-    height: 100%;
-}
-
-.invisible {
-    opacity: 0;
-}
-
-.Right {
-    opacity: 0;
-}
-
-.Left {
-    opacity: 0;
+    transform: translateX(-100%);
 }
