@@ -19,7 +19,6 @@ const Modal: FC<IProps> = React.memo(props => {
     const stopPropagation = e => {
         e.stopPropagation();
     };
-    console.log(...props.carImgUrls);
     return (
         <>
             <Backdrop show={props.show} clicked={props.modalClosed} />

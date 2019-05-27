@@ -5,6 +5,7 @@ $close-border-color: rgba(0, 0, 0, 0.6);
     width: 100%;
     top: 0;
     z-index: 5000;
+    transition: all 0.5s ease-out;
 }
 
 .Modal {
@@ -13,7 +14,6 @@ $close-border-color: rgba(0, 0, 0, 0.6);
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
     z-index: 5000;
     padding: 0;
-    transition: all 0.3s ease-out;
     margin: auto;
     max-width: 450px;
     .close {

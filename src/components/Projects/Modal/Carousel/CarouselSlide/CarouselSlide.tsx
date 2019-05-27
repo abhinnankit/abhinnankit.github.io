@@ -7,7 +7,11 @@ interface IProps {
 }
 
 const CarouselSlide: FC<IProps> = props => {
-    return <img className={classes.CarouselImage} src={props.imagesUrl} alt={''} />;
+    const imgClasses = [classes.CarouselImage];
+    if (props.imgIndex !== 1) {
+        imgClasses.push(classes.invisible);
+    }
+    return <img className={imgClasses.join(' ')} src={props.imagesUrl} alt={''} />;
 };
 
 export default CarouselSlide;
