@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "ba5089dd00aa7e7a4c826b460f0949ce",
+    "revision": "2916e2110318110acb10b4f69aad483f",
     "url": "abhinnankit.github.io/index.html"
   },
   {
-    "revision": "d92d999ef26fe571f5bc",
-    "url": "abhinnankit.github.io/static/css/main.ad842106.chunk.css"
+    "revision": "cad1e554fad606d8a2b1",
+    "url": "abhinnankit.github.io/static/css/main.d2a39f66.chunk.css"
   },
   {
-    "revision": "6edce2ba67c87ebdcf19",
-    "url": "abhinnankit.github.io/static/js/2.148865b2.chunk.js"
+    "revision": "c6b8ec8f25f5c78420b3",
+    "url": "abhinnankit.github.io/static/js/2.04cdf010.chunk.js"
   },
   {
-    "revision": "d92d999ef26fe571f5bc",
-    "url": "abhinnankit.github.io/static/js/main.69a01a35.chunk.js"
+    "revision": "cad1e554fad606d8a2b1",
+    "url": "abhinnankit.github.io/static/js/main.5c76c727.chunk.js"
   },
   {
     "revision": "9bf7cdc42c764bd68001",
