@@ -8,6 +8,8 @@ interface IProps {
     animate: boolean;
     title: string;
     technologies: string;
+    about: string;
+    description: string;
 }
 
 const Project: FC<IProps> = props => {
@@ -29,9 +31,13 @@ const Project: FC<IProps> = props => {
     };
     return (
         <>
-            <Modal show={showDetails} modalClosed={closeDetailsHandler}>
-                show me
-            </Modal>
+            <Modal
+                show={showDetails}
+                modalClosed={closeDetailsHandler}
+                title={props.title}
+                description={'description'}
+                about={props.about}
+            />
             <div className={mainDivClass.join(' ')}>
                 <div className={classes.ProjectInfo}>
                     <div className={classes.ProjectInfoTextWrapper}>

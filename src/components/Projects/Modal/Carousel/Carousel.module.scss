@@ -2,29 +2,30 @@
     height: 300px;
     width: 100%;
     position: relative;
+    border-bottom: 2px solid black;
 }
 
 .Prev,
 .Next {
+    display: inline-flex;
+    padding: 0.5em 0.75em;
     cursor: pointer;
     position: absolute;
     bottom: 0;
     border: 0;
-    width: auto;
-    padding: 0.5em 1em;
     margin-top: -50px;
+    font-size: 18px;
     color: white;
-    font-weight: bold;
-    font-size: 20px;
-    border-radius: 0 3px 3px 0;
     background-color: rgba(0, 0, 0, 0.6);
     user-select: none;
     -webkit-user-select: none;
+    path {
+        color: white;
+    }
 }
 
 .Next {
     right: 0;
-    border-radius: 3px 0 0 3px;
 }
 
 .Prev:hover,
@@ -34,18 +35,18 @@
 
 @media (min-width: 450px) {
     .Carousel {
-        height: 350px;
+        height: 330px;
     }
 }
 
 @media (min-width: 650px) {
     .Carousel {
-        height: 400px;
+        height: 360px;
     }
 }
 
 @media (min-width: 850px) {
     .Carousel {
-        height: 450px;
+        height: 400px;
     }
 }

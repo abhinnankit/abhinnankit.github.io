@@ -11,19 +11,24 @@ const Projects = React.memo(() => {
             technologies: 'Angular 4 + Express.js',
             imgUrl: styleItRightUrl,
             justifyContentStart: false,
+            about: 'E-commerce website',
+            description: 'Description',
         },
         {
             title: 'Boston Events',
             technologies: 'Angular 5 + Node.js',
             imgUrl: bostonEventsUrl,
             justifyContentStart: true,
+            about: 'E-commerce website',
+            description: 'Description',
         },
     ];
     const moreSection = [classes.More, 'col-12'];
     const projectRef = useRef(null);
-    const threshold = window.innerHeight / 1.6;
+    const threshold = window.innerHeight / 1.6 - 100;
     const [animate, setAnimate] = useState(false);
     const scrollListener = () => {
+        console.log(threshold + ' ' + projectRef.current.getBoundingClientRect().top);
         if (!animate && projectRef.current && projectRef.current.getBoundingClientRect().top < threshold) {
             setAnimate(true);
             window.removeEventListener('scroll', scrollListener);
@@ -46,6 +51,8 @@ const Projects = React.memo(() => {
                         animate={animate}
                         imgUrl={project.imgUrl}
                         title={project.title}
+                        description={project.description}
+                        about={project.about}
                         technologies={project.technologies}
                         justifyContentStart={project.justifyContentStart}
                     />

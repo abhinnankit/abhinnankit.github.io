@@ -24,7 +24,6 @@ $close-border-color: rgba(0, 0, 0, 0.6);
         right: 0;
         top: 0;
         background-color: rgba(0, 0, 0, 0.6);
-        border-radius: 0 0 0 3px;
         padding: 0.5em;
         path {
             color: white;
@@ -33,6 +32,32 @@ $close-border-color: rgba(0, 0, 0, 0.6);
             background-color: rgba(0, 0, 0, 0.8);
         }
     }
+}
+
+.Title {
+    font-family: 'Cormorant Upright', serif;
+}
+
+.About {
+    text-transform: uppercase;
+    font-family: 'Cormorant Upright', serif;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    padding-bottom: 1em;
+    font-size: calc(1em + (0 - 1.5) * ((100vw - 250px) / (1600 - 250)));
+}
+
+.Description {
+    font-family: 'Roboto', sans-serif;
+    margin: 1em 0 2em;
+    font-size: 9pt;
+    line-height: 14pt;
+}
+
+.CarouselInfo {
+    display: flex;
+    flex-direction: column;
+    width: 80%;
+    margin: 2em auto auto;
 }
 
 @media (min-width: 650px) {

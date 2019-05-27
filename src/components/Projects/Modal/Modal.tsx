@@ -7,6 +7,9 @@ import Carousel from './Carousel/Carousel';
 
 interface IProps {
     show: boolean;
+    title: string;
+    description: string;
+    about: string;
 
     modalClosed(): void;
 }
@@ -27,14 +30,15 @@ const Modal: FC<IProps> = React.memo(props => {
             >
                 <Row onClick={props.modalClosed}>
                     <div className={['col-12 col-md-10 col-lg-6', classes.Modal].join(' ')} onClick={stopPropagation}>
-                        <span className={classes.close}>
-                            <Close
-                                onClick={props.modalClosed}
-                                className={['svg-inline--fa fa-times-square fa-w-14'].join(' ')}
-                            />
+                        <span className={classes.close} onClick={props.modalClosed}>
+                            <Close className={['svg-inline--fa fa-times-square fa-w-14'].join(' ')} />
                         </span>
                         <Carousel />
-                        {props.children}
+                        <div className={classes.CarouselInfo}>
+                            <h2 className={classes.Title}>{props.title}</h2>
+                            <h4 className={classes.About}>{props.about}</h4>
+                            <p className={classes.Description}>{props.description}</p>
+                        </div>
                     </div>
                 </Row>
             </div>
