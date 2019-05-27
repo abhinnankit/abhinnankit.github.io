@@ -4,7 +4,7 @@ import Modal from '../Modal/Modal';
 
 interface IProps {
     imgUrl: string;
-    justifyContentStart: boolean;
+    animateLate: boolean;
     animate: boolean;
     title: string;
     technologies: string;
@@ -15,10 +15,8 @@ interface IProps {
 const Project: FC<IProps> = props => {
     const [showDetails, setShowDetails] = useState(false);
     const mainDivClass = ['col-md-6 col-lg-5', classes.Project, classes.p0];
-    if (props.justifyContentStart) {
-        mainDivClass.push(classes.ProjectFlexStart, classes.AnimateLate);
-    } else {
-        mainDivClass.push(classes.ProjectFlexEnd);
+    if (props.animateLate) {
+        mainDivClass.push(classes.AnimateLate);
     }
     if (props.animate) {
         mainDivClass.push(classes.Animate);
@@ -35,8 +33,9 @@ const Project: FC<IProps> = props => {
                 show={showDetails}
                 modalClosed={closeDetailsHandler}
                 title={props.title}
-                description={'description'}
+                description={props.description}
                 about={props.about}
+                imgUrls={[]}
             />
             <div className={mainDivClass.join(' ')}>
                 <div className={classes.ProjectInfo}>

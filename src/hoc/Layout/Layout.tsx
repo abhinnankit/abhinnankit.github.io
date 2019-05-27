@@ -47,13 +47,13 @@ class Layout extends Component<object, State> {
                 window.scrollTo(0, this.aboutRef.current.offsetTop + 57);
                 break;
             case 'work':
-                window.scrollTo(0, this.workRef.current.offsetTop - 54);
+                window.scrollTo(0, this.workRef.current.offsetTop - 24);
                 break;
             case 'contact':
-                window.scrollTo(0, this.contactRef.current.offsetTop - 54);
+                window.scrollTo(0, this.contactRef.current.offsetTop - 24);
                 break;
             case 'skills':
-                window.scrollTo(0, this.skillRef.current.offsetTop - 54);
+                window.scrollTo(0, this.skillRef.current.offsetTop + 54);
                 break;
             default:
                 window.scrollTo(0, 0);

@@ -10,17 +10,23 @@ const Projects = React.memo(() => {
             title: 'Style It Right',
             technologies: 'Angular 4 + Express.js',
             imgUrl: styleItRightUrl,
-            justifyContentStart: false,
-            about: 'E-commerce website',
-            description: 'Description',
+            animateLate: false,
+            about: 'E-commerce',
+            description:
+                'Style It Right is an online shopping website that facilitate online purchase of clothes. ' +
+                'It was my final project for the web design course. Built with Angular 4, Express.js and' +
+                ' MongoDb.',
         },
         {
             title: 'Boston Events',
             technologies: 'Angular 5 + Node.js',
             imgUrl: bostonEventsUrl,
-            justifyContentStart: true,
-            about: 'E-commerce website',
-            description: 'Description',
+            animateLate: true,
+            about: 'Event organization',
+            description:
+                'Boston Events is an event management and ticketing website, where users can browse, create,' +
+                ' and promote local events. An academic project on my credit developed using Angular 5, Node.js and' +
+                ' MongoDb.',
         },
     ];
     const moreSection = [classes.More, 'col-12'];
@@ -44,7 +50,7 @@ const Projects = React.memo(() => {
     return (
         <>
             <div className={classes.Projects} ref={projectRef}>
-                <div className={'col-lg-1 ' + classes.ProjectGutter} />
+                <div className={'col-lg-1 ' + classes.Gutter} />
                 {projects.map(project => (
                     <Project
                         key={project.title}
@@ -54,7 +60,7 @@ const Projects = React.memo(() => {
                         description={project.description}
                         about={project.about}
                         technologies={project.technologies}
-                        justifyContentStart={project.justifyContentStart}
+                        animateLate={project.animateLate}
                     />
                 ))}
             </div>

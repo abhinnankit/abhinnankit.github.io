@@ -44,13 +44,14 @@ $close-border-color: rgba(0, 0, 0, 0.6);
     border-bottom: 1px solid rgba(0, 0, 0, 0.1);
     padding-bottom: 1em;
     font-size: calc(1em + (0 - 1.5) * ((100vw - 250px) / (1600 - 250)));
+    color: darkgrey;
 }
 
 .Description {
     font-family: 'Roboto', sans-serif;
-    margin: 1em 0 2em;
-    font-size: 9pt;
-    line-height: 14pt;
+    margin: 1em 0 4em;
+    color: #444;
+    font-size: calc(1em + (0 - 2) * ((100vw - 250px) / (1600 - 250)));
 }
 
 .CarouselInfo {

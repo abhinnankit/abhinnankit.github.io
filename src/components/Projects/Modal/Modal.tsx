@@ -10,6 +10,7 @@ interface IProps {
     title: string;
     description: string;
     about: string;
+    imgUrls: string[];
 
     modalClosed(): void;
 }

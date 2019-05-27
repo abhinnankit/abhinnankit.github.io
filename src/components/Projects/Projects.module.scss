@@ -16,7 +16,7 @@
     opacity: 1;
 }
 
-.ProjectGutter {
+.Gutter {
     display: none;
 }
 
@@ -27,7 +27,7 @@
 }
 
 @media (min-width: 992px) {
-    .ProjectGutter {
+    .Gutter {
         display: initial;
     }
 }
