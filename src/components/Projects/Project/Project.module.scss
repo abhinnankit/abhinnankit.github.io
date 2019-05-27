@@ -24,8 +24,9 @@
 
 .Button {
     padding: 0.5em 1em;
-    font-size: 16px;
+    //font-size: 16px;
     //color: #33444e;
+    font-size: calc(0.7em + (3 - 1.5) * ((100vw - 250px) / (500 - 250)));
     color: rgba(27, 36, 47, 0.5);
     text-transform: uppercase;
     border: 2px solid rgba(27, 36, 47, 0.5);
@@ -55,19 +56,24 @@
 }
 
 .Title {
-    position: absolute;
-    top: 25%;
     color: #33444e;
     text-transform: uppercase;
+    font-size: calc(1em + (3 - 1.5) * ((100vw - 250px) / (500 - 250)));
+    text-align: center;
 }
 
 .Technologies {
-    position: absolute;
-    bottom: 60%;
-    font-size: 18px;
+    //font-size: 18px;
     color: #edb200;
+    font-size: calc(0.5em + (3 - 1.5) * ((100vw - 250px) / (500 - 250)));
+    text-align: center;
     //color: #D2B48C;
     //color: #c69400;
+}
+
+.ProjectInfoTextWrapper {
+    position: absolute;
+    top: 20%;
 }
 
 .p0 {
@@ -122,28 +128,31 @@
 }
 
 @media (max-width: 575px) {
-    .Title {
-        position: initial;
+    .ProjectInfoTextWrapper {
+        margin-bottom: calc(1em + (40 - 1.5) * ((100vw - 250px) / (500 - 250)));
     }
-    .Technologies {
-        position: initial;
-        margin-bottom: calc(3em + (40 - 1.5) * ((100vw - 250px) / (500 - 250)));
-    }
-    .Button {
-        position: initial;
+}
+
+@media (max-width: 400px) {
+    .ProjectInfoTextWrapper {
+        margin-bottom: calc(8em + (40 - 1.5) * ((100vw - 250px) / (500 - 250)));
     }
 }
 
 @media (min-width: 992px) {
-    .ProjectFlexStart {
-        justify-content: flex-start;
-    }
-
     .ProjectImg {
         width: 100%;
     }
+}
 
-    .ProjectFlexEnd {
-        justify-content: flex-end;
+@media (min-width: 1600px) {
+    .Title {
+        font-size: 18px;
+    }
+    .Technologies {
+        font-size: 16px;
+    }
+    .Button {
+        font-size: 16px;
     }
 }

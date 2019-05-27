@@ -1,6 +1,6 @@
 import React, { useEffect, useRef, useState } from 'react';
 import classes from './Parallax.module.scss';
-import imgUrl from '../../../assets/images/banner.png';
+import imgUrl from '../../assets/images/banner.png';
 
 const Parallax = () => {
     const wrapperRef = useRef(null);

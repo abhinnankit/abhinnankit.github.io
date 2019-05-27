@@ -7,7 +7,7 @@ import Contact from '../../components/Contact/Contact';
 import Projects from '../../components/Projects/Projects';
 import Home from '../../components/Home/Home';
 import Skills from '../../components/Skills/Skills';
-import Parallax from '../../components/UI/Parallax/Parallax';
+import Parallax from '../../components/Parallax/Parallax';
 
 const initialState = {
     markActive: [false, false, false, false, false],

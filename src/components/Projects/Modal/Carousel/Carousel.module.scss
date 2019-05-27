@@ -1,0 +1,51 @@
+.Carousel {
+    height: 300px;
+    width: 100%;
+    position: relative;
+}
+
+.Prev,
+.Next {
+    cursor: pointer;
+    position: absolute;
+    bottom: 0;
+    border: 0;
+    width: auto;
+    padding: 0.5em 1em;
+    margin-top: -50px;
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(0, 0, 0, 0.6);
+    user-select: none;
+    -webkit-user-select: none;
+}
+
+.Next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.Prev:hover,
+.Next:hover {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+@media (min-width: 450px) {
+    .Carousel {
+        height: 350px;
+    }
+}
+
+@media (min-width: 650px) {
+    .Carousel {
+        height: 400px;
+    }
+}
+
+@media (min-width: 850px) {
+    .Carousel {
+        height: 450px;
+    }
+}

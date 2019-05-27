@@ -39,6 +39,7 @@ const Projects = React.memo(() => {
     return (
         <>
             <div className={classes.Projects} ref={projectRef}>
+                <div className={'col-lg-1 ' + classes.ProjectGutter} />
                 {projects.map(project => (
                     <Project
                         key={project.title}

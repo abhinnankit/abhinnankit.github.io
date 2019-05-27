@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import NavigationList from './NavigationList/NavigationList';
 import classes from './Header.module.scss';
 import Row from '../../hoc/Row/Row';
-import HamburgerMenu from '../UI/HamburgerMenu/HamburgerMenu';
+import HamburgerMenu from './HamburgerMenu/HamburgerMenu';
 
 const initialState = { show: false, sticky: false };
 type State = Readonly<typeof initialState>;

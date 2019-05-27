@@ -16,8 +16,18 @@
     opacity: 1;
 }
 
-@media (min-width: 992px) {
+.ProjectGutter {
+    display: none;
+}
+
+@media (min-width: 425px) {
     .Projects {
         flex-direction: row;
+    }
+}
+
+@media (min-width: 992px) {
+    .ProjectGutter {
+        display: initial;
     }
 }
