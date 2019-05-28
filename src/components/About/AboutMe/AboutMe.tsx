@@ -20,8 +20,8 @@ const aboutMe: FC<IProps> = props => {
             <article className={articleClasses.join(' ')}>
                 <p>
                     I am a graduate student at Northeastern University in Boston. I strive to create visually appealing
-                    web apps and websites with intuitive design and clear navigation, accompanied by modern and
-                    efficient backend.
+                    web apps and websites with intuitive design and clear navigation, coupled with modern and efficient
+                    backend.
                 </p>
                 <p>
                     I've interned at Amadeus North America, where I brought ideas to life by building prototypes and
