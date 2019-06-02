@@ -16,17 +16,8 @@ const Home = () => {
         }
     };
     useEffect(() => {
-        const calcHeight = () => {
-            const vh = window.innerHeight * 0.01;
-            document.documentElement.style.setProperty('--vh', `${vh}px`);
-        };
         setAnimate(true);
         headerRef.current.addEventListener('transitionend', animationEndCallback);
-        window.addEventListener('resize', calcHeight);
-        calcHeight();
-        return () => {
-            window.removeEventListener('resize', calcHeight);
-        };
         // eslint-disable-next-line
     }, []);
     const headerLineClasses = [classes.HeaderLine];
