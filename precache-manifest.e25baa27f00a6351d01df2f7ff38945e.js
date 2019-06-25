@@ -1,10 +1,10 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "047b8dca43596ba8aa8c177661bf9d4e",
+    "revision": "fcb762033741e36725e4df3f341a7e63",
     "url": "abhinnankit.github.io/index.html"
   },
   {
-    "revision": "c6cbbf5539d1162924c9",
+    "revision": "b9d208b3e0fbdd75e563",
     "url": "abhinnankit.github.io/static/css/main.d2a39f66.chunk.css"
   },
   {
@@ -12,8 +12,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "abhinnankit.github.io/static/js/2.04cdf010.chunk.js"
   },
   {
-    "revision": "c6cbbf5539d1162924c9",
-    "url": "abhinnankit.github.io/static/js/main.adfac3a9.chunk.js"
+    "revision": "b9d208b3e0fbdd75e563",
+    "url": "abhinnankit.github.io/static/js/main.00a98a68.chunk.js"
   },
   {
     "revision": "9bf7cdc42c764bd68001",
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "abhinnankit.github.io/static/media/networkwired.7fda671e.svg"
   },
   {
-    "revision": "c4fcd70322b3a26e90c5594dedf55c65",
-    "url": "abhinnankit.github.io/static/media/resume.c4fcd703.pdf"
+    "revision": "b1b245903f99f395f58064027542865c",
+    "url": "abhinnankit.github.io/static/media/resume.b1b24590.pdf"
   },
   {
     "revision": "914381aa969bde0f6d6d08deff92af98",
