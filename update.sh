@@ -11,7 +11,7 @@ else
 fi
 
 echo -e "Formatting before adding\n"
-yarn pretty-quick --staged
+yarn pretty-quick
 
 echo -e "Adding files:\n"
 git add --all
