@@ -26,3 +26,5 @@ branch_name=$(git branch | grep \* | cut -d ' ' -f2)
 git push origin ${branch_name}
 
 npm run deploy
+
+rm -rf build
