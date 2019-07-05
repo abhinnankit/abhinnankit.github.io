@@ -76,7 +76,7 @@ const Projects = React.memo(() => {
             </div>
             <div className={moreSection.join(' ')}>
                 More projects on&nbsp;
-                <a href="https://github.com/abhinn-ankit?tab=repositories" rel="noopener noreferrer" target="_blank">
+                <a href="https://github.com/ankitabhinn?tab=repositories" rel="noopener noreferrer" target="_blank">
                     github
                 </a>
                 .

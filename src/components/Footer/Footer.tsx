@@ -13,7 +13,7 @@ const footer = () => {
                     <div className={classes.Footer}>
                         <div className={classes.FooterIconsWrapper}>
                             <SocialLinks icon={faLinkedinIn} link="https://www.linkedin.com/in/abhinn-ankit/" />
-                            <SocialLinks icon={faGithub} link="https://github.com/abhinn-ankit" />
+                            <SocialLinks icon={faGithub} link="https://github.com/ankitabhinn" />
                             <SocialLinks
                                 icon={faStackOverflow}
                                 link="https://stackoverflow.com/users/8616210/abhinnankit"
