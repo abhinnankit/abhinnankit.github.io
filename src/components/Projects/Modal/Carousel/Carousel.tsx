@@ -15,7 +15,7 @@ const Carousel: FC<IProps> = props => {
     const [moveBackward, setMoveBackward] = useState(false);
     const carouselSlideWrapperClasses = [classes.CarouselSlideWrapper];
     const onRightArrowHandler = () => {
-        setMoveForward(true);
+        setMoveBackward(true);
     };
     const shiftElementsForwards = () => {
         const tempImgUrls = [...carImgUrls];
@@ -26,7 +26,7 @@ const Carousel: FC<IProps> = props => {
         setCarImgUrls(tempImgUrls);
     };
     const onLeftArrowHandler = () => {
-        setMoveBackward(true);
+        setMoveForward(true);
     };
     const shiftElementBackwards = () => {
         const tempImgUrls = [...carImgUrls];
