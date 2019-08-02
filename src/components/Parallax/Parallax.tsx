@@ -5,23 +5,17 @@ import imgUrl from '../../assets/images/banner.png';
 const Parallax = () => {
     const wrapperRef = useRef(null);
     const parallaxMobileRef = useRef(null);
-    const [bottom, setBottom] = useState(0);
     const [resized, setResized] = useState(false);
 
     useEffect(() => {
         const onScroll = () => {
             if (window.matchMedia('only screen and (max-width: 525px)').matches) {
-                if (
-                    window.innerHeight - wrapperRef.current.getBoundingClientRect().top >
-                    window.innerHeight + wrapperRef.current.getBoundingClientRect().height
-                ) {
-                    parallaxMobileRef.current.style.position = 'absolute';
-                    parallaxMobileRef.current.style.bottom = bottom;
-                    parallaxMobileRef.current.style.top = 'auto';
+                if (wrapperRef.current.getBoundingClientRect().bottom < 0) {
+                    parallaxMobileRef.current.style.position = 'scroll';
+                    parallaxMobileRef.current.style.top = 0;
                 } else if (wrapperRef.current.getBoundingClientRect().top > window.innerHeight) {
-                    parallaxMobileRef.current.style.position = 'absolute';
-                    parallaxMobileRef.current.style.bottom = bottom;
-                    parallaxMobileRef.current.style.top = 'auto';
+                    parallaxMobileRef.current.style.position = 'scroll';
+                    parallaxMobileRef.current.style.top = 0;
                 } else if (wrapperRef.current.getBoundingClientRect().top < window.innerHeight) {
                     parallaxMobileRef.current.style.position = 'fixed';
                     parallaxMobileRef.current.style.bottom = 0;
@@ -29,13 +23,16 @@ const Parallax = () => {
                 }
             } else {
                 parallaxMobileRef.current.style.backgroundAttachment = 'fixed';
+                window.removeEventListener('scroll', onScroll);
             }
         };
         const updateAngles = () => {
+            if (window.matchMedia('only screen and (max-width: 525px)').matches) {
+                window.addEventListener('scroll', onScroll);
+            }
             const resize = !resized;
             setResized(resize);
         };
-        setBottom(wrapperRef.current.getBoundingClientRect().height);
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', updateAngles);
         onScroll();
@@ -43,7 +40,7 @@ const Parallax = () => {
             window.removeEventListener('resize', updateAngles);
             window.removeEventListener('scroll', onScroll);
         };
-    }, [bottom, resized]);
+    }, [resized]);
     return (
         <div ref={wrapperRef} className={classes.parallax}>
             <div
