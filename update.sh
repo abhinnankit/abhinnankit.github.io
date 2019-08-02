@@ -23,8 +23,8 @@ git commit -m "${commit_msg}"
 echo -e "Pushing repo.\n"
 
 branch_name=$(git branch | grep \* | cut -d ' ' -f2)
-git push origin ${branch_name}
+git push origin "${branch_name}"
 
-npm run deploy
+yarn deploy
 
 rm -rf build
