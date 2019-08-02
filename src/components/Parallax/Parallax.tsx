@@ -6,10 +6,18 @@ const Parallax = () => {
     const wrapperRef = useRef(null);
     const parallaxMobileRef = useRef(null);
     const [resized, setResized] = useState(false);
+    const [crappyBrowser, setCrappyBrowser] = useState(false);
+
+    const ua = window.navigator.userAgent;
+    const msie = ua.indexOf('MSIE ');
+    const trident = ua.indexOf('Trident/');
 
     useEffect(() => {
+        if (trident > 0 || msie > 0) {
+            setCrappyBrowser(true);
+        }
         const onScroll = () => {
-            if (window.matchMedia('only screen and (max-width: 525px)').matches) {
+            if (crappyBrowser || window.matchMedia('only screen and (max-width: 767px)').matches) {
                 if (wrapperRef.current.getBoundingClientRect().bottom < 0) {
                     parallaxMobileRef.current.style.position = 'scroll';
                     parallaxMobileRef.current.style.top = 0;
@@ -27,7 +35,7 @@ const Parallax = () => {
             }
         };
         const updateAngles = () => {
-            if (window.matchMedia('only screen and (max-width: 525px)').matches) {
+            if (window.matchMedia('only screen and (max-width: 767px)').matches) {
                 window.addEventListener('scroll', onScroll);
             }
             const resize = !resized;
@@ -40,7 +48,7 @@ const Parallax = () => {
             window.removeEventListener('resize', updateAngles);
             window.removeEventListener('scroll', onScroll);
         };
-    }, [resized]);
+    }, [resized, msie, trident, crappyBrowser]);
     return (
         <div ref={wrapperRef} className={classes.parallax}>
             <div
