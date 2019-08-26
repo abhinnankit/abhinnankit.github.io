@@ -1,4 +1,4 @@
-import React, { useEffect, useRef, useState } from 'react';
+import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classes from './Home.module.scss';
 import Particles from 'react-particles-js';
 import Typed from 'react-typed';
@@ -11,15 +11,17 @@ const Home = () => {
     const bannerTextClasses = [classes.BannerText];
     const animationEndCallback = () => {
         if (!startTyping) {
-            headerRef.current.removeEventListener('transitionend', animationEndCallback);
+            headerRef.current.removeEventListener('transitionend', memoizedCallback);
             setStartTyping(true);
         }
     };
+    const memoizedCallback = useCallback(animationEndCallback, []);
     useEffect(() => {
-        setAnimate(true);
-        headerRef.current.addEventListener('transitionend', animationEndCallback);
-        // eslint-disable-next-line
-    }, []);
+        setTimeout(() => {
+            setAnimate(true);
+        }, 0);
+        headerRef.current.addEventListener('transitionend', memoizedCallback);
+    }, [animate, memoizedCallback]);
     const headerLineClasses = [classes.HeaderLine];
     if (animate) {
         headerLineClasses.push(classes.Animate);

@@ -59,7 +59,8 @@
     position: relative;
     top: -2em;
     will-change: top;
-    transition: top 1s;
+    transition: top ease 1s;
+    -webkit-transition: top ease 1s;
 }
 
 .BannerText {
@@ -84,17 +85,6 @@
 .Animate {
     top: 0;
 }
-//
-//@keyframes dropDown {
-//    from {
-//        opacity: 0;
-//        transform: translateY(-1em);
-//    }
-//    to {
-//        opacity: 1;
-//        transform: translateY(0);
-//    }
-//}
 
 @media (min-width: 500px) {
     .HeaderLine {
