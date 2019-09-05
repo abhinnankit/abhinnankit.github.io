@@ -7,7 +7,7 @@ const Parallax = () => {
     const parallaxMobileRef = useRef(null);
     const [resized, setResized] = useState(false);
     const [crappyBrowser, setCrappyBrowser] = useState(false);
-
+    const [bottom, setBottom] = useState(0);
     const ua = window.navigator.userAgent;
     const msie = ua.indexOf('MSIE ');
     const trident = ua.indexOf('Trident/');
@@ -18,12 +18,17 @@ const Parallax = () => {
         }
         const onScroll = () => {
             if (crappyBrowser || window.matchMedia('only screen and (max-width: 767px)').matches) {
-                if (wrapperRef.current.getBoundingClientRect().bottom < 0) {
-                    parallaxMobileRef.current.style.position = 'scroll';
-                    parallaxMobileRef.current.style.top = 0;
+                if (
+                    window.innerHeight - wrapperRef.current.getBoundingClientRect().top >
+                    window.innerHeight + wrapperRef.current.getBoundingClientRect().height
+                ) {
+                    parallaxMobileRef.current.style.position = 'absolute';
+                    parallaxMobileRef.current.style.bottom = bottom;
+                    parallaxMobileRef.current.style.top = 'auto';
                 } else if (wrapperRef.current.getBoundingClientRect().top > window.innerHeight) {
-                    parallaxMobileRef.current.style.position = 'scroll';
-                    parallaxMobileRef.current.style.top = 0;
+                    parallaxMobileRef.current.style.position = 'absolute';
+                    parallaxMobileRef.current.style.bottom = bottom;
+                    parallaxMobileRef.current.style.top = 'auto';
                 } else if (wrapperRef.current.getBoundingClientRect().top < window.innerHeight) {
                     parallaxMobileRef.current.style.position = 'fixed';
                     parallaxMobileRef.current.style.bottom = 0;
@@ -31,7 +36,6 @@ const Parallax = () => {
                 }
             } else {
                 parallaxMobileRef.current.style.backgroundAttachment = 'fixed';
-                window.removeEventListener('scroll', onScroll);
             }
         };
         const updateAngles = () => {
@@ -41,6 +45,7 @@ const Parallax = () => {
             const resize = !resized;
             setResized(resize);
         };
+        setBottom(wrapperRef.current.getBoundingClientRect().height);
         window.addEventListener('scroll', onScroll);
         window.addEventListener('resize', updateAngles);
         onScroll();
@@ -48,7 +53,7 @@ const Parallax = () => {
             window.removeEventListener('resize', updateAngles);
             window.removeEventListener('scroll', onScroll);
         };
-    }, [resized, msie, trident, crappyBrowser]);
+    }, [bottom, resized, msie, trident, crappyBrowser]);
     return (
         <div ref={wrapperRef} className={classes.parallax}>
             <div
