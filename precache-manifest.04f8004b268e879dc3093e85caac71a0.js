@@ -1,19 +1,19 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "cb486234387c8b634f5b74c2327e364f",
+    "revision": "165c3df58ff63f92f152620b16c2b0bd",
     "url": "abhinnankit.github.io/index.html"
   },
   {
-    "revision": "ba9bcbee68aeb5a98d9e",
-    "url": "abhinnankit.github.io/static/css/main.3655b5a1.chunk.css"
+    "revision": "52e582835326ed7c2268",
+    "url": "abhinnankit.github.io/static/css/main.406c2a2e.chunk.css"
   },
   {
-    "revision": "9ff1d17b795c67f30274",
-    "url": "abhinnankit.github.io/static/js/2.0ebf78e5.chunk.js"
+    "revision": "e978ada8c3ef79f4e0fb",
+    "url": "abhinnankit.github.io/static/js/2.d3203dee.chunk.js"
   },
   {
-    "revision": "ba9bcbee68aeb5a98d9e",
-    "url": "abhinnankit.github.io/static/js/main.2503af6a.chunk.js"
+    "revision": "52e582835326ed7c2268",
+    "url": "abhinnankit.github.io/static/js/main.20917d5f.chunk.js"
   },
   {
     "revision": "9bf7cdc42c764bd68001",
@@ -80,8 +80,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "abhinnankit.github.io/static/media/networkwired.7fda671e.svg"
   },
   {
-    "revision": "7e201c7d3a7d076accfc9698ee36635f",
-    "url": "abhinnankit.github.io/static/media/resume.7e201c7d.pdf"
+    "revision": "8c48b6e3f0057ca6c09cb9c70a6850f4",
+    "url": "abhinnankit.github.io/static/media/resume.8c48b6e3.pdf"
   },
   {
     "revision": "914381aa969bde0f6d6d08deff92af98",
