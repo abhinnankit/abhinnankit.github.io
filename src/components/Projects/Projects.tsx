@@ -60,7 +60,7 @@ const Projects = React.memo(() => {
         <>
             <div className={classes.Projects} ref={projectRef}>
                 <div className={'col-lg-1 ' + classes.Gutter} />
-                {projects.map(project => (
+                {projects.map((project) => (
                     <Project
                         key={project.title}
                         animate={animate}

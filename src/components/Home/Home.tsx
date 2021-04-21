@@ -92,7 +92,6 @@ const Home = () => {
                                 size: 3,
                                 duration: 3,
                                 opacity: 1,
-                                speed: 3,
                             },
                             push: {
                                 particles_nb: 4,

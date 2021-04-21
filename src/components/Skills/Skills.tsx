@@ -18,7 +18,7 @@ interface IDevType {
     description: string;
 }
 
-const skills: FC<IProps> = React.memo(props => {
+const skills: FC<IProps> = React.memo((props) => {
     const devTypes: IDevType[] = [
         {
             icon: <NetworkWired />,
@@ -85,7 +85,7 @@ const skills: FC<IProps> = React.memo(props => {
                 secondHalfHeader="LOGIES"
             >
                 <div className={classes.SkillWrapper}>
-                    {Object.keys(technologies).map(technology => (
+                    {Object.keys(technologies).map((technology) => (
                         <Skill
                             key={technology}
                             animate={props.animate}

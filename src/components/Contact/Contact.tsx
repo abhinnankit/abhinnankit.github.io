@@ -1,7 +1,7 @@
 import React, { useLayoutEffect, useRef, useState } from 'react';
 import classes from './Contact.module.scss';
 
-const Contact = props => {
+const Contact = (props) => {
     const [animate, setAnimate] = useState(false);
     const textAreaRef = useRef(null);
     const threshold = window.innerHeight / 1.6;

@@ -9,7 +9,7 @@ interface IProps {
     animate: boolean;
 }
 
-const Card: FC<IProps> = props => {
+const Card: FC<IProps> = (props) => {
     const wrapperClasses = ['row', classes.Wrapper];
     const imageClasses = ['col-3', classes.Card];
     const descClasses = ['col-9', classes.CardDescription];

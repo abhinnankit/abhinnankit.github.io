@@ -8,7 +8,7 @@ interface IProps {
     link: string;
 }
 
-const socialLinks: FC<IProps> = props => {
+const socialLinks: FC<IProps> = (props) => {
     return (
         <div className={classes.SocialLinks}>
             <a href={props.link} className={classes.IconsBox} rel="noopener noreferrer" target="_blank">

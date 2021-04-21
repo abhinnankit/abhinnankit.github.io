@@ -1,6 +1,6 @@
 import React from 'react';
 
-const row = props => (
+const row = (props) => (
     <div className={'row'} style={props.style} onClick={props.onClick}>
         {props.children}
     </div>

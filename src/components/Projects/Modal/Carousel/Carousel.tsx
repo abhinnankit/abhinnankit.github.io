@@ -8,7 +8,7 @@ interface IProps {
     carImgUrls: string[];
 }
 
-const Carousel: FC<IProps> = props => {
+const Carousel: FC<IProps> = (props) => {
     const slideWrapperRef = useRef(null);
     const [carImgUrls, setCarImgUrls] = useState(props.carImgUrls);
     const [moveForward, setMoveForward] = useState(false);
@@ -55,7 +55,7 @@ const Carousel: FC<IProps> = props => {
     return (
         <div className={classes.Carousel}>
             <div ref={slideWrapperRef} className={carouselSlideWrapperClasses.join(' ')}>
-                {carImgUrls.slice().map(carImgUrl => (
+                {carImgUrls.slice().map((carImgUrl) => (
                     <CarouselSlide key={carImgUrl} imagesUrl={carImgUrl} />
                 ))}
             </div>

@@ -8,7 +8,7 @@ interface IProps {
     animate: boolean;
 }
 
-const aboutMe: FC<IProps> = props => {
+const aboutMe: FC<IProps> = (props) => {
     const figureClasses = [classes.Figure, 'opaque'];
     const articleClasses = [classes.article, 'opaque'];
     if (props.animate) {

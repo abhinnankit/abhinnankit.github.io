@@ -7,7 +7,7 @@ interface IProps {
     animate: boolean;
 }
 
-const Skill: FC<IProps> = props => {
+const Skill: FC<IProps> = (props) => {
     const progressBarRef = useRef(null);
     const progressBlockRef = useRef(null);
     const percentRef = useRef(null);

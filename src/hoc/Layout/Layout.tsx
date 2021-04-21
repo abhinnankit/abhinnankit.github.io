@@ -24,13 +24,13 @@ class Layout extends Component<object, State> {
         return isMobile.matches;
     }
 
-    readonly state: State = initialState;
+    state: State = initialState;
 
-    private readonly aboutRef: React.RefObject<any>;
-    private readonly workRef: React.RefObject<any>;
-    private readonly contactRef: React.RefObject<any>;
-    private readonly skillRef: React.RefObject<any>;
-    private readonly headerRef: React.RefObject<Header>;
+    aboutRef: React.RefObject<any>;
+    workRef: React.RefObject<any>;
+    contactRef: React.RefObject<any>;
+    skillRef: React.RefObject<any>;
+    headerRef: React.RefObject<Header>;
 
     constructor(props) {
         super(props);
@@ -41,7 +41,7 @@ class Layout extends Component<object, State> {
         this.headerRef = React.createRef<Header>();
     }
 
-    linkClicked = navItem => {
+    linkClicked = (navItem) => {
         switch (navItem.toLowerCase()) {
             case 'about':
                 window.scrollTo(0, this.aboutRef.current.offsetTop + 57);
@@ -102,7 +102,7 @@ class Layout extends Component<object, State> {
 
     addAnimateClass = (aboutTop, skillTop, workTop, contactTop) => {
         const threshold = window.innerHeight / 2.8;
-        if (!this.state.animateHeader.every(_ => _)) {
+        if (!this.state.animateHeader.every((_) => _)) {
             this.animateHeaders(threshold, aboutTop, skillTop, workTop, contactTop);
         }
         if (!this.state.animateAbout) {

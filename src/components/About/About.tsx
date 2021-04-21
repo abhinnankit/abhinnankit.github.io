@@ -6,7 +6,7 @@ interface IProps {
     animateAbout: boolean;
 }
 
-const About: FC<IProps> = React.memo(props => {
+const About: FC<IProps> = React.memo((props) => {
     const aboutMeClasses = ['col-12', classes.AboutSpace];
     return (
         <>

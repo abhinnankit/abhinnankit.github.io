@@ -1,7 +1,7 @@
 import React from 'react';
 import classes from './NavigationListItem.module.scss';
 
-const navigationListItem = props => {
+const navigationListItem = (props) => {
     const onNavItemClick = () => {
         props.clicked(props.children);
     };

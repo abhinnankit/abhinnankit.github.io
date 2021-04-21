@@ -8,7 +8,7 @@ interface IProps {
     clicked(e: string): void;
 }
 
-const navigationList: FC<IProps> = React.memo(props => {
+const navigationList: FC<IProps> = React.memo((props) => {
     const ulClass = [classes.NavigationList, 'header-bg-color'];
     if (props.show) {
         ulClass.push(classes.OpenNavBar);

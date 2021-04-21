@@ -6,7 +6,7 @@ interface IProps {
     clicked(): void;
 }
 
-const Backdrop: FC<IProps> = React.memo(props => {
+const Backdrop: FC<IProps> = React.memo((props) => {
     const backdropRef = useRef(null);
     if (!props.show) {
         document.body.style.overflowY = 'auto';

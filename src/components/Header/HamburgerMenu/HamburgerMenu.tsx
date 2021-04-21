@@ -6,7 +6,7 @@ interface IProps {
     clicked(e: MouseEvent<HTMLElement>): void;
 }
 
-const hamburgerMenu: FC<IProps> = props => {
+const hamburgerMenu: FC<IProps> = (props) => {
     const bar1Class = [classes.bar1];
     const bar2Class = [classes.bar2];
     const bar3Class = [classes.bar3];

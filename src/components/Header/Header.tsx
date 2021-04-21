@@ -13,9 +13,9 @@ interface IProps {
 }
 
 class Header extends Component<IProps, State> {
-    readonly state: State = initialState;
+    state: State = initialState;
     height = 0;
-    readonly headerRef = React.createRef<HTMLElement>();
+    headerRef = React.createRef<HTMLElement>();
 
     toggleHamburgerMenu = () => {
         this.setState((prevState: State) => {
@@ -64,7 +64,7 @@ class Header extends Component<IProps, State> {
         window.removeEventListener('scroll', this.addStickyClass);
     }
 
-    onNavItemClick = navItem => {
+    onNavItemClick = (navItem) => {
         if (this.isMobile()) {
             this.setState({
                 show: false,

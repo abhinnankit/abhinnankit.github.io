@@ -15,8 +15,8 @@ interface IProps {
     modalClosed(): void;
 }
 
-const Modal: FC<IProps> = React.memo(props => {
-    const stopPropagation = e => {
+const Modal: FC<IProps> = React.memo((props) => {
+    const stopPropagation = (e) => {
         e.stopPropagation();
     };
     return (

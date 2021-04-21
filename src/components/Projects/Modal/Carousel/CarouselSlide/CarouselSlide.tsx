@@ -5,7 +5,7 @@ interface IProps {
     imagesUrl: string;
 }
 
-const CarouselSlide: FC<IProps> = props => {
+const CarouselSlide: FC<IProps> = (props) => {
     return <img className={classes.CarouselImage} src={props.imagesUrl} alt={''} />;
 };
 

@@ -8,7 +8,7 @@ interface IProps {
     colClass: string;
 }
 
-const SkillsLayout: FC<IProps> = props => {
+const SkillsLayout: FC<IProps> = (props) => {
     const skillsClasses = [props.colClass, classes.Wrapper];
     const firstSpanClasses = ['opaque'];
     const secondSpanClasses = ['opaque'];

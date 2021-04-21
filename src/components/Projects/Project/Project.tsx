@@ -13,7 +13,7 @@ interface IProps {
     carImgUrls: string[];
 }
 
-const Project: FC<IProps> = props => {
+const Project: FC<IProps> = (props) => {
     const [showDetails, setShowDetails] = useState(false);
     const mainDivClass = ['col-md-6 col-lg-5', classes.Project, classes.p0];
     if (props.animateLate) {
