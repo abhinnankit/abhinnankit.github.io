@@ -1,6 +1,6 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classes from './Home.module.scss';
-import Particles from 'react-particles-js';
+import Particles from 'react-tsparticles';
 import Typed from 'react-typed';
 
 const Home = () => {
@@ -40,8 +40,9 @@ const Home = () => {
                 )}
             </div>
             <Particles
+                id="tsparticles"
                 className={classes.Particles}
-                params={{
+                options={{
                     particles: {
                         number: {
                             value: 160,
@@ -62,12 +63,24 @@ const Home = () => {
                             enable: false,
                         },
                         move: {
-                            random: true,
-                            speed: 1,
                             direction: 'top',
-                            out_mode: 'out',
+                            enable: true,
+                            outMode: 'out',
+                            random: true,
+                            speed: 3,
+                        },
+                        opacity: {
+                            value: 0.9,
+                            random: true,
+                            anim: {
+                                enable: true,
+                                speed: 1,
+                                opacity_min: 0.4,
+                                sync: false,
+                            },
                         },
                     },
+                    detectRetina: true,
                     interactivity: {
                         detect_on: 'canvas',
                         events: {
