@@ -24,7 +24,7 @@
         "react-typed": "2.0.12"
     },
     "scripts": {
-        "predeploy": "npm run build && cp CNAME ./dist/",
+        "predeploy": "npm run build",
         "deploy": "gh-pages -b master -d dist",
         "dev": "vite",
         "start": "vite",
