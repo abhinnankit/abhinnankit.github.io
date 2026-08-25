@@ -1,10 +1,12 @@
+@use 'sass:math';
+
 // Contains all the functions
 
 @mixin generate-col($value) {
     @for $i from 1 through 12 {
         .col#{$value}-#{$i} {
-            flex: 0 0 ($i/12) * 100%;
-            max-width: ($i/12) * 100%;
+            flex: 0 0 math.div($i, 12) * 100%;
+            max-width: math.div($i, 12) * 100%;
         }
     }
 }
