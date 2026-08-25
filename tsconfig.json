@@ -1,6 +1,6 @@
 {
     "compilerOptions": {
-        "target": "es5",
+        "target": "es2024",
         "lib": ["dom", "dom.iterable", "esnext"],
         "typeRoots": ["typings", "node_modules/@types"],
         "allowJs": true,
@@ -10,10 +10,9 @@
         "strict": true,
         "forceConsistentCasingInFileNames": true,
         "module": "esnext",
-        "downlevelIteration": true,
         "noImplicitAny": false,
         "strictNullChecks": false,
-        "moduleResolution": "node",
+        "moduleResolution": "bundler",
         "resolveJsonModule": true,
         "isolatedModules": true,
         "noEmit": true,

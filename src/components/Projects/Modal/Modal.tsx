@@ -1,7 +1,7 @@
 import React, { FC } from 'react';
 import Backdrop from './Backdrop/Backdrop';
 import classes from './Modal.module.scss';
-import { ReactComponent as Close } from '../../../assets/images/svg/close.svg';
+import Close from '../../../assets/images/svg/close.svg?react';
 import Row from '../../../hoc/Row/Row';
 import Carousel from './Carousel/Carousel';
 

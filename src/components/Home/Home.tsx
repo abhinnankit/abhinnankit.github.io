@@ -1,11 +1,12 @@
 import React, { useCallback, useEffect, useRef, useState } from 'react';
 import classes from './Home.module.scss';
-import Particles from 'react-tsparticles';
-import Typed from 'react-typed';
+import Particles from '@tsparticles/react';
+import type { ISourceOptions } from '@tsparticles/engine';
+import { ReactTyped } from 'react-typed';
 
 const Home = () => {
     const message = ["I'm a <i>full-stack</i> <b>software developer</b> with a wide array of <i>skills</i>."];
-    const headerRef = useRef(null);
+    const headerRef = useRef<HTMLParagraphElement>(null);
     const [animate, setAnimate] = useState(false);
     const [startTyping, setStartTyping] = useState(false);
     const bannerTextClasses = [classes.BannerText];
@@ -17,11 +18,17 @@ const Home = () => {
     };
     const memoizedCallback = useCallback(animationEndCallback, []);
     useEffect(() => {
-        setTimeout(() => {
+        const timer = window.setTimeout(() => {
             setAnimate(true);
         }, 0);
-        headerRef.current.addEventListener('transitionend', memoizedCallback);
-    }, [animate, memoizedCallback]);
+        const header = headerRef.current;
+        header?.addEventListener('transitionend', memoizedCallback);
+
+        return () => {
+            window.clearTimeout(timer);
+            header?.removeEventListener('transitionend', memoizedCallback);
+        };
+    }, [memoizedCallback]);
     const headerLineClasses = [classes.HeaderLine];
     if (animate) {
         headerLineClasses.push(classes.Animate);
@@ -34,7 +41,7 @@ const Home = () => {
                     <strong className={headerLineClasses.join(' ')}>Abhinn Ankit</strong>
                 </p>
                 {startTyping ? (
-                    <Typed className={bannerTextClasses.join(' ')} strings={message} typeSpeed={40} />
+                    <ReactTyped className={bannerTextClasses.join(' ')} strings={message} typeSpeed={40} />
                 ) : (
                     <div style={{ height: '32px' }} />
                 )}
@@ -42,83 +49,80 @@ const Home = () => {
             <Particles
                 id="tsparticles"
                 className={classes.Particles}
-                options={{
-                    particles: {
-                        number: {
-                            value: 160,
-                            density: {
-                                enable: false,
-                                value_area: 789.1476416322727,
-                            },
-                        },
-                        size: {
-                            value: 3,
-                            random: true,
-                            anim: {
-                                speed: 4,
-                                size_min: 0.3,
-                            },
-                        },
-                        line_linked: {
-                            enable: false,
-                        },
-                        move: {
-                            direction: 'top',
-                            enable: true,
-                            outMode: 'out',
-                            random: true,
-                            speed: 3,
-                        },
-                        opacity: {
-                            value: 0.9,
-                            random: true,
-                            anim: {
-                                enable: true,
-                                speed: 1,
-                                opacity_min: 0.4,
-                                sync: false,
-                            },
-                        },
-                    },
-                    detectRetina: true,
-                    interactivity: {
-                        detect_on: 'canvas',
-                        events: {
-                            onhover: {
-                                enable: true,
-                                mode: 'bubble',
-                            },
-                            onclick: {
-                                enable: true,
-                                mode: 'push',
-                            },
-                        },
-                        modes: {
-                            grab: {
-                                distance: 400,
-                                line_linked: {
-                                    opacity: 1,
+                options={
+                    {
+                        particles: {
+                            number: {
+                                value: 160,
+                                density: {
+                                    enable: false,
                                 },
                             },
-                            bubble: {
-                                distance: 250,
-                                size: 3,
-                                duration: 3,
-                                opacity: 1,
+                            size: {
+                                value: {
+                                    min: 0.3,
+                                    max: 3,
+                                },
                             },
-                            push: {
-                                particles_nb: 4,
+                            links: { enable: false },
+                            move: {
+                                direction: 'top',
+                                enable: true,
+                                outModes: 'out',
+                                random: true,
+                                speed: 3,
                             },
-                            remove: {
-                                particles_nb: 2,
-                            },
-                            repulse: {
-                                distance: 200,
-                                duration: 0.4,
+                            opacity: {
+                                value: {
+                                    min: 0.3,
+                                    max: 0.9,
+                                },
+                                animation: {
+                                    enable: true,
+                                    speed: 1,
+                                    sync: false,
+                                },
                             },
                         },
-                    },
-                }}
+                        detectRetina: true,
+                        interactivity: {
+                            events: {
+                                onHover: {
+                                    enable: true,
+                                    mode: 'bubble',
+                                },
+                                onClick: {
+                                    enable: true,
+                                    mode: 'push',
+                                },
+                            },
+                            modes: {
+                                grab: {
+                                    distance: 400,
+                                    links: {
+                                        opacity: 1,
+                                    },
+                                },
+                                bubble: {
+                                    distance: 250,
+                                    size: 3,
+                                    duration: 3,
+                                    opacity: 1,
+                                },
+                                push: {
+                                    quantity: 4,
+                                },
+                                remove: {
+                                    quantity: 2,
+                                },
+                                repulse: {
+                                    distance: 200,
+                                    duration: 0.4,
+                                },
+                            },
+                        },
+                    } satisfies ISourceOptions
+                }
             />
         </div>
     );

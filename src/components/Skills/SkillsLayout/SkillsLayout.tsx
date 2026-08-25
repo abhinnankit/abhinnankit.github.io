@@ -1,4 +1,4 @@
-import React, { FC } from 'react';
+import React, { FC, ReactNode } from 'react';
 import classes from './SkillsLayout.module.scss';
 
 interface IProps {
@@ -6,6 +6,7 @@ interface IProps {
     firstHalfHeader: string;
     secondHalfHeader: string;
     colClass: string;
+    children: ReactNode;
 }
 
 const SkillsLayout: FC<IProps> = (props) => {

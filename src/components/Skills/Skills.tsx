@@ -3,9 +3,9 @@ import Skill from './Skill/Skill';
 import SkillsLayout from './SkillsLayout/SkillsLayout';
 import Card from './Card/Card';
 import classes from './Skills.module.scss';
-import { ReactComponent as NetworkWired } from '../../assets/images/svg/networkwired.svg';
-import { ReactComponent as Laptop } from '../../assets/images/svg/laptop.svg';
-import { ReactComponent as Cloud } from '../../assets/images/svg/cloud.svg';
+import NetworkWired from '../../assets/images/svg/networkwired.svg?react';
+import Laptop from '../../assets/images/svg/laptop.svg?react';
+import Cloud from '../../assets/images/svg/cloud.svg?react';
 
 interface IProps {
     animate: boolean;

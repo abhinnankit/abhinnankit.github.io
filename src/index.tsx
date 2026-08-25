@@ -1,7 +1,20 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import { StrictMode } from 'react';
+import { createRoot } from 'react-dom/client';
+import { ParticlesProvider } from '@tsparticles/react';
+import { loadSlim } from '@tsparticles/slim';
 import './index.scss';
 import App from './App';
-import 'react-app-polyfill/ie9';
 
-ReactDOM.render(<App />, document.getElementById('root'));
+const rootElement = document.getElementById('root');
+
+if (!rootElement) {
+    throw new Error('Root element is missing');
+}
+
+createRoot(rootElement).render(
+    <StrictMode>
+        <ParticlesProvider init={loadSlim}>
+            <App />
+        </ParticlesProvider>
+    </StrictMode>
+);

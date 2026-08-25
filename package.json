@@ -2,44 +2,43 @@
     "name": "abhinnankit.github.io",
     "version": "0.1.0",
     "private": true,
+    "type": "module",
+    "packageManager": "npm@11.17.0",
     "homepage": "https://abhinnankit.github.io",
+    "engines": {
+        "node": ">=24.0.0"
+    },
+    "overrides": {
+        "semver": "7.8.5"
+    },
     "dependencies": {
-        "@fortawesome/fontawesome-svg-core": "^1.2.35",
-        "@fortawesome/free-brands-svg-icons": "^5.15.3",
-        "@fortawesome/free-solid-svg-icons": "^5.15.3",
-        "@fortawesome/react-fontawesome": "^0.1.14",
-        "@types/jest": "26.0.22",
-        "@types/node": "14.14.41",
-        "@types/react": "17.0.3",
-        "@types/react-dom": "17.0.3",
-        "node-sass": "^5.0.0",
-        "react": "^17.0.2",
-        "react-app-polyfill": "^2.0.0",
-        "react-dom": "^17.0.2",
-        "react-scripts": "4.0.3",
-        "react-tsparticles": "^1.26.4",
-        "react-typed": "^1.2.0",
-        "typescript": "4.2.4"
+        "@fortawesome/fontawesome-svg-core": "7.3.1",
+        "@fortawesome/free-brands-svg-icons": "7.3.1",
+        "@fortawesome/free-solid-svg-icons": "7.3.1",
+        "@fortawesome/react-fontawesome": "3.5.0",
+        "@tsparticles/engine": "4.3.2",
+        "@tsparticles/react": "4.3.2",
+        "@tsparticles/slim": "4.3.2",
+        "react": "19.2.8",
+        "react-dom": "19.2.8",
+        "react-typed": "2.0.12"
     },
     "scripts": {
-        "predeploy": "npm run build && cp CNAME ./build/",
-        "deploy": "gh-pages -b master -d build",
-        "start": "react-scripts start",
-        "build": "react-scripts build",
-        "test": "react-scripts test",
-        "eject": "react-scripts eject"
-    },
-    "husky": {
-        "hooks": {
-            "pre-commit": "pretty-quick --staged"
-        }
+        "predeploy": "npm run build && cp CNAME ./dist/",
+        "deploy": "gh-pages -b master -d dist",
+        "dev": "vite",
+        "start": "vite",
+        "build": "vite build",
+        "typecheck": "tsc --noEmit",
+        "preview": "vite preview",
+        "format:staged": "pretty-quick --staged",
+        "prepare": "husky"
     },
     "browserslist": {
         "production": [
             ">0.2%",
             "not dead",
-            "not op_mini all",
-            "ie >= 9"
+            "not op_mini all"
         ],
         "development": [
             "last 1 chrome version",
@@ -48,13 +47,17 @@
         ]
     },
     "devDependencies": {
-        "gh-pages": "3.1",
-        "husky": "^6.0.0",
-        "prettier": "^2.2.1",
-        "pretty-quick": "^3.1.0",
-        "tslint": "^5.20.1",
-        "tslint-config-prettier": "^1.18.0",
-        "tslint-plugin-prettier": "^2.3.0",
-        "tslint-react": "^4.1.0"
+        "@types/node": "26.3.0",
+        "@types/react": "19.2.18",
+        "@types/react-dom": "19.2.5",
+        "@vitejs/plugin-react": "6.1.0",
+        "gh-pages": "6.3.0",
+        "husky": "9.1.7",
+        "prettier": "3.9.6",
+        "pretty-quick": "4.2.2",
+        "sass": "1.103.1",
+        "typescript": "7.0.2",
+        "vite": "8.2.2",
+        "vite-plugin-svgr": "5.2.0"
     }
 }

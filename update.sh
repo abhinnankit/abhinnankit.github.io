@@ -11,7 +11,7 @@ else
 fi
 
 echo -e "Formatting before adding\n"
-yarn pretty-quick
+npm run format:staged
 
 echo -e "Adding files:\n"
 git add --all
@@ -25,6 +25,6 @@ echo -e "Pushing repo.\n"
 branch_name=$(git branch | grep \* | cut -d ' ' -f2)
 git push origin "${branch_name}"
 
-yarn deploy
+npm run deploy
 
-rm -rf build
+rm -rf dist

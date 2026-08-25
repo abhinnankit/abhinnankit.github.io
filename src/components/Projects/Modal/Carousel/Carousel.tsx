@@ -1,7 +1,7 @@
 import React, { FC, useEffect, useRef, useState } from 'react';
 import classes from './Carousel.module.scss';
-import { ReactComponent as LeftArrow } from '../../../../assets/images/svg/left_arrow.svg';
-import { ReactComponent as RightArrow } from '../../../../assets/images/svg/right_arrow.svg';
+import LeftArrow from '../../../../assets/images/svg/left_arrow.svg?react';
+import RightArrow from '../../../../assets/images/svg/right_arrow.svg?react';
 import CarouselSlide from './CarouselSlide/CarouselSlide';
 
 interface IProps {
